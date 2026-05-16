@@ -1,0 +1,37 @@
+name: 🟢 درخواست شهروندی / Citizenship Request
+description: فرم درخواست برای پیوستن به جهان شیفتوپیا
+title: "[Citizenship] "
+labels: ["citizenship"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: نام تو / Your name
+      placeholder: مثال: سارا
+    validations:
+      required: true
+  - type: dropdown
+    id: language
+    attributes:
+      label: زبان اصلی / Primary language
+      options:
+        - فارسی
+        - English
+        - Español
+        - العربية
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: چرا می‌خواهی شهروند شیفتوپیا شوی؟ / Why do you want to become a citizen?
+    validations:
+      required: true
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: پذیرش قوانین
+      options:
+        - label: من قانون اساسی شیفتوپیا را خوانده‌ام و می‌پذیرم.
+          required: true

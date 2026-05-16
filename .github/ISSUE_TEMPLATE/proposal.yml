@@ -1,0 +1,33 @@
+name: 💡 پیشنهاد جدید / New Proposal
+description: پیشنهاد یک قانون جدید، شغل جدید، یا تغییر در جهان
+title: "[Proposal] "
+labels: ["proposal"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: عنوان پیشنهاد
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: نوع پیشنهاد
+      options:
+        - قانون جدید
+        - شغل جدید
+        - اصلاح شاهنامه
+        - تغییر اقتصادی
+        - سایر
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: شرح پیشنهاد
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: تأثیر پیشنهاد بر جهان
