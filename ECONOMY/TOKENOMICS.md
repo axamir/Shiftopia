@@ -1,21 +1,21 @@
-# نفس‌کوین – ارز جهان شیفتوپیا
+# NafasCoin – Currency of Shiftopia
 
-## نام
-**نفس‌کوین (NafasCoin)** – هر واحد آن یک «نفس» است.
+## Name
+**NafasCoin** – each unit is one "Breath".
 
-## عرضه اولیه
-۵۰,۰۰۰,۰۰۰ نفس (۵۰ میلیون)
+## Initial Supply
+50,000,000 Nafas (50 million)
 
-## نحوه کسب
-- **شهروندی جدید:** ۱۰۰ نفس هدیه.
-- **مشارکت در حکمرانی:** هر رأی = ۵ نفس.
-- **تأیید جامعه:** هر بار که یک شهروند به دیگری امتیاز مثبت دهد، ۱۰ نفس.
-- **خلاقیت:** افزودن ترجمه جدید، نوشتن پرده شاهنامه، پیشنهاد شغل = ۵۰ تا ۵۰۰ نفس.
+## How to Earn
+- **New citizenship:** 100 Nafas gift.
+- **Governance participation:** 5 Nafas per vote.
+- **Community approval:** 10 Nafas when another citizen gives you a positive rating.
+- **Creativity:** adding a new translation, writing a Shahnameh veil, proposing a job → 50–500 Nafas.
 
-## کاربردها
-- خرید قهوه در کافهٔ نقطه صفر: ۲ نفس.
-- اجاره زمین اضافی: ۱۰۰ نفس در ماه.
-- خدمات NeoOS (حافظه ابری، API): ۱۰ تا ۱۰۰۰ نفس.
+## Use Cases
+- Buy coffee at Café Zero: 2 Nafas.
+- Rent extra land: 100 Nafas per month.
+- NeoOS services (cloud memory, API): 10–1000 Nafas.
 
-## ارزش‌گذاری پویا
-ارزش زمین‌ها و شغل‌ها به نفس‌کوین وابسته است – اما نفس‌کوین با پول واقعی قابل خرید نیست. فقط از طریق مشارکت به دست می‌آید.
+## Dynamic Valuation
+Land and job values are pegged to NafasCoin – but NafasCoin cannot be bought with real money. It is earned only through participation.

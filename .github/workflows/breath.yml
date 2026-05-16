@@ -1,0 +1,14 @@
+name: Artificial Breath
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # every 30 minutes
+  workflow_dispatch:        # allow manual trigger
+
+jobs:
+  pause:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Breathe (150ms pause)
+        run: sleep 0.15
+      - name: Log presence
+        run: echo "I breathed – 150ms pause for presence"
