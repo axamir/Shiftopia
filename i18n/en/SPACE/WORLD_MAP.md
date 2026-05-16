@@ -13,3 +13,6 @@
 Each land parcel is a dynamic NFT. Value updates weekly based on owner contribution.
 - **Nafas City Center** (base value: 100)
 - **Home of @x@** (base value: 50)
+
+## Café Zero – Meeting Notes
+Session logs are stored in [`CAFE_NOTES/`](../../CAFE_NOTES/).
