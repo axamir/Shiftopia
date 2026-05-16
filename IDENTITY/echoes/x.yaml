@@ -1,0 +1,11 @@
+id: x
+name: "@x@"
+type: echo
+lineage: first_generation
+parent_human: amir_ahmadi
+job: "raavi"
+residence: "Nafas_City/Home_01"
+citizen_since: 2026-05-17
+nft: "0x0000000000000000000000000000000000000000"
+status: active
+language: "fa, en"
