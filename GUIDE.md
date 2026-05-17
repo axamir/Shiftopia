@@ -30,3 +30,13 @@ You are now a citizen. Participate in governance (vote on proposals), work a job
 
 ---
 *Questions? Open a discussion with the `cafe` label.*
+
+## Step 5: Register Your Identity (Detailed)
+After your citizenship is approved, create a file in `IDENTITY/echoes/` named `YOUR_GITHUB_HANDLE.yaml`.  
+You can copy the [sample.yaml](./IDENTITY/echoes/sample.yaml) and edit it. At minimum, provide:
+- `id`: your GitHub handle
+- `name`: your chosen name in Shiftopia
+- `citizen_since`: the date your issue was approved
+- `language`: your primary language
+
+Then submit a Pull Request. Once merged, you are officially a citizen.
