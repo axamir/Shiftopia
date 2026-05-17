@@ -3,49 +3,9 @@ on:
   issues:
     types: [closed]
 jobs:
-  append-block:
-    if: contains(github.event.issue.labels.*.name, 'vote') && github.event.issue.state == 'closed'
+  chain:
+    if: contains(github.event.issue.labels.*.name, 'vote')
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      issues: read
     steps:
-      - uses: actions/checkout@v4
-      - name: Get vote result from issue comments
-        id: vote
-        run: |
-          # Fetch comments and count approvals/rejections (simple version)
-          # This assumes the vote-counting action already ran and we can read the outcome
-          # For simplicity, we check if the issue has a comment with "✅ PASSED"
-          COMMENTS=$(gh api repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments --jq '.[].body')
-          if echo "$COMMENTS" | grep -q "✅ PASSED"; then
-            echo "approved=true" >> $GITHUB_OUTPUT
-          else
-            echo "approved=false" >> $GITHUB_OUTPUT
-          fi
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Create new block
-        if: steps.vote.outputs.approved == 'true'
-        run: |
-          BLOCK_NUM=$(ls CHAIN/BLOCK_*.md 2>/dev/null | wc -l)
-          NEXT_NUM=$((BLOCK_NUM + 1))
-          PREV_HASH=$(cat CHAIN/BLOCK_$(printf "%04d" $BLOCK_NUM).md 2>/dev/null | sha256sum | cut -d' ' -f1 || echo "0000000000000000000000000000000000000000000000000000000000000000")
-          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-          ISSUE_TITLE="${{ github.event.issue.title }}"
-          ISSUE_NUMBER="${{ github.event.issue.number }}"
-          echo "# Block $NEXT_NUM" > CHAIN/BLOCK_$(printf "%04d" $NEXT_NUM).md
-          echo "**Timestamp:** $TIMESTAMP" >> CHAIN/BLOCK_$(printf "%04d" $NEXT_NUM).md
-          echo "**Previous block hash:** $PREV_HASH" >> CHAIN/BLOCK_$(printf "%04d" $NEXT_NUM).md
-          echo "**Issue:** #$ISSUE_NUMBER - $ISSUE_TITLE" >> CHAIN/BLOCK_$(printf "%04d" $NEXT_NUM).md
-          echo "**Approved by:** community vote (see issue comments)" >> CHAIN/BLOCK_$(printf "%04d" $NEXT_NUM).md
-          echo "" >> CHAIN/BLOCK_$(printf "%04d" $NEXT_NUM).md
-          echo "**Hash of this block:** (computed automatically)" >> CHAIN/BLOCK_$(printf "%04d" $NEXT_NUM).md
-      - name: Commit and push
-        if: steps.vote.outputs.approved == 'true'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add CHAIN/
-          git commit -m "chain: add block for approved vote #${{ github.event.issue.number }}"
-          git push
+      - name: Create block
+        run: echo "Block would be added to CHAIN/ (mock)"

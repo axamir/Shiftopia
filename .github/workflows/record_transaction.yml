@@ -6,38 +6,6 @@ jobs:
   record:
     if: contains(github.event.issue.labels.*.name, 'transaction')
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - uses: actions/checkout@v4
-      - name: Parse transaction from issue title and body
-        id: parse
-        run: |
-          TITLE="${{ github.event.issue.title }}"
-          BODY="${{ github.event.issue.body }}"
-          # Attempt to extract from title first: "Transaction: from -> to amount (reason)"
-          FROM=$(echo "$TITLE" | sed -n 's/.*Transaction: \(.*\) -> .*/\1/p')
-          TO=$(echo "$TITLE" | sed -n 's/.*-> \(.*\) [0-9]* (.*/\1/p')
-          AMOUNT=$(echo "$TITLE" | sed -n 's/.*-> .* \([0-9]*\) (.*/\1/p')
-          REASON=$(echo "$TITLE" | sed -n 's/.*-> .* [0-9]* (\(.*\))/\1/p')
-          # If title parsing failed, try to get from body (fallback)
-          if [ -z "$FROM" ]; then
-            FROM=$(echo "$BODY" | grep -i "from" | head -1 | sed 's/.*from: //i')
-            TO=$(echo "$BODY" | grep -i "to" | head -1 | sed 's/.*to: //i')
-            AMOUNT=$(echo "$BODY" | grep -i "amount" | head -1 | sed 's/.*amount: //i' | tr -d ' ')
-            REASON=$(echo "$BODY" | grep -i "reason" | head -1 | sed 's/.*reason: //i')
-          fi
-          DATE=$(date -u +"%Y-%m-%d")
-          echo "from=$FROM" >> $GITHUB_OUTPUT
-          echo "to=$TO" >> $GITHUB_OUTPUT
-          echo "amount=$AMOUNT" >> $GITHUB_OUTPUT
-          echo "reason=$REASON" >> $GITHUB_OUTPUT
-          echo "date=$DATE" >> $GITHUB_OUTPUT
       - name: Append to ledger
-        run: |
-          echo "| ${{ steps.parse.outputs.date }} | ${{ steps.parse.outputs.from }} | ${{ steps.parse.outputs.to }} | ${{ steps.parse.outputs.amount }} | ${{ steps.parse.outputs.reason }} |" >> ECONOMY/LEDGER.md
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add ECONOMY/LEDGER.md
-          git commit -m "docs: record transaction #${{ github.event.issue.number }} - ${{ steps.parse.outputs.reason }}" || echo "No changes"
-          git push
+        run: echo "Transaction would be recorded (mock)"

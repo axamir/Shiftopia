@@ -1,55 +1,11 @@
 name: Count Votes
-
 on:
   issues:
     types: [closed]
-
 jobs:
-  count_votes:
+  count:
     if: contains(github.event.issue.labels.*.name, 'vote')
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Count votes from comments
-        id: vote_count
-        run: |
-          # Fetch comments using GitHub API
-          COMMENTS=$(gh api repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments --paginate)
-          APPROVE=$(echo "$COMMENTS" | jq '[.[] | .body | ascii_downcase | select(contains("approve") or contains("موافق") or contains("+1") or contains("👍"))] | length')
-          REJECT=$(echo "$COMMENTS" | jq '[.[] | .body | ascii_downcase | select(contains("reject") or contains("مخالف") or contains("-1") or contains("👎"))] | length')
-          echo "approve=$APPROVE" >> $GITHUB_OUTPUT
-          echo "reject=$REJECT" >> $GITHUB_OUTPUT
-
-      - name: Create outcome directory
-        run: mkdir -p GOVERNANCE
-
-      - name: Write outcome to file
-        run: |
-          cat << EOF >> GOVERNANCE/OUTCOME.md
-          ## Vote Result – Issue #${{ github.event.issue.number }}
-          - **Title:** ${{ github.event.issue.title }}
-          - **Closed on:** $(date -u +"%Y-%m-%d %H:%M UTC")
-          - **Approve votes:** ${{ steps.vote_count.outputs.approve }}
-          - **Reject votes:** ${{ steps.vote_count.outputs.reject }}
-          - **Status:** ${{ steps.vote_count.outputs.approve > steps.vote_count.outputs.reject && 'Passed' || 'Failed' }}
-          ---
-          EOF
-
-      - name: Commit outcome
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add GOVERNANCE/OUTCOME.md
-          git commit -m "docs: record vote result for issue #${{ github.event.issue.number }}" || echo "No changes to commit"
-          git push
-
-      - name: Add comment to issue
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          RESULT="${{ steps.vote_count.outputs.approve > steps.vote_count.outputs.reject && '✅ PASSED' || '❌ FAILED' }}"
-          gh issue comment ${{ github.event.issue.number }} --body "**Vote result:** $RESULT\n✅ Approve: ${{ steps.vote_count.outputs.approve }}\n❌ Reject: ${{ steps.vote_count.outputs.reject }}\n\n*This vote has been automatically recorded in [GOVERNANCE/OUTCOME.md](https://github.com/${{ github.repository }}/blob/main/GOVERNANCE/OUTCOME.md).*"
+      - name: Count approvals
+        run: echo "Vote counting would happen here (mock for now)"
