@@ -1,0 +1,15 @@
+name: Test Permissions
+on: workflow_dispatch
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Permissions work" > test.txt
+      - run: git config user.name "github-actions[bot]"
+      - run: git config user.email "github-actions[bot]@users.noreply.github.com"
+      - run: git add test.txt
+      - run: git commit -m "test: permissions ok"
+      - run: git push
