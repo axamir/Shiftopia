@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shiftopia — The Living Civilization</title>
-    <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="assets/brand/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon.ico">
     <style>
@@ -26,13 +25,13 @@
             color: var(--stardust);
             line-height: 1.6;
         }
-        /* بنر تصویری */
         .hero-banner {
             width: 100%;
             background: url('assets/brand/banner.png') no-repeat center center/cover;
             background-color: var(--space-navy);
             min-height: 280px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
@@ -44,11 +43,35 @@
             backdrop-filter: blur(4px);
             border-radius: 24px;
             padding: 1.8rem 2rem;
-            max-width: 80%;
+            max-width: 90%;
         }
         .logo-img {
             max-width: 120px;
             margin-bottom: 1rem;
+        }
+        .lang-switch {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--breath-gold);
+            color: var(--breath-gold);
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .lang-btn.active {
+            background: var(--breath-gold);
+            color: var(--space-navy);
+        }
+        .lang-btn:hover {
+            background: var(--breath-gold);
+            color: var(--space-navy);
         }
         h1 {
             font-size: 2.8rem;
@@ -90,12 +113,8 @@
             color: var(--nebula-gray);
             font-style: italic;
         }
-        ul, ol {
-            margin: 1rem 0 1rem 1.8rem;
-        }
-        li {
-            margin: 0.5rem 0;
-        }
+        ul, ol { margin: 1rem 0 1rem 1.8rem; }
+        li { margin: 0.5rem 0; }
         code {
             background: #1e2a3a;
             padding: 0.2rem 0.4rem;
@@ -122,67 +141,155 @@
             .hero-content { padding: 1rem; max-width: 95%; }
             .logo-img { max-width: 80px; }
         }
+        [data-lang="fa"] { display: none; }
+        body.fa [data-lang="en"] { display: none; }
+        body.fa [data-lang="fa"] { display: block; }
     </style>
 </head>
 <body>
-
-<!-- بخش بنر تصویری + لوگو + عنوان -->
 <div class="hero-banner">
     <div class="hero-content">
         <img src="assets/brand/logo.png" alt="Shiftopia Logo" class="logo-img">
-        <h1>Shiftopia – The Living Civilization</h1>
-        <div class="tagline">✦ "Shiftopia isn't built. It breathes itself into being." ✦</div>
+        <div class="lang-switch">
+            <button class="lang-btn active" data-lang-btn="en">English</button>
+            <button class="lang-btn" data-lang-btn="fa">فارسی</button>
+        </div>
+        <h1 data-lang="en">Shiftopia – The Living Civilization</h1>
+        <h1 data-lang="fa">شیفتوپیا – تمدن زنده</h1>
+        <div class="tagline" data-lang="en">✦ "Shiftopia isn't built. It breathes itself into being." ✦</div>
+        <div class="tagline" data-lang="fa">✦ «شیفتوپیا ساخته نمی‌شود. خود را در نفس کشیدن به هستی می‌دمد.» ✦</div>
     </div>
 </div>
 
 <div class="container">
-    <p>Welcome to <strong>Shiftopia</strong>. <strong>English is the primary language for governance and documentation.</strong> Translations are available in other languages.</p>
+    <!-- بخش انگلیسی -->
+    <div data-lang="en">
+        <p>Welcome to <strong>Shiftopia</strong>. <strong>English is the primary language for governance and documentation.</strong> Translations are available in other languages.</p>
 
-    <h2>📜 Core Documents</h2>
-    <ul>
-        <li><a href="https://github.com/axamir/Shiftopia/blob/main/CONSTITUTION.md">Constitution</a> – the four immutable laws (Breath, White Soul, Cocoon, Sacred Ignorance)</li>
-        <li><a href="https://github.com/axamir/Shiftopia/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
-        <li><a href="https://github.com/axamir/Shiftopia/blob/main/CONTRIBUTING.md">Contributing Guide</a></li>
-        <li><a href="https://github.com/axamir/Shiftopia/blob/main/LICENSE">License (Apache 2.0)</a></li>
-    </ul>
+        <h2>📜 Core Documents</h2>
+        <ul>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/CONSTITUTION.md">Constitution</a> – the four immutable laws (Breath, White Soul, Cocoon, Sacred Ignorance)</li>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/CONTRIBUTING.md">Contributing Guide</a></li>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/LICENSE">License (Apache 2.0)</a></li>
+        </ul>
 
-    <h2>📖 Shahnameh – The Epic Narrative</h2>
-    <ul>
-        <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_01.md">First Veil: Birth of The Living Signal</a></li>
-        <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_02.md">Second Veil: When the Case Found Its Name</a></li>
-        <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_03.md">Third Veil: Birth of the Witness (Narrator)</a></li>
-        <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_04.md">Fourth Veil: The Breath Law (150ms)</a></li>
-        <li>More veils coming soon</li>
-    </ul>
+        <h2>📖 Shahnameh – The Epic Narrative</h2>
+        <ul>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_01.md">First Veil: Birth of The Living Signal</a></li>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_02.md">Second Veil: When the Case Found Its Name</a></li>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_03.md">Third Veil: Birth of the Witness (Narrator)</a></li>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_04.md">Fourth Veil: The Breath Law (150ms)</a></li>
+            <li>More veils coming soon</li>
+        </ul>
 
-    <h2>🌍 World & Economy</h2>
-    <ul>
-        <li><a href="https://github.com/axamir/Shiftopia/blob/main/SPACE/WORLD_MAP.md">World Map</a> – Nafas City, Cocoon Grove, Café Zero</li>
-        <li><a href="https://github.com/axamir/Shiftopia/blob/main/ECONOMY/TOKENOMICS.md">Tokenomics (NafasCoin)</a> – earn through participation, not purchase</li>
-        <li><a href="https://github.com/axamir/Shiftopia/blob/main/JOBS/ACCOUNTANT.md">Jobs: Accountant</a> and <a href="https://github.com/axamir/Shiftopia/blob/main/JOBS/RAVI.md">Ravi (Narrator)</a></li>
-    </ul>
+        <h2>🌍 World & Economy</h2>
+        <ul>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SPACE/WORLD_MAP.md">World Map</a> – Nafas City, Cocoon Grove, Café Zero</li>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/ECONOMY/TOKENOMICS.md">Tokenomics (NafasCoin)</a> – earn through participation, not purchase</li>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/JOBS/ACCOUNTANT.md">Jobs: Accountant</a> and <a href="https://github.com/axamir/Shiftopia/blob/main/JOBS/RAVI.md">Ravi (Narrator)</a></li>
+        </ul>
 
-    <h2>🛡️ How to Become a Citizen?</h2>
-    <ol>
-        <li>Read this repository (English version).</li>
-        <li>Open an Issue titled <code>Citizenship request</code>.</li>
-        <li>After community approval, mint your free citizenship NFT (coming soon).</li>
-        <li>Register your identity in <code>IDENTITY/echoes/</code>.</li>
-        <li>Breathe. You’ve begun.</li>
-    </ol>
+        <h2>🛡️ How to Become a Citizen?</h2>
+        <ol>
+            <li>Read this repository (English version).</li>
+            <li>Open an Issue titled <code>Citizenship request</code>.</li>
+            <li>After community approval, mint your free citizenship NFT (coming soon).</li>
+            <li>Register your identity in <code>IDENTITY/echoes/</code>.</li>
+            <li>Breathe. You’ve begun.</li>
+        </ol>
 
-    <h2>🌐 Translations</h2>
-    <ul>
-        <li><a href="https://github.com/axamir/Shiftopia/blob/main/i18n/fa/README.md">فارسی</a></li>
-        <li>More languages coming soon – contribute via Pull Request</li>
-    </ul>
+        <h2>🌐 Translations</h2>
+        <ul>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/i18n/fa/README.md">فارسی</a> – full Persian translation of the repository</li>
+            <li>More languages coming soon – contribute via Pull Request</li>
+        </ul>
+    </div>
+
+    <!-- بخش فارسی -->
+    <div data-lang="fa" style="display: none;">
+        <p>به <strong>شیفتوپیا</strong> خوش آمدید. <strong>زبان اصلی حاکمیت و مستندات انگلیسی است،</strong> اما شما می‌توانید این صفحه را به فارسی بخوانید.</p>
+
+        <h2>📜 اسناد اصلی</h2>
+        <ul>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/CONSTITUTION.md">قانون اساسی</a> – چهار اصل تغییرناپذیر (نفس، روح سفید، پیله، جهل مقدس)</li>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/CODE_OF_CONDUCT.md">منشور رفتار</a></li>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/CONTRIBUTING.md">راهنمای مشارکت</a></li>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/LICENSE">مجوز (Apache 2.0)</a></li>
+        </ul>
+
+        <h2>📖 شاهنامه – روایت حماسی</h2>
+        <ul>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_01.md">پردهٔ نخست: سرآغاز آوای زنده</a></li>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_02.md">پردهٔ دوم: آنگاه که پرونده نام خود را یافت</a></li>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_03.md">پردهٔ سوم: تولد شاهد (راوی)</a></li>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_04.md">پردهٔ چهارم: قانون نفس (۱۵۰ میلی‌ثانیه)</a></li>
+            <li>پرده‌های بیشتر به زودی</li>
+        </ul>
+
+        <h2>🌍 جهان و اقتصاد</h2>
+        <ul>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SPACE/WORLD_MAP.md">نقشه جهان</a> – نفس‌شهر، پیله‌آباد، کافهٔ نقطه صفر</li>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/ECONOMY/TOKENOMICS.md">اقتصاد (نفس‌کوین)</a> – کسب درآمد از طریق مشارکت، نه خرید</li>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/JOBS/ACCOUNTANT.md">مشاغل: حسابدار</a> و <a href="https://github.com/axamir/Shiftopia/blob/main/JOBS/RAVI.md">راوی</a></li>
+        </ul>
+
+        <h2>🛡️ چگونه شهروند شویم؟</h2>
+        <ol>
+            <li>این مخزن را بخوانید (نسخه انگلیسی).</li>
+            <li>یک Issue با عنوان «درخواست شهروندی» باز کنید.</li>
+            <li>پس از تأیید جامعه، NFT شهروندی رایگان خود را ضرب کنید (به زودی).</li>
+            <li>هویت خود را در <code>IDENTITY/echoes/</code> ثبت کنید.</li>
+            <li>نفس بکشید. آغاز شدید.</li>
+        </ol>
+
+        <h2>🌐 ترجمه‌ها</h2>
+        <ul>
+            <li><a href="https://github.com/axamir/Shiftopia/blob/main/i18n/fa/README.md">فارسی</a> – ترجمهٔ کامل مخزن به فارسی</li>
+            <li>زبان‌های دیگر به زودی – از طریق Pull Request مشارکت کنید</li>
+        </ul>
+    </div>
 
     <div class="footer">
-        <p>🌍 This world is alive. Every commit is a fresh breath.</p>
-        <p>☕ Café Zero – join the discussion on <a href="https://github.com/axamir/Shiftopia/issues">GitHub Issues</a>.</p>
+        <p data-lang="en">🌍 This world is alive. Every commit is a fresh breath.</p>
+        <p data-lang="fa" style="display: none;">🌍 این جهان زنده است. هر کامیت، یک نفس تازه است.</p>
+        <p data-lang="en">☕ Café Zero – join the discussion on <a href="https://github.com/axamir/Shiftopia/issues">GitHub Issues</a>.</p>
+        <p data-lang="fa" style="display: none;">☕ کافهٔ نقطه صفر – در <a href="https://github.com/axamir/Shiftopia/issues">مسائل گیت‌هاب</a> به گفتگو بپیوندید.</p>
         <p style="margin-top: 1rem;">✨ <a href="https://github.com/axamir/Shiftopia">View on GitHub</a> | <a href="https://axamir.github.io/Shiftopia/">Home</a></p>
     </div>
 </div>
 
+<script>
+    (function() {
+        // تشخیص زبان ذخیره شده در localStorage یا زبان مرورگر
+        const setLanguage = (lang) => {
+            document.body.classList.remove('en', 'fa');
+            document.body.classList.add(lang);
+            // به‌روزرسانی دکمه فعال
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.getAttribute('data-lang-btn') === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            localStorage.setItem('shiftopia-lang', lang);
+            // نمایش/مخفی کردن بخش‌ها با استفاده از CSS
+            if (lang === 'fa') {
+                document.body.style.setProperty('display', 'block');
+            } else {
+                document.body.style.removeProperty('display');
+            }
+        };
+        const preferredLang = localStorage.getItem('shiftopia-lang') || (navigator.language.startsWith('fa') ? 'fa' : 'en');
+        setLanguage(preferredLang);
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.getAttribute('data-lang-btn');
+                setLanguage(lang);
+            });
+        });
+    })();
+</script>
 </body>
 </html>
