@@ -1,0 +1,54 @@
+name: 💰 Record a Transaction
+description: Log a financial transaction (e.g., coffee purchase, tax payment, donation)
+title: "[Transaction] "
+labels: ["transaction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Record a NafasCoin Transaction
+        Please fill in the details below. After closing this issue, the transaction will be automatically added to the ledger.
+
+  - type: input
+    id: from
+    attributes:
+      label: From (payer)
+      description: GitHub handle of the citizen paying
+      placeholder: "@username or Treasury"
+    validations:
+      required: true
+
+  - type: input
+    id: to
+    attributes:
+      label: To (receiver)
+      description: GitHub handle of the citizen receiving payment, or "Treasury"
+      placeholder: "@username or Treasury"
+    validations:
+      required: true
+
+  - type: number
+    id: amount
+    attributes:
+      label: Amount (NafasCoins)
+      description: Number of NafasCoins transferred
+      placeholder: "2"
+    validations:
+      required: true
+
+  - type: input
+    id: reason
+    attributes:
+      label: Reason
+      description: Brief description (e.g., "Coffee at Café Zero", "Monthly land tax")
+      placeholder: "Coffee at Café Zero"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I confirm that both parties agree to this transaction (if applicable) or it is a public payment (e.g., tax).
+          required: true
