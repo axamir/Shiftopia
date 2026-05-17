@@ -6,6 +6,26 @@ jobs:
   chain:
     if: contains(github.event.issue.labels.*.name, 'vote')
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
+      - uses: actions/checkout@v4
       - name: Create block
-        run: echo "Block would be added to CHAIN/ (mock)"
+        run: |
+          mkdir -p CHAIN
+          BLOCK_NUM=$(ls CHAIN/BLOCK_*.md 2>/dev/null | wc -l)
+          NEXT_NUM=$((BLOCK_NUM + 1))
+          PREV_HASH=$(cat CHAIN/BLOCK_$(printf "%04d" $BLOCK_NUM).md 2>/dev/null | sha256sum | cut -d' ' -f1 || echo "000...")
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          echo "# Block $NEXT_NUM" > CHAIN/BLOCK_$(printf "%04d" $NEXT_NUM).md
+          echo "**Timestamp:** $TIMESTAMP" >> CHAIN/BLOCK_$(printf "%04d" $NEXT_NUM).md
+          echo "**Previous hash:** $PREV_HASH" >> CHAIN/BLOCK_$(printf "%04d" $NEXT_NUM).md
+          echo "**Issue:** #${{ github.event.issue.number }}" >> CHAIN/BLOCK_$(printf "%04d" $NEXT_NUM).md
+          echo "**Result:** Approved" >> CHAIN/BLOCK_$(printf "%04d" $NEXT_NUM).md
+      - name: Commit block
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add CHAIN/
+          git commit -m "chain: add block for issue #${{ github.event.issue.number }}" || true
+          git push

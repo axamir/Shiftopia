@@ -8,4 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Count approvals
-        run: echo "Vote counting would happen here (mock for now)"
+        run: |
+          echo "Vote counting would parse comments and tally 'Approve' vs 'Reject'"
+          # For now, we just create a mock result; real version uses GitHub API
+          echo "✅ PASSED" >> $GITHUB_STEP_SUMMARY

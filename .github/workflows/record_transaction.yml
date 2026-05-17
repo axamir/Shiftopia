@@ -6,6 +6,29 @@ jobs:
   record:
     if: contains(github.event.issue.labels.*.name, 'transaction')
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
+      - uses: actions/checkout@v4
+      - name: Parse transaction
+        run: |
+          TITLE="${{ github.event.issue.title }}"
+          # Expected format: "[Transaction] from -> to amount (reason)"
+          FROM=$(echo "$TITLE" | sed -n 's/.*Transaction] \(.*\) -> .*/\1/p')
+          TO=$(echo "$TITLE" | sed -n 's/.*-> \(.*\) [0-9]* (.*/\1/p')
+          AMOUNT=$(echo "$TITLE" | sed -n 's/.*-> .* \([0-9]*\) (.*/\1/p')
+          REASON=$(echo "$TITLE" | sed -n 's/.*-> .* [0-9]* (\(.*\))/\1/p')
+          DATE=$(date -u +"%Y-%m-%d")
+          echo "from=$FROM" >> $GITHUB_ENV
+          echo "to=$TO" >> $GITHUB_ENV
+          echo "amount=$AMOUNT" >> $GITHUB_ENV
+          echo "reason=$REASON" >> $GITHUB_ENV
+          echo "date=$DATE" >> $GITHUB_ENV
       - name: Append to ledger
-        run: echo "Transaction would be recorded (mock)"
+        run: |
+          echo "| ${{ env.date }} | ${{ env.from }} | ${{ env.to }} | ${{ env.amount }} | ${{ env.reason }} |" >> ECONOMY/LEDGER.md
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ECONOMY/LEDGER.md
+          git commit -m "docs: record transaction #${{ github.event.issue.number }}" || true
+          git push
