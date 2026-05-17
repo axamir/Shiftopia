@@ -1,33 +1,65 @@
-name: 💡 پیشنهاد جدید / New Proposal
-description: پیشنهاد یک قانون جدید، شغل جدید، یا تغییر در جهان
+name: 💡 New Proposal
+description: Propose a new law, job, amendment, or economic change
 title: "[Proposal] "
-labels: ["proposal"]
+labels: ["proposal", "vote"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Thank you for contributing to Shiftopia
+        Please fill out this form to propose a change. The community will review and vote.
+
   - type: input
     id: title
     attributes:
-      label: عنوان پیشنهاد
+      label: Proposal Title
+      placeholder: e.g., "Add a new job: Librarian"
     validations:
       required: true
+
   - type: dropdown
-    id: type
+    id: category
     attributes:
-      label: نوع پیشنهاد
+      label: Category
       options:
-        - قانون جدید
-        - شغل جدید
-        - اصلاح شاهنامه
-        - تغییر اقتصادی
-        - سایر
+        - New Law
+        - Amendment to Constitution
+        - New Job
+        - Economic Change
+        - Governance Process
+        - Other
     validations:
       required: true
+
   - type: textarea
     id: description
     attributes:
-      label: شرح پیشنهاد
+      label: Detailed Description
+      description: Explain your proposal clearly. Include rationale, benefits, and potential drawbacks.
+      placeholder: |
+        Example: I propose adding a "Librarian" job responsible for organizing the Shahnameh...
     validations:
       required: true
+
   - type: textarea
     id: impact
     attributes:
-      label: تأثیر پیشنهاد بر جهان
+      label: Impact on Shiftopia
+      description: How will this change affect citizens, economy, or governance?
+      placeholder: e.g., "Creates a new role, improves knowledge sharing..."
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Implementation Steps
+      description: If applicable, list steps to implement this proposal (e.g., create a new file, update a workflow).
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have read the Constitution and ensure this proposal does not contradict it.
+          required: true
+        - label: I understand that this proposal will be voted on for 7 days after submission.
+          required: true
