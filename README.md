@@ -41,3 +41,5 @@ See [ROADMAP.md](./ROADMAP.md) for upcoming milestones (new languages, NFT minti
 ---
 ✨ **This world is alive. Every commit is a fresh breath.**  
 ☕ Join the discussion at [Café Zero](https://github.com/axamir/Shiftopia/issues) (use the `cafe` label).
+
+**Citizens:** 2
