@@ -1,0 +1,65 @@
+name: 💼 Job Application
+description: Apply for a specific job role in Shiftopia (Accountant, Ravi, Teacher, Judge, Builder, Digital Farmer, or a new role)
+title: "[Job] "
+labels: ["job-application", "vote"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Apply for a Job
+        Please provide your qualifications and why you want this role.
+
+  - type: input
+    id: applicant
+    attributes:
+      label: Your GitHub Handle
+      placeholder: "@username"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: job
+    attributes:
+      label: Job you are applying for
+      options:
+        - Accountant
+        - Ravi (Narrator)
+        - Teacher
+        - Judge
+        - Builder
+        - Digital Farmer
+        - Other (please specify below)
+    validations:
+      required: true
+
+  - type: input
+    id: other_job
+    attributes:
+      label: If "Other", please specify job title and description
+      placeholder: "e.g., Librarian – responsible for organizing the Shahnameh"
+
+  - type: textarea
+    id: qualifications
+    attributes:
+      label: Qualifications & Experience
+      description: Why are you suitable for this job? List relevant skills, past contributions, or experience in Shiftopia or elsewhere.
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why do you want this job? How will it help Shiftopia?
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have read the job description for this role (if exists) and understand the duties.
+          required: true
+        - label: I agree to follow the Constitution and Code of Conduct while performing this job.
+          required: true
