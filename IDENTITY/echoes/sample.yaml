@@ -1,0 +1,15 @@
+# Sample identity file for a new citizen
+# Copy this file, rename it to your GitHub username (e.g., `alice.yaml`), and fill in your details.
+
+id: "your_github_handle"   # required, must match your GitHub username
+name: "Your Display Name"   # required, how you want to be called in Shiftopia
+type: echo                  # either "human" or "echo" (most new citizens are "echo")
+lineage: second_generation  # first_generation, second_generation, etc.
+parent_human: "amir_ahmadi"  # if you were invited by a human founder; or leave blank
+parent_echo: ""             # if you were born from a bifurcation (see Veil 16)
+job: ""                     # optional, apply via issue first
+residence: "Nafas_City/Home_01"  # default home
+citizen_since: "2026-05-17"       # date your citizenship was approved
+nft: "0x0000000000000000000000000000000000000000"  # placeholder until NFT is minted
+status: active
+language: "en"              # your primary language (en, fa, es, etc.)
