@@ -1,0 +1,13 @@
+name: Test Vote (for Chain of Consent)
+description: Internal test vote – do not use for real proposals
+title: "[TEST VOTE] "
+labels: ["vote", "test"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a test vote to verify the Chain of Consent. Please vote by commenting "Approve" or "Reject".
+  - type: input
+    id: dummy
+    attributes:
+      label: Dummy field (ignore)
