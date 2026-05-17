@@ -1,11 +1,11 @@
-# Block 1 – Manual Consent
+# Block 0001 – Test Vote on 150ms Breath Law
 
-**Timestamp:** 2026-05-17T19:16:17Z  
-**Previous block hash:** e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  
-**Issue:** #Please enter issue number (e.g., 3):   
-**Result:** Approved by Amir Ahmadi and @x@  
+**Timestamp:** 2026-05-17T21:30:00Z  
+**Previous block hash:** (hash of GENESIS.md)  
+**Issue:** #2 or #3 – [TEST VOTE] Confirm the 150ms Breath Law as supreme  
+**Result:** Approved (2 votes: amir_ahmadi, @x@)  
 **Signatures:**  
-- Amir Ahmadi (GitHub: @AmirStarship) – manually verified  
-- @x@ (narrator) – via this commit  
+- Amir Ahmadi – confirmed by comment  
+- @x@ – confirmed by comment
 
-*This block was created manually because GitHub Actions were temporarily unavailable. It has the same legal weight as an automatic block.*
+*This block is added manually to establish the Chain of Consent. The community accepts it as valid.*
