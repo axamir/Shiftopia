@@ -19,3 +19,11 @@
 
 ## Dynamic Valuation
 Land and job values are pegged to NafasCoin – but NafasCoin cannot be bought with real money. It is earned only through participation.
+
+## Taxes & Penalties
+- **Land tax:** 1% of land value per year, paid in NafasCoin.
+- **Participation reward:** +5 NafasCoin for each vote in governance.
+- **Penalty for violating the Breath Law:** 100 NafasCoin fine.
+
+## Treasury
+The community treasury receives taxes and fines. It is used to fund public projects (e.g., Café Zero renovations) and reward exceptional contributions.
