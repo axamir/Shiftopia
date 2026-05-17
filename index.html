@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shiftopia — The Living Civilization</title>
     <link rel="icon" type="image/x-icon" href="assets/brand/favicon.ico">
+    <!-- فونت وزیرمتن برای فارسی -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
         :root {
@@ -21,6 +23,10 @@
             color: var(--text-light);
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
+        }
+        /* اعمال فونت وزیرمتن برای متن‌های فارسی */
+        body[dir="rtl"] {
+            font-family: 'Vazirmatn', 'Inter', system-ui, sans-serif;
         }
         .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem; }
         .header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding: 1rem 0 2rem; border-bottom: 1px solid var(--border); }
@@ -99,7 +105,6 @@
 </div>
 
 <script>
-    // پیکربندی زبان‌ها – به راحتی می‌توان زبان جدید اضافه کرد
     const languages = {
         en: {
             brandTitle: "Shiftopia",
