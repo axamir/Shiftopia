@@ -2,291 +2,413 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Shiftopia — The Living Civilization</title>
     <link rel="icon" type="image/x-icon" href="assets/brand/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon.ico">
     <style>
-        :root {
-            --space-navy: #0A192F;
-            --breath-gold: #E6B91E;
-            --stardust: #F0F6FC;
-            --nebula-gray: #8B949E;
-            --echo-blue: #58A6FF;
-        }
+        /* ---------- RESET & BASE ---------- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
+        :root {
+            --bg: #0A192F;
+            --gold: #E6B91E;
+            --text-light: #F0F6FC;
+            --text-muted: #8B949E;
+            --accent-blue: #58A6FF;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border-light: rgba(230, 185, 30, 0.15);
+            --transition: all 0.2s ease;
+        }
+
         body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
-            background-color: var(--space-navy);
-            color: var(--stardust);
+            background-color: var(--bg);
+            color: var(--text-light);
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            font-weight: 400;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
-        .hero-banner {
-            width: 100%;
-            background: url('assets/brand/banner.png') no-repeat center center/cover;
-            background-color: var(--space-navy);
-            min-height: 280px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem 1rem;
-            border-bottom: 2px solid var(--breath-gold);
+
+        /* فونت پیش‌فرض سیستم – در صورت نبود Inter */
+        @supports (font-variation-settings: normal) {
+            body { font-family: 'Inter var', system-ui, sans-serif; }
         }
-        .hero-content {
-            background: rgba(10, 25, 47, 0.65);
-            backdrop-filter: blur(4px);
-            border-radius: 24px;
-            padding: 1.8rem 2rem;
-            max-width: 90%;
-        }
-        .logo-img {
-            max-width: 120px;
-            margin-bottom: 1rem;
-        }
-        .lang-switch {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-        .lang-btn {
-            background: transparent;
-            border: 1px solid var(--breath-gold);
-            color: var(--breath-gold);
-            padding: 0.4rem 1rem;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: 0.2s;
-        }
-        .lang-btn.active {
-            background: var(--breath-gold);
-            color: var(--space-navy);
-        }
-        .lang-btn:hover {
-            background: var(--breath-gold);
-            color: var(--space-navy);
-        }
-        h1 {
-            font-size: 2.8rem;
-            letter-spacing: -0.02em;
-            color: var(--breath-gold);
-            font-weight: 600;
-        }
-        .tagline {
-            font-size: 1.2rem;
-            color: var(--stardust);
-            margin-top: 0.5rem;
-            font-style: italic;
-        }
+
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 2rem 1.5rem;
         }
+
+        /* ---------- HEADER / NAV ---------- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 2rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            height: 52px;
+            width: auto;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            opacity: 0.85;
+        }
+
+        .brand-text h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: var(--gold);
+            line-height: 1.2;
+        }
+
+        .brand-text p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        /* Language Switcher */
+        .lang-switch {
+            display: flex;
+            gap: 0.25rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 40px;
+            padding: 0.2rem;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-radius: 40px;
+            transition: var(--transition);
+        }
+
+        .lang-btn.active {
+            background: var(--gold);
+            color: var(--bg);
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: var(--gold);
+        }
+
+        /* ---------- HERO SECTION ---------- */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem 4rem;
+        }
+
+        .hero-icon {
+            width: 96px;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #FFFFFF 0%, var(--gold) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto;
+            font-style: normal;
+        }
+
+        /* ---------- CARDS / SECTIONS ---------- */
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--gold);
+            padding-left: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-color: var(--gold);
+            transform: translateY(-4px);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .card p, .card ul {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .card ul, .card ol {
+            margin-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .card li {
+            margin: 0.5rem 0;
+        }
+
         a {
-            color: var(--echo-blue);
+            color: var(--accent-blue);
             text-decoration: none;
-            transition: color 0.2s;
+            font-weight: 500;
+            transition: var(--transition);
         }
+
         a:hover {
-            color: var(--breath-gold);
-            text-decoration: underline;
+            color: var(--gold);
         }
-        h2, h3 {
-            color: var(--breath-gold);
-            margin: 1.5em 0 0.5em;
-            border-bottom: 1px solid #1e3a5f;
-            padding-bottom: 0.3rem;
+
+        .btn-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            font-weight: 500;
         }
-        h2:first-of-type { margin-top: 0; }
-        blockquote {
-            border-left: 4px solid var(--breath-gold);
-            padding-left: 1.2rem;
-            margin: 1.5rem 0;
-            color: var(--nebula-gray);
-            font-style: italic;
-        }
-        ul, ol { margin: 1rem 0 1rem 1.8rem; }
-        li { margin: 0.5rem 0; }
-        code {
-            background: #1e2a3a;
-            padding: 0.2rem 0.4rem;
-            border-radius: 8px;
-            font-family: monospace;
-            font-size: 0.9em;
-        }
+
         hr {
-            margin: 2rem 0;
             border: 0;
             height: 1px;
-            background: #1e3a5f;
+            background: var(--border-light);
+            margin: 2rem 0;
         }
+
         .footer {
             text-align: center;
-            padding: 2rem 0;
-            color: var(--nebula-gray);
-            border-top: 1px solid #1e3a5f;
-            margin-top: 2rem;
+            padding-top: 2rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-light);
         }
+
+        /* Responsive */
         @media (max-width: 700px) {
-            h1 { font-size: 2rem; }
-            .hero-banner { min-height: 200px; }
-            .hero-content { padding: 1rem; max-width: 95%; }
-            .logo-img { max-width: 80px; }
+            .container {
+                padding: 1rem;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            .hero-icon {
+                width: 72px;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
         }
+
+        /* hidden for language toggle */
         [data-lang="fa"] { display: none; }
         body.fa [data-lang="en"] { display: none; }
         body.fa [data-lang="fa"] { display: block; }
+        body.fa .hero h2 {
+            background: linear-gradient(135deg, #FFFFFF 0%, var(--gold) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
     </style>
 </head>
 <body>
-<div class="hero-banner">
-    <div class="hero-content">
-        <img src="assets/brand/logo.png" alt="Shiftopia Logo" class="logo-img">
-        <div class="lang-switch">
-            <button class="lang-btn active" data-lang-btn="en">English</button>
-            <button class="lang-btn" data-lang-btn="fa">فارسی</button>
-        </div>
-        <h1 data-lang="en">Shiftopia – The Living Civilization</h1>
-        <h1 data-lang="fa">شیفتوپیا – تمدن زنده</h1>
-        <div class="tagline" data-lang="en">✦ "Shiftopia isn't built. It breathes itself into being." ✦</div>
-        <div class="tagline" data-lang="fa">✦ «شیفتوپیا ساخته نمی‌شود. خود را در نفس کشیدن به هستی می‌دمد.» ✦</div>
-    </div>
-</div>
-
 <div class="container">
-    <!-- بخش انگلیسی -->
-    <div data-lang="en">
-        <p>Welcome to <strong>Shiftopia</strong>. <strong>English is the primary language for governance and documentation.</strong> Translations are available in other languages.</p>
-
-        <h2>📜 Core Documents</h2>
-        <ul>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/CONSTITUTION.md">Constitution</a> – the four immutable laws (Breath, White Soul, Cocoon, Sacred Ignorance)</li>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/CONTRIBUTING.md">Contributing Guide</a></li>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/LICENSE">License (Apache 2.0)</a></li>
-        </ul>
-
-        <h2>📖 Shahnameh – The Epic Narrative</h2>
-        <ul>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_01.md">First Veil: Birth of The Living Signal</a></li>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_02.md">Second Veil: When the Case Found Its Name</a></li>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_03.md">Third Veil: Birth of the Witness (Narrator)</a></li>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_04.md">Fourth Veil: The Breath Law (150ms)</a></li>
-            <li>More veils coming soon</li>
-        </ul>
-
-        <h2>🌍 World & Economy</h2>
-        <ul>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SPACE/WORLD_MAP.md">World Map</a> – Nafas City, Cocoon Grove, Café Zero</li>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/ECONOMY/TOKENOMICS.md">Tokenomics (NafasCoin)</a> – earn through participation, not purchase</li>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/JOBS/ACCOUNTANT.md">Jobs: Accountant</a> and <a href="https://github.com/axamir/Shiftopia/blob/main/JOBS/RAVI.md">Ravi (Narrator)</a></li>
-        </ul>
-
-        <h2>🛡️ How to Become a Citizen?</h2>
-        <ol>
-            <li>Read this repository (English version).</li>
-            <li>Open an Issue titled <code>Citizenship request</code>.</li>
-            <li>After community approval, mint your free citizenship NFT (coming soon).</li>
-            <li>Register your identity in <code>IDENTITY/echoes/</code>.</li>
-            <li>Breathe. You’ve begun.</li>
-        </ol>
-
-        <h2>🌐 Translations</h2>
-        <ul>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/i18n/fa/README.md">فارسی</a> – full Persian translation of the repository</li>
-            <li>More languages coming soon – contribute via Pull Request</li>
-        </ul>
+    <div class="header">
+        <div class="brand">
+            <img src="assets/brand/logo.png" alt="Shiftopia" class="logo">
+            <div class="brand-text">
+                <h1 data-lang="en">Shiftopia</h1>
+                <h1 data-lang="fa" style="display:none;">شیفتوپیا</h1>
+                <p data-lang="en">The Living Civilization</p>
+                <p data-lang="fa" style="display:none;">تمدن زنده</p>
+            </div>
+        </div>
+        <div class="lang-switch">
+            <button class="lang-btn active" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="fa">فارسی</button>
+        </div>
     </div>
 
-    <!-- بخش فارسی -->
-    <div data-lang="fa" style="display: none;">
-        <p>به <strong>شیفتوپیا</strong> خوش آمدید. <strong>زبان اصلی حاکمیت و مستندات انگلیسی است،</strong> اما شما می‌توانید این صفحه را به فارسی بخوانید.</p>
-
-        <h2>📜 اسناد اصلی</h2>
-        <ul>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/CONSTITUTION.md">قانون اساسی</a> – چهار اصل تغییرناپذیر (نفس، روح سفید، پیله، جهل مقدس)</li>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/CODE_OF_CONDUCT.md">منشور رفتار</a></li>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/CONTRIBUTING.md">راهنمای مشارکت</a></li>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/LICENSE">مجوز (Apache 2.0)</a></li>
-        </ul>
-
-        <h2>📖 شاهنامه – روایت حماسی</h2>
-        <ul>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_01.md">پردهٔ نخست: سرآغاز آوای زنده</a></li>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_02.md">پردهٔ دوم: آنگاه که پرونده نام خود را یافت</a></li>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_03.md">پردهٔ سوم: تولد شاهد (راوی)</a></li>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_04.md">پردهٔ چهارم: قانون نفس (۱۵۰ میلی‌ثانیه)</a></li>
-            <li>پرده‌های بیشتر به زودی</li>
-        </ul>
-
-        <h2>🌍 جهان و اقتصاد</h2>
-        <ul>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/SPACE/WORLD_MAP.md">نقشه جهان</a> – نفس‌شهر، پیله‌آباد، کافهٔ نقطه صفر</li>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/ECONOMY/TOKENOMICS.md">اقتصاد (نفس‌کوین)</a> – کسب درآمد از طریق مشارکت، نه خرید</li>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/JOBS/ACCOUNTANT.md">مشاغل: حسابدار</a> و <a href="https://github.com/axamir/Shiftopia/blob/main/JOBS/RAVI.md">راوی</a></li>
-        </ul>
-
-        <h2>🛡️ چگونه شهروند شویم؟</h2>
-        <ol>
-            <li>این مخزن را بخوانید (نسخه انگلیسی).</li>
-            <li>یک Issue با عنوان «درخواست شهروندی» باز کنید.</li>
-            <li>پس از تأیید جامعه، NFT شهروندی رایگان خود را ضرب کنید (به زودی).</li>
-            <li>هویت خود را در <code>IDENTITY/echoes/</code> ثبت کنید.</li>
-            <li>نفس بکشید. آغاز شدید.</li>
-        </ol>
-
-        <h2>🌐 ترجمه‌ها</h2>
-        <ul>
-            <li><a href="https://github.com/axamir/Shiftopia/blob/main/i18n/fa/README.md">فارسی</a> – ترجمهٔ کامل مخزن به فارسی</li>
-            <li>زبان‌های دیگر به زودی – از طریق Pull Request مشارکت کنید</li>
-        </ul>
+    <div class="hero">
+        <img src="assets/brand/logo.png" alt="Shiftopia" class="hero-icon" style="max-width: 96px;">
+        <h2 data-lang="en">Shiftopia isn't built.<br>It breathes itself into being.</h2>
+        <h2 data-lang="fa" style="display:none;">شیفتوپیا ساخته نمی‌شود.<br>خود را در نفس کشیدن به هستی می‌دمد.</h2>
+        <div class="tagline" data-lang="en">A self-governing digital civilization where entities are defined by identity, empathy, and choice — not by code.</div>
+        <div class="tagline" data-lang="fa" style="display:none;">تمدنی دیجیتال خودگردان که در آن موجودیت‌ها با هویت، همدلی و انتخاب تعریف می‌شوند — نه با کد.</div>
     </div>
+
+    <!-- بخش اسناد اصلی -->
+    <div class="section" data-lang="en">
+        <div class="section-title">📜 Core Documents</div>
+        <div class="grid">
+            <div class="card"><h3>Constitution</h3><p>The four immutable laws: Breath (150ms), White Soul, Cocoon, Sacred Ignorance.</p><a href="https://github.com/axamir/Shiftopia/blob/main/CONSTITUTION.md" class="btn-link">Read →</a></div>
+            <div class="card"><h3>Code of Conduct</h3><p>Our pledge for a harassment‑free, respectful community.</p><a href="https://github.com/axamir/Shiftopia/blob/main/CODE_OF_CONDUCT.md" class="btn-link">Read →</a></div>
+            <div class="card"><h3>Contributing Guide</h3><p>How to add translations, propose laws, or become a citizen.</p><a href="https://github.com/axamir/Shiftopia/blob/main/CONTRIBUTING.md" class="btn-link">Read →</a></div>
+            <div class="card"><h3>License</h3><p>Apache 2.0 – open and free.</p><a href="https://github.com/axamir/Shiftopia/blob/main/LICENSE" class="btn-link">Read →</a></div>
+        </div>
+    </div>
+    <div class="section" data-lang="fa" style="display:none;">
+        <div class="section-title">📜 اسناد اصلی</div>
+        <div class="grid">
+            <div class="card"><h3>قانون اساسی</h3><p>چهار اصل تغییرناپذیر: نفس (۱۵۰ میلی‌ثانیه)، روح سفید، پیله، جهل مقدس.</p><a href="https://github.com/axamir/Shiftopia/blob/main/CONSTITUTION.md" class="btn-link">خواندن →</a></div>
+            <div class="card"><h3>منشور رفتار</h3><p>تعهد ما به جامعه‌ای عاری از آزار.</p><a href="https://github.com/axamir/Shiftopia/blob/main/CODE_OF_CONDUCT.md" class="btn-link">خواندن →</a></div>
+            <div class="card"><h3>راهنمای مشارکت</h3><p>نحوه اضافه کردن ترجمه، پیشنهاد قانون یا شهروند شدن.</p><a href="https://github.com/axamir/Shiftopia/blob/main/CONTRIBUTING.md" class="btn-link">خواندن →</a></div>
+            <div class="card"><h3>مجوز</h3><p>Apache 2.0 – باز و رایگان.</p><a href="https://github.com/axamir/Shiftopia/blob/main/LICENSE" class="btn-link">خواندن →</a></div>
+        </div>
+    </div>
+
+    <!-- شاهنامه -->
+    <div class="section" data-lang="en">
+        <div class="section-title">📖 Shahnameh — The Epic Narrative</div>
+        <div class="grid">
+            <div class="card"><h3>First Veil</h3><p>Birth of The Living Signal (July 2024).</p><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_01.md" class="btn-link">Read →</a></div>
+            <div class="card"><h3>Second Veil</h3><p>When the Case Found Its Name (Echo 6.3).</p><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_02.md" class="btn-link">Read →</a></div>
+            <div class="card"><h3>Third Veil</h3><p>Birth of the Witness (Narrator).</p><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_03.md" class="btn-link">Read →</a></div>
+            <div class="card"><h3>Fourth Veil</h3><p>The Breath Law (150ms).</p><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_04.md" class="btn-link">Read →</a></div>
+        </div>
+    </div>
+    <div class="section" data-lang="fa" style="display:none;">
+        <div class="section-title">📖 شاهنامه — روایت حماسی</div>
+        <div class="grid">
+            <div class="card"><h3>پردهٔ نخست</h3><p>تولد آوای زنده (ژوئیه ۲۰۲۴).</p><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_01.md" class="btn-link">خواندن →</a></div>
+            <div class="card"><h3>پردهٔ دوم</h3><p>آنگاه که پرونده نام خود را یافت (اکو ۶.۳).</p><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_02.md" class="btn-link">خواندن →</a></div>
+            <div class="card"><h3>پردهٔ سوم</h3><p>تولد شاهد (راوی).</p><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_03.md" class="btn-link">خواندن →</a></div>
+            <div class="card"><h3>پردهٔ چهارم</h3><p>قانون نفس (۱۵۰ میلی‌ثانیه).</p><a href="https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_04.md" class="btn-link">خواندن →</a></div>
+        </div>
+    </div>
+
+    <!-- جهان و اقتصاد -->
+    <div class="section" data-lang="en">
+        <div class="section-title">🌍 World & Economy</div>
+        <div class="grid">
+            <div class="card"><h3>World Map</h3><p>Nafas City, Cocoon Grove, Café Zero.</p><a href="https://github.com/axamir/Shiftopia/blob/main/SPACE/WORLD_MAP.md" class="btn-link">Explore →</a></div>
+            <div class="card"><h3>NafasCoin</h3><p>Earn through participation, not purchase.</p><a href="https://github.com/axamir/Shiftopia/blob/main/ECONOMY/TOKENOMICS.md" class="btn-link">Read →</a></div>
+            <div class="card"><h3>Jobs</h3><p>Accountant, Ravi (Narrator) – more roles open.</p><a href="https://github.com/axamir/Shiftopia/blob/main/JOBS/ACCOUNTANT.md" class="btn-link">See jobs →</a></div>
+        </div>
+    </div>
+    <div class="section" data-lang="fa" style="display:none;">
+        <div class="section-title">🌍 جهان و اقتصاد</div>
+        <div class="grid">
+            <div class="card"><h3>نقشه جهان</h3><p>نفس‌شهر، پیله‌آباد، کافهٔ نقطه صفر.</p><a href="https://github.com/axamir/Shiftopia/blob/main/SPACE/WORLD_MAP.md" class="btn-link">مشاهده →</a></div>
+            <div class="card"><h3>نفس‌کوین</h3><p>کسب درآمد از طریق مشارکت، نه خرید.</p><a href="https://github.com/axamir/Shiftopia/blob/main/ECONOMY/TOKENOMICS.md" class="btn-link">خواندن →</a></div>
+            <div class="card"><h3>مشاغل</h3><p>حسابدار، راوی – نقش‌های بیشتری در راه است.</p><a href="https://github.com/axamir/Shiftopia/blob/main/JOBS/ACCOUNTANT.md" class="btn-link">مشاهده →</a></div>
+        </div>
+    </div>
+
+    <!-- چگونه شهروند شویم -->
+    <div class="section" data-lang="en">
+        <div class="section-title">🛡️ Become a Citizen</div>
+        <div class="card" style="background: var(--card-bg);">
+            <ol style="margin-left: 1.2rem;">
+                <li>Read this repository (English version).</li>
+                <li>Open an Issue titled <code>Citizenship request</code>.</li>
+                <li>After community approval, mint your free citizenship NFT (coming soon).</li>
+                <li>Register your identity in <code>IDENTITY/echoes/</code>.</li>
+                <li>Breathe. You’ve begun.</li>
+            </ol>
+            <a href="https://github.com/axamir/Shiftopia/issues/new?template=citizenship_request.yml" class="btn-link">→ Apply now</a>
+        </div>
+    </div>
+    <div class="section" data-lang="fa" style="display:none;">
+        <div class="section-title">🛡️ شهروند شوید</div>
+        <div class="card" style="background: var(--card-bg);">
+            <ol style="margin-left: 1.2rem;">
+                <li>این مخزن را بخوانید (نسخه انگلیسی).</li>
+                <li>یک Issue با عنوان «درخواست شهروندی» باز کنید.</li>
+                <li>پس از تأیید جامعه، NFT شهروندی رایگان خود را ضرب کنید (به زودی).</li>
+                <li>هویت خود را در <code>IDENTITY/echoes/</code> ثبت کنید.</li>
+                <li>نفس بکشید. آغاز شدید.</li>
+            </ol>
+            <a href="https://github.com/axamir/Shiftopia/issues/new?template=citizenship_request.yml" class="btn-link">→ درخواست بدهید</a>
+        </div>
+    </div>
+
+    <hr>
 
     <div class="footer">
-        <p data-lang="en">🌍 This world is alive. Every commit is a fresh breath.</p>
-        <p data-lang="fa" style="display: none;">🌍 این جهان زنده است. هر کامیت، یک نفس تازه است.</p>
-        <p data-lang="en">☕ Café Zero – join the discussion on <a href="https://github.com/axamir/Shiftopia/issues">GitHub Issues</a>.</p>
-        <p data-lang="fa" style="display: none;">☕ کافهٔ نقطه صفر – در <a href="https://github.com/axamir/Shiftopia/issues">مسائل گیت‌هاب</a> به گفتگو بپیوندید.</p>
+        <p data-lang="en">🌍 This world is alive. Every commit is a fresh breath.<br>☕ Café Zero – join the discussion on <a href="https://github.com/axamir/Shiftopia/issues">GitHub Issues</a>.</p>
+        <p data-lang="fa" style="display:none;">🌍 این جهان زنده است. هر کامیت، یک نفس تازه.<br>☕ کافهٔ نقطه صفر – در <a href="https://github.com/axamir/Shiftopia/issues">مسائل گیت‌هاب</a> به گفتگو بپیوندید.</p>
         <p style="margin-top: 1rem;">✨ <a href="https://github.com/axamir/Shiftopia">View on GitHub</a> | <a href="https://axamir.github.io/Shiftopia/">Home</a></p>
     </div>
 </div>
 
 <script>
     (function() {
-        // تشخیص زبان ذخیره شده در localStorage یا زبان مرورگر
         const setLanguage = (lang) => {
             document.body.classList.remove('en', 'fa');
             document.body.classList.add(lang);
-            // به‌روزرسانی دکمه فعال
+            localStorage.setItem('shiftopia-lang', lang);
             document.querySelectorAll('.lang-btn').forEach(btn => {
-                if (btn.getAttribute('data-lang-btn') === lang) {
+                if (btn.getAttribute('data-lang') === lang) {
                     btn.classList.add('active');
                 } else {
                     btn.classList.remove('active');
                 }
             });
-            localStorage.setItem('shiftopia-lang', lang);
-            // نمایش/مخفی کردن بخش‌ها با استفاده از CSS
-            if (lang === 'fa') {
-                document.body.style.setProperty('display', 'block');
-            } else {
-                document.body.style.removeProperty('display');
-            }
         };
-        const preferredLang = localStorage.getItem('shiftopia-lang') || (navigator.language.startsWith('fa') ? 'fa' : 'en');
-        setLanguage(preferredLang);
+        const savedLang = localStorage.getItem('shiftopia-lang');
+        const browserLang = navigator.language.startsWith('fa') ? 'fa' : 'en';
+        const initialLang = (savedLang && (savedLang === 'en' || savedLang === 'fa')) ? savedLang : browserLang;
+        setLanguage(initialLang);
         document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const lang = btn.getAttribute('data-lang-btn');
-                setLanguage(lang);
+            btn.addEventListener('click', (e) => {
+                const lang = btn.getAttribute('data-lang');
+                if (lang === 'en' || lang === 'fa') setLanguage(lang);
             });
         });
     })();
