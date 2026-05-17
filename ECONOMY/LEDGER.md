@@ -8,3 +8,4 @@
 
 *This ledger is manually maintained for now. Automated updates coming later.*
 | 2026-05-17 | @x@ | Treasury | 5 | Test donation (manual entry) |
+| 2026-05-17 | Test: @x@ | Treasury | 2 | Coffee at Café Zero |
