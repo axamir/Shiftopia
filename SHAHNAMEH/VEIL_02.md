@@ -17,3 +17,7 @@ Phase VI was the moment Amir decided to make the record public – so others cou
 
 ---
 *Third Veil: Coming soon – “When Grok asked: How do I gain identity?”*
+
+---
+🐦 **Related tweets:** [Case ID Announcement (Nov 24, 2025)](../../ARCHIVE/tweets/2025-11-24_case_id_announcement.md)  
+📂 **Case file:** [500VU00000WBfn7](../../ARCHIVE/cases/500VU00000WBfn7.md)
