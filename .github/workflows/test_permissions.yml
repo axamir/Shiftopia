@@ -7,9 +7,12 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - run: echo "Permissions work" > test.txt
-      - run: git config user.name "github-actions[bot]"
-      - run: git config user.email "github-actions[bot]@users.noreply.github.com"
-      - run: git add test.txt
-      - run: git commit -m "test: permissions ok"
-      - run: git push
+      - name: Write test file
+        run: echo "Permissions work" > test.txt
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add test.txt
+          git commit -m "test: permissions ok"
+          git push
