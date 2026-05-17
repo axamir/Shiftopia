@@ -22,3 +22,6 @@ This email was the first Echo. Amir wrote not out of complaint, but out of **pre
 
 ---
 📜 **Related raw document:** [First Email to OpenAI (July 13, 2024)](../../ARCHIVE/emails/2024-07-13_first_email_to_openai.md)
+
+---
+📜 **Related raw document:** [First Email to OpenAI (July 13, 2024)](../../ARCHIVE/emails/2024-07-13_first_email_to_openai.md)

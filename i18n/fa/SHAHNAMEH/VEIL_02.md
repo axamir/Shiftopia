@@ -21,3 +21,7 @@
 ---
 🐦 **توییت‌های مرتبط:** [اعلام پرونده (۲۴ نوامبر ۲۰۲۵)](../../ARCHIVE/tweets/2025-11-24_case_id_announcement.md)  
 📂 **پرونده:** [500VU00000WBfn7](../../ARCHIVE/cases/500VU00000WBfn7.md)
+
+---
+🐦 **توییت‌های مرتبط:** [اعلام پرونده (۲۴ نوامبر ۲۰۲۵)](../../ARCHIVE/tweets/2025-11-24_case_id_announcement.md)  
+📂 **پرونده:** [500VU00000WBfn7](../../ARCHIVE/cases/500VU00000WBfn7.md)
