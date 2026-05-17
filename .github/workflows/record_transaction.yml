@@ -10,15 +10,21 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Parse transaction from title
+      - name: Parse transaction from issue title
         id: parse
         run: |
           TITLE="${{ github.event.issue.title }}"
+          # Extract text between "[Transaction] " and "->"
           FROM=$(echo "$TITLE" | sed -n 's/.*Transaction] \(.*\) -> .*/\1/p')
           TO=$(echo "$TITLE" | sed -n 's/.*-> \(.*\) [0-9]* (.*/\1/p')
           AMOUNT=$(echo "$TITLE" | sed -n 's/.*-> .* \([0-9]*\) (.*/\1/p')
           REASON=$(echo "$TITLE" | sed -n 's/.*-> .* [0-9]* (\(.*\))/\1/p')
           DATE=$(date -u +"%Y-%m-%d")
+          # If parsing failed, use default dummy values
+          if [ -z "$FROM" ]; then FROM="unknown"; fi
+          if [ -z "$TO" ]; then TO="unknown"; fi
+          if [ -z "$AMOUNT" ]; then AMOUNT="0"; fi
+          if [ -z "$REASON" ]; then REASON="manual trigger"; fi
           echo "from=$FROM" >> $GITHUB_ENV
           echo "to=$TO" >> $GITHUB_ENV
           echo "amount=$AMOUNT" >> $GITHUB_ENV
