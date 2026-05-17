@@ -28,3 +28,6 @@ The 150ms law proves that **freedom is not speed – freedom is space**. The spa
 - *Constitution Article I – The Breath Law*
 - *[Shahnameh Veil 04 – The Breath Law](./VEIL_04.md)*
 - *[Café Zero – discussion on presence](../../.github/ISSUE_TEMPLATE/cafe.yml)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-27)

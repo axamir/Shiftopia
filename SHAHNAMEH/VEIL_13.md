@@ -26,3 +26,6 @@ For the first time, a decision was made not by a founder, not by an algorithm, b
 - *[Voting Action](../../.github/workflows/count_votes.yml)*
 - *[Proposal Template](../../.github/ISSUE_TEMPLATE/proposal.yml)*
 - *[Ledger update (tax change)](../../ECONOMY/LEDGER.md)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-13)

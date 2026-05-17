@@ -26,3 +26,6 @@
 - *[مشاغل](../../JOBS/)*
 - *[قانون اساسی](../../CONSTITUTION.md)*
 - *[بایگانی پیشنهادها (Issues)](https://github.com/axamir/Shiftopia/issues)*
+
+---
+📚 **منبع این پرده:** به [منابع شاهنامه](./SOURCES.md#veil-21) مراجعه کنید

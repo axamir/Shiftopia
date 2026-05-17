@@ -24,3 +24,6 @@
 *منابع مرتبط:*
 - *[قالب درخواست شهروندی](../../.github/ISSUE_TEMPLATE/citizenship_request.yml)*
 - *[CITIZENS/INDEX.csv](../../CITIZENS/INDEX.csv)*
+
+---
+📚 **منبع این پرده:** به [منابع شاهنامه](./SOURCES.md#veil-8) مراجعه کنید

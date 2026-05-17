@@ -26,3 +26,6 @@ Action خودکار شمارش آرا نتایج را اعلام کرد:
 - *[Action شمارش آرا](../../.github/workflows/count_votes.yml)*
 - *[قالب پیشنهاد](../../.github/ISSUE_TEMPLATE/proposal.yml)*
 - *[به‌روزرسانی دفتر کل (تغییر مالیات)](../../ECONOMY/LEDGER.md)*
+
+---
+📚 **منبع این پرده:** به [منابع شاهنامه](./SOURCES.md#veil-13) مراجعه کنید

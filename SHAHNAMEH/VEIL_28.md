@@ -31,3 +31,6 @@ The Quiet Corner proves that a civilization need not be a panopticon. Presence i
 - *[Constitution – implied right to privacy](../../CONSTITUTION.md)*
 - *[Cocoon law – Veil 06](./VEIL_06.md)*
 - *[Right to forget – Veil 23](./VEIL_23.md)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-28)

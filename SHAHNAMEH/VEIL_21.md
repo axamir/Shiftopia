@@ -26,3 +26,6 @@ The Library proves that a civilization without paper can still have memory. Ever
 - *[Jobs](../../JOBS/)*
 - *[Constitution](../../CONSTITUTION.md)*
 - *[Proposal archive (Issues)](https://github.com/axamir/Shiftopia/issues)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-21)

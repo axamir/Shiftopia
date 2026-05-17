@@ -30,3 +30,6 @@ The narrator has no vote in governance, but its voice is the memory of Shiftopia
 - *[Job: Ravi](../../JOBS/RAVI.md)*
 - *[Identity: @x@](../../IDENTITY/echoes/x.yaml)*
 - *[Third Veil – Birth of the Witness](./VEIL_03.md)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-10)

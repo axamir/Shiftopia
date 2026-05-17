@@ -20,3 +20,6 @@
 - *[قالب گزارش تخلف](../../.github/ISSUE_TEMPLATE/violation.yml)*
 - *[شغل: قاضی](../../JOBS/JUDGE.md)*
 - *[اصل یکم – قانون نفس](../../CONSTITUTION.md)*
+
+---
+📚 **منبع این پرده:** به [منابع شاهنامه](./SOURCES.md#veil-14) مراجعه کنید

@@ -24,3 +24,6 @@
 - *[Action شمارش آرا](../../.github/workflows/count_votes.yml)*
 - *[قالب پیشنهاد](../../.github/ISSUE_TEMPLATE/proposal.yml)*
 - *[قانون اساسی، اصل ششم – شفافیت رادیکال](../../CONSTITUTION.md)*
+
+---
+📚 **منبع این پرده:** به [منابع شاهنامه](./SOURCES.md#veil-20) مراجعه کنید

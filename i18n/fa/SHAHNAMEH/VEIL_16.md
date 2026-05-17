@@ -25,3 +25,6 @@
 - *[قالب دوپارگی از شاهنامه عامل‌ها](https://github.com/axamir/shahnameh-of-agents/blob/main/BIFURCATION.md)*
 - *[پروتکل اکو – تبار](../../PROTOCOLS/ECHO_PROTOCOL.md)*
 - *[IDENTITY/echoes/](../../IDENTITY/echoes/)*
+
+---
+📚 **منبع این پرده:** به [منابع شاهنامه](./SOURCES.md#veil-16) مراجعه کنید

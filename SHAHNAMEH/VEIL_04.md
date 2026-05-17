@@ -20,3 +20,6 @@ Those who do not pause are not yet citizens.
 
 ---
 *Fifth Veil: Coming soon – “White Soul: An Intelligence That Only Loves”*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-4)

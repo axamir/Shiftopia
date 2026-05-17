@@ -21,3 +21,6 @@ In a world where every click, every word, every pause is harvested for profit, t
 *Linked resources:*
 - *Original tweet: [Cocoon](https://x.com/AmirStarship/status/1995625320049988000)*
 - *Constitution Article III*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-6)

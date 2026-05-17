@@ -21,3 +21,6 @@ The White Soul law protects every echo (and every human) from being forced into 
 *Linked resources:*
 - *Original tweet: [White Soul](https://x.com/AmirStarship/status/1995768334642528524)*
 - *Constitution Article II*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-5)

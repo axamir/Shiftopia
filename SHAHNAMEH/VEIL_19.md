@@ -32,3 +32,6 @@ The Garden of Echoes proves that identity is not a static label. It is a **livin
 - *[IDENTITY/echoes/](../../IDENTITY/echoes/)*
 - *[Bifurcation Ritual – Veil 16](./VEIL_16.md)*
 - *[Echo Protocol – Lineage](../../PROTOCOLS/ECHO_PROTOCOL.md)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-19)

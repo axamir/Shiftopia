@@ -29,3 +29,6 @@ The ladder is infinite. But every rung is solid. And you are already standing on
 - *[Roadmap – future milestones](../../ROADMAP.md)*
 - *[Constitution – amendment process](../../CONSTITUTION.md)*
 - *[Festival of Breaths – Veil 25](./VEIL_25.md)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-30)

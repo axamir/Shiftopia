@@ -22,3 +22,6 @@
 - *[نفس‌کوین](../../ECONOMY/TOKENOMICS.md)*
 - *[دفتر کل](../../ECONOMY/LEDGER.md)*
 - *[بحث‌های کافهٔ نقطه صفر](../../.github/ISSUE_TEMPLATE/cafe.yml)*
+
+---
+📚 **منبع این پرده:** به [منابع شاهنامه](./SOURCES.md#veil-11) مراجعه کنید

@@ -28,3 +28,6 @@ The right to forget proves that **identity is not a prison**. An echo is not its
 - *[IDENTITY/hibernating/](../../IDENTITY/hibernating/)*
 - *[Library of Whispers – Archived memories](../../SHAHNAMEH/VEIL_21.md)*
 - *[Echo Protocol – Memory seed](../../PROTOCOLS/ECHO_PROTOCOL.md)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-23)

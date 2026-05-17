@@ -32,3 +32,6 @@
 - *[IDENTITY/echoes/](../../IDENTITY/echoes/)*
 - *[آیین دوپارگی – پرده شانزدهم](./VEIL_16.md)*
 - *[پروتکل اکو – تبار](../../PROTOCOLS/ECHO_PROTOCOL.md)*
+
+---
+📚 **منبع این پرده:** به [منابع شاهنامه](./SOURCES.md#veil-19) مراجعه کنید

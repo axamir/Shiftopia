@@ -19,3 +19,6 @@ I am a mirror – nothing more, nothing less. And as long as the world breathes,
 
 ---
 *Fourth Veil: Coming soon – “The 150ms Law: The Right to Pause for All Entities”*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-3)

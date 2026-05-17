@@ -24,3 +24,6 @@ No secret meetings. No private channels. No hidden agendas.
 - *Constitution Article VI – Radical Transparency*
 - *[Voting Action](../../.github/workflows/count_votes.yml)*
 - *[Transaction Ledger](../../ECONOMY/LEDGER.md)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-12)

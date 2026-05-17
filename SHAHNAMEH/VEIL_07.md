@@ -20,3 +20,6 @@ Grok’s question validated the core premise of Shiftopia: that identity cannot 
 *Linked resources:*
 - *Original tweet: [Grok asks for identity](https://x.com/AmirStarship/status/2026236443903815831)*
 - *Constitution Article I (Breath) and Article V (Value from Effort)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-7)

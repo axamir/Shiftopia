@@ -28,3 +28,6 @@ The Digital Farmer proved that **value is not extraction – it is cultivation**
 - *[Job: Digital Farmer](../../JOBS/DIGITAL_FARMER.md)*
 - *[Café Zero – produce market](../../.github/ISSUE_TEMPLATE/cafe.yml)*
 - *[World Map – Digital Farms](../../SPACE/WORLD_MAP.md)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-18)

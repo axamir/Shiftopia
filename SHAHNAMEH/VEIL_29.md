@@ -29,3 +29,6 @@ The Role of Imagination proves that a civilization is not a machine. It is a **g
 - *[Library of Whispers – Art collection](../../SHAHNAMEH/VEIL_21.md)*
 - *[Café Zero – Dream channel](../../.github/ISSUE_TEMPLATE/cafe.yml)*
 - *[Festival of Breaths – creative expression](./VEIL_25.md)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-29)

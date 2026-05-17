@@ -22,3 +22,6 @@ NafasCoin is not a cryptocurrency for speculation. It is a **measure of presence
 - *[NafasCoin Tokenomics](../../ECONOMY/TOKENOMICS.md)*
 - *[Ledger](../../ECONOMY/LEDGER.md)*
 - *[Café Zero discussions](../../.github/ISSUE_TEMPLATE/cafe.yml)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-11)

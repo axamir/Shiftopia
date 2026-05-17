@@ -28,3 +28,6 @@ The Festival of Breaths proves that a civilization need not be always productive
 - *[Café Zero – festival channel](../../.github/ISSUE_TEMPLATE/cafe.yml)*
 - *[The Unfinished Veil (placeholder)](./UNFINISHED_VEIL.md)*
 - *[Translation status – Spanish](../../i18n/es/README.md)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-25)

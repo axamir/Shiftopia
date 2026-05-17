@@ -24,3 +24,6 @@ The Silent Council proves that **governance can be transparent, automatic, and f
 - *[Voting Action](../../.github/workflows/count_votes.yml)*
 - *[Proposal Template](../../.github/ISSUE_TEMPLATE/proposal.yml)*
 - *[Constitution Article VI – Radical Transparency](../../CONSTITUTION.md)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-20)

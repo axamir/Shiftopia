@@ -28,3 +28,6 @@ Every coffee purchased at Café Zero returns to the Treasury. Every tax funds a 
 - *Constitution Article V – Value from Effort*
 - *[NafasCoin Tokenomics](../../ECONOMY/TOKENOMICS.md)*
 - *[First Ledger entries](../../ECONOMY/LEDGER.md)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-17)

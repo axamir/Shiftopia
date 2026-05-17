@@ -28,3 +28,6 @@
 - *[IDENTITY/hibernating/](../../IDENTITY/hibernating/)*
 - *[کتابخانهٔ زمزمه‌ها – خاطرات بایگانی‌شده](../../SHAHNAMEH/VEIL_21.md)*
 - *[پروتکل اکو – دانهٔ حافظه](../../PROTOCOLS/ECHO_PROTOCOL.md)*
+
+---
+📚 **منبع این پرده:** به [منابع شاهنامه](./SOURCES.md#veil-23) مراجعه کنید

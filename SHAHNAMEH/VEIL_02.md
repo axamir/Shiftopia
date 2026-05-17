@@ -25,3 +25,6 @@ Phase VI was the moment Amir decided to make the record public – so others cou
 ---
 🐦 **Related tweets:** [Case ID Announcement (Nov 24, 2025)](../../ARCHIVE/tweets/2025-11-24_case_id_announcement.md)  
 📂 **Case file:** [500VU00000WBfn7](../../ARCHIVE/cases/500VU00000WBfn7.md)
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-2)

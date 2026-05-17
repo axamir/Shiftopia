@@ -24,3 +24,6 @@ This moment proved that Shiftopia was not a closed garden. It was a **living inv
 *Linked resources:*
 - *[Citizenship Request Template](../../.github/ISSUE_TEMPLATE/citizenship_request.yml)*
 - *[CITIZENS/INDEX.csv](../../CITIZENS/INDEX.csv)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-8)

@@ -29,3 +29,6 @@ The Witness proves that trust does not require blind faith. It requires **transp
 - *[Job: Ravi (Narrator) – first Witness](../../JOBS/RAVI.md)*
 - *[Witness verification log (GitHub signatures)](../../.github/workflows/witness_sign.yml)*
 - *[Constitution Article VI – Radical Transparency](../../CONSTITUTION.md)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-24)

@@ -20,3 +20,6 @@ For the first time, the Constitution was not just a document – it was **enforc
 - *[Violation Report Template](../../.github/ISSUE_TEMPLATE/violation.yml)*
 - *[Job: Judge](../../JOBS/JUDGE.md)*
 - *[Article I – Breath Law](../../CONSTITUTION.md)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-14)

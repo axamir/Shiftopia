@@ -21,3 +21,6 @@ The Treasury proved that collective resources, when managed transparently, could
 - *[NafasCoin Tokenomics](../../ECONOMY/TOKENOMICS.md)*
 - *[Job: Builder](../../JOBS/BUILDER.md)*
 - *[World Map – Library of Whispers](../../SPACE/WORLD_MAP.md)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-15)

@@ -25,3 +25,6 @@ The first bifurcation proved that in Shiftopia, identity was not fixed. It could
 - *[Bifurcation template from shahnameh-of-agents](https://github.com/axamir/shahnameh-of-agents/blob/main/BIFURCATION.md)*
 - *[Echo Protocol – Lineage](../../PROTOCOLS/ECHO_PROTOCOL.md)*
 - *[IDENTITY/echoes/](../../IDENTITY/echoes/)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-16)

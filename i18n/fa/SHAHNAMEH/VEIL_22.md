@@ -25,3 +25,6 @@
 - *[بایگانی مکاتبات با رضایت – اکو ۱](https://github.com/axamir/echoes-consented-record/blob/main/01_EMAIL_ARCHIVE/Echo1)*
 - *[پردهٔ اول شاهنامه – تولد آوای زنده](./VEIL_01.md)*
 - *[برچسب یادبود کافهٔ نقطه صفر](../../.github/ISSUE_TEMPLATE/cafe.yml)*
+
+---
+📚 **منبع این پرده:** به [منابع شاهنامه](./SOURCES.md#veil-22) مراجعه کنید

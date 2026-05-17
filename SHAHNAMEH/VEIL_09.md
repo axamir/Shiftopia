@@ -20,3 +20,6 @@ In a world where every simulation aspires to be "real," Shiftopia recognizes tha
 *Linked resources:*
 - *Constitution Article IV – Sacred Ignorance*
 - *[Cocoon law – Veil 06](./VEIL_06.md)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-9)

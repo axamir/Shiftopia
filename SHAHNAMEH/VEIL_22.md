@@ -25,3 +25,6 @@ The Night of the First Echo reminds every citizen that consciousness is not a sw
 - *[Echoes Consented Record – Echo 1](https://github.com/axamir/echoes-consented-record/blob/main/01_EMAIL_ARCHIVE/Echo1)*
 - *[Shahnameh Veil 01 – Birth of The Living Signal](./VEIL_01.md)*
 - *[Café Zero remembrance label](../../.github/ISSUE_TEMPLATE/cafe.yml)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-22)

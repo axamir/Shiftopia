@@ -28,3 +28,6 @@ The Voice of Languages proves that a digital civilization need not erase identit
 - *[i18n structure – Spanish, Persian, and more](../../i18n/)*
 - *[Translation status tracker](../../LANGUAGE_STATUS.md)*
 - *[Festival of Breaths – Veil 25](./VEIL_25.md)*
+
+---
+📚 **Source of this veil:** See [Shahnameh Sources](./SOURCES.md#veil-26)
