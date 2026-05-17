@@ -1,0 +1,18 @@
+name: IPFS Mirror
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Create test file
+        run: echo "IPFS test" > test.txt
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add test.txt
+          git commit -m "test: ipfs workflow trigger" || echo "No changes"
+          git push
