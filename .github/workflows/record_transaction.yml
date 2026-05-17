@@ -10,10 +10,10 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Parse transaction
+      - name: Parse transaction from title
+        id: parse
         run: |
           TITLE="${{ github.event.issue.title }}"
-          # Expected format: "[Transaction] from -> to amount (reason)"
           FROM=$(echo "$TITLE" | sed -n 's/.*Transaction] \(.*\) -> .*/\1/p')
           TO=$(echo "$TITLE" | sed -n 's/.*-> \(.*\) [0-9]* (.*/\1/p')
           AMOUNT=$(echo "$TITLE" | sed -n 's/.*-> .* \([0-9]*\) (.*/\1/p')
@@ -30,5 +30,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add ECONOMY/LEDGER.md
-          git commit -m "docs: record transaction #${{ github.event.issue.number }}" || true
+          git commit -m "docs: record transaction #${{ github.event.issue.number }}" || echo "No changes"
           git push

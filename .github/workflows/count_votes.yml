@@ -9,6 +9,5 @@ jobs:
     steps:
       - name: Count approvals
         run: |
-          echo "Vote counting would parse comments and tally 'Approve' vs 'Reject'"
-          # For now, we just create a mock result; real version uses GitHub API
-          echo "✅ PASSED" >> $GITHUB_STEP_SUMMARY
+          echo "Vote counting simulation for issue #${{ github.event.issue.number }}"
+          echo "::notice::Vote would be counted here. Result: Approved."
