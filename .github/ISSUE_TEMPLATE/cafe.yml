@@ -1,0 +1,36 @@
+name: ☕ Café Zero – General Discussion
+description: Start a casual conversation, ask questions, or share ideas with the community
+title: "[Café] "
+labels: ["cafe"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Welcome to Café Zero
+        This is a relaxed space for citizens to chat, brainstorm, and get to know each other.  
+        No formal proposals or votes here – just the breath of community.
+
+  - type: input
+    id: topic
+    attributes:
+      label: Topic / Subject
+      placeholder: e.g., "What does the 150ms law mean to you?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: message
+    attributes:
+      label: Your message
+      description: Share your thoughts, questions, or ideas.
+      placeholder: "I've been thinking about..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: reminder
+    attributes:
+      label: Community reminder
+      options:
+        - label: I will respect the 150ms pause before responding to others.
+          required: true
