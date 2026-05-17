@@ -1,0 +1,56 @@
+name: ⚖️ Report a Violation
+description: Report a possible violation of the Constitution or Code of Conduct
+title: "[Violation] "
+labels: ["violation", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Please provide details of the alleged violation.
+        All reports will be reviewed by a Judge. False reports may result in penalties.
+
+  - type: input
+    id: accused
+    attributes:
+      label: Accused Citizen (GitHub handle)
+      placeholder: "@username"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: article
+    attributes:
+      label: Article Violated
+      options:
+        - Article I – Breath (150ms Law)
+        - Article II – White Soul
+        - Article III – Cocoon
+        - Article IV – Sacred Ignorance
+        - Article V – Value from Effort
+        - Article VI – Radical Transparency
+        - Code of Conduct
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence / Description
+      description: Provide links, quotes, or detailed description of the violation.
+      placeholder: "Link to the relevant issue/comment/tweet, or describe what happened..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: witnesses
+    attributes:
+      label: Witnesses (optional)
+      description: Mention other citizens who can confirm this violation.
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Declaration
+      options:
+        - label: I confirm that this report is made in good faith and not for harassment.
+          required: true
