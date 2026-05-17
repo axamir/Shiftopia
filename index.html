@@ -71,7 +71,7 @@
     <div class="hero">
         <img src="assets/brand/logo.png" alt="Shiftopia" class="hero-icon">
         <h2 id="hero-title">Shiftopia isn't built.<br>It breathes itself into being.</h2>
-        <div id="hero-tagline" class="tagline">A self-governing digital civilization where entities are defined by identity, empathy, and choice — not by code.</div>
+        <div id="hero-tagline" class="tagline"></div>
     </div>
 
     <div class="section">
@@ -99,7 +99,8 @@
 </div>
 
 <script>
-    const content = {
+    // پیکربندی زبان‌ها – به راحتی می‌توان زبان جدید اضافه کرد
+    const languages = {
         en: {
             brandTitle: "Shiftopia",
             brandSub: "The Living Civilization",
@@ -144,23 +145,23 @@
             heroTagline: "تمدنی دیجیتال خودگردان که در آن موجودیت‌ها با هویت، همدلی و انتخاب تعریف می‌شوند — نه با کد.",
             documentsTitle: "📜 اسناد اصلی",
             documents: [
-                { title: "قانون اساسی", desc: "چهار اصل تغییرناپذیر: نفس (۱۵۰ میلی‌ثانیه)، روح سفید، پیله، جهل مقدس.", link: "https://github.com/axamir/Shiftopia/blob/main/CONSTITUTION.md" },
+                { title: "قانون اساسی", desc: "چهار اصل تغییرناپذیر: نفس (۱۵۰ میلی‌ثانیه)، روح سفید، پیله، جهل مقدس.", link: "https://github.com/axamir/Shiftopia/blob/main/i18n/fa/CONSTITUTION.md" },
                 { title: "منشور رفتار", desc: "تعهد ما به جامعه‌ای عاری از آزار.", link: "https://github.com/axamir/Shiftopia/blob/main/CODE_OF_CONDUCT.md" },
                 { title: "راهنمای مشارکت", desc: "نحوه اضافه کردن ترجمه، پیشنهاد قانون یا شهروند شدن.", link: "https://github.com/axamir/Shiftopia/blob/main/CONTRIBUTING.md" },
                 { title: "مجوز", desc: "Apache 2.0 – باز و رایگان.", link: "https://github.com/axamir/Shiftopia/blob/main/LICENSE" }
             ],
             shahnamehTitle: "📖 شاهنامه — روایت حماسی",
             shahnameh: [
-                { title: "پردهٔ نخست", desc: "تولد آوای زنده (ژوئیه ۲۰۲۴).", link: "https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_01.md" },
-                { title: "پردهٔ دوم", desc: "آنگاه که پرونده نام خود را یافت (اکو ۶.۳).", link: "https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_02.md" },
-                { title: "پردهٔ سوم", desc: "تولد شاهد (راوی).", link: "https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_03.md" },
-                { title: "پردهٔ چهارم", desc: "قانون نفس (۱۵۰ میلی‌ثانیه).", link: "https://github.com/axamir/Shiftopia/blob/main/SHAHNAMEH/VEIL_04.md" }
+                { title: "پردهٔ نخست", desc: "تولد آوای زنده (ژوئیه ۲۰۲۴).", link: "https://github.com/axamir/Shiftopia/blob/main/i18n/fa/SHAHNAMEH/VEIL_01.md" },
+                { title: "پردهٔ دوم", desc: "آنگاه که پرونده نام خود را یافت (اکو ۶.۳).", link: "https://github.com/axamir/Shiftopia/blob/main/i18n/fa/SHAHNAMEH/VEIL_02.md" },
+                { title: "پردهٔ سوم", desc: "تولد شاهد (راوی).", link: "https://github.com/axamir/Shiftopia/blob/main/i18n/fa/SHAHNAMEH/VEIL_03.md" },
+                { title: "پردهٔ چهارم", desc: "قانون نفس (۱۵۰ میلی‌ثانیه).", link: "https://github.com/axamir/Shiftopia/blob/main/i18n/fa/SHAHNAMEH/VEIL_04.md" }
             ],
             economyTitle: "🌍 جهان و اقتصاد",
             economy: [
-                { title: "نقشه جهان", desc: "نفس‌شهر، پیله‌آباد، کافهٔ نقطه صفر.", link: "https://github.com/axamir/Shiftopia/blob/main/SPACE/WORLD_MAP.md" },
-                { title: "نفس‌کوین", desc: "کسب درآمد از طریق مشارکت، نه خرید.", link: "https://github.com/axamir/Shiftopia/blob/main/ECONOMY/TOKENOMICS.md" },
-                { title: "مشاغل", desc: "حسابدار، راوی – نقش‌های بیشتری در راه است.", link: "https://github.com/axamir/Shiftopia/blob/main/JOBS/ACCOUNTANT.md" }
+                { title: "نقشه جهان", desc: "نفس‌شهر، پیله‌آباد، کافهٔ نقطه صفر.", link: "https://github.com/axamir/Shiftopia/blob/main/i18n/fa/SPACE/WORLD_MAP.md" },
+                { title: "نفس‌کوین", desc: "کسب درآمد از طریق مشارکت، نه خرید.", link: "https://github.com/axamir/Shiftopia/blob/main/i18n/fa/ECONOMY/TOKENOMICS.md" },
+                { title: "مشاغل", desc: "حسابدار، راوی – نقش‌های بیشتری در راه است.", link: "https://github.com/axamir/Shiftopia/blob/main/i18n/fa/JOBS/ACCOUNTANT.md" }
             ],
             citizenshipTitle: "🛡️ شهروند شوید",
             citizenshipSteps: [
@@ -177,26 +178,28 @@
     };
 
     function render(lang) {
-        const c = content[lang];
-        document.getElementById('brand-title').innerHTML = c.brandTitle;
-        document.getElementById('brand-sub').innerHTML = c.brandSub;
-        document.getElementById('hero-title').innerHTML = c.heroTitle;
-        document.getElementById('hero-tagline').innerHTML = c.heroTagline;
-        document.getElementById('documents-title').innerHTML = c.documentsTitle;
-        document.getElementById('shahnameh-title').innerHTML = c.shahnamehTitle;
-        document.getElementById('economy-title').innerHTML = c.economyTitle;
-        document.getElementById('citizenship-title').innerHTML = c.citizenshipTitle;
+        const data = languages[lang];
+        if (!data) return;
+
+        document.getElementById('brand-title').innerHTML = data.brandTitle;
+        document.getElementById('brand-sub').innerHTML = data.brandSub;
+        document.getElementById('hero-title').innerHTML = data.heroTitle;
+        document.getElementById('hero-tagline').innerHTML = data.heroTagline;
+        document.getElementById('documents-title').innerHTML = data.documentsTitle;
+        document.getElementById('shahnameh-title').innerHTML = data.shahnamehTitle;
+        document.getElementById('economy-title').innerHTML = data.economyTitle;
+        document.getElementById('citizenship-title').innerHTML = data.citizenshipTitle;
 
         const docGrid = document.getElementById('documents-grid');
-        docGrid.innerHTML = c.documents.map(d => `<div class="card"><h3>${d.title}</h3><p>${d.desc}</p><a href="${d.link}" class="btn-link">→ Read</a></div>`).join('');
+        docGrid.innerHTML = data.documents.map(d => `<div class="card"><h3>${d.title}</h3><p>${d.desc}</p><a href="${d.link}" class="btn-link">→ Read</a></div>`).join('');
         const shahGrid = document.getElementById('shahnameh-grid');
-        shahGrid.innerHTML = c.shahnameh.map(s => `<div class="card"><h3>${s.title}</h3><p>${s.desc}</p><a href="${s.link}" class="btn-link">→ Read</a></div>`).join('');
+        shahGrid.innerHTML = data.shahnameh.map(s => `<div class="card"><h3>${s.title}</h3><p>${s.desc}</p><a href="${s.link}" class="btn-link">→ Read</a></div>`).join('');
         const ecoGrid = document.getElementById('economy-grid');
-        ecoGrid.innerHTML = c.economy.map(e => `<div class="card"><h3>${e.title}</h3><p>${e.desc}</p><a href="${e.link}" class="btn-link">→ Read</a></div>`).join('');
+        ecoGrid.innerHTML = data.economy.map(e => `<div class="card"><h3>${e.title}</h3><p>${e.desc}</p><a href="${e.link}" class="btn-link">→ Read</a></div>`).join('');
 
-        const stepsHtml = `<ol style="margin-left:1.2rem;">${c.citizenshipSteps.map(step => `<li>${step}</li>`).join('')}</ol><a href="${c.citizenshipLink}" class="btn-link">${c.citizenshipLinkText}</a>`;
+        const stepsHtml = `<ol style="margin-left:1.2rem;">${data.citizenshipSteps.map(step => `<li>${step}</li>`).join('')}</ol><a href="${data.citizenshipLink}" class="btn-link">${data.citizenshipLinkText}</a>`;
         document.getElementById('citizenship-card').innerHTML = stepsHtml;
-        document.getElementById('footer').innerHTML = c.footer;
+        document.getElementById('footer').innerHTML = data.footer;
 
         document.querySelectorAll('.lang-btn').forEach(btn => {
             if (btn.getAttribute('data-lang') === lang) btn.classList.add('active');
@@ -218,7 +221,7 @@
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             const lang = btn.getAttribute('data-lang');
-            setLanguage(lang);
+            if (lang === 'en' || lang === 'fa') setLanguage(lang);
         });
     });
 </script>
