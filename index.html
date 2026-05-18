@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Shiftopia — The Living Civilization</title>
     <link rel="icon" type="image/x-icon" href="assets/brand/favicon.ico">
-    <!-- Vazirmatn font from CDN (fast and reliable) -->
-    <link href="assets/fonts/font-face.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
         :root {
@@ -21,40 +20,43 @@
         body {
             background: var(--bg);
             color: var(--text-light);
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-family: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
             line-height: 1.6;
         }
         body[dir="rtl"] {
-            font-family: 'Vazirmatn', 'Inter', system-ui, sans-serif;
+            font-family: 'Vazirmatn', system-ui, sans-serif;
         }
-        .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem; }
-        .header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding: 1rem 0 2rem; border-bottom: 1px solid var(--border); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 1rem; }
+        @media (min-width: 768px) { .container { padding: 2rem 1.5rem; } }
+        .header { display: flex; flex-direction: column; gap: 1rem; padding: 1rem 0 2rem; border-bottom: 1px solid var(--border); }
+        @media (min-width: 768px) { .header { flex-direction: row; justify-content: space-between; align-items: center; } }
         .brand { display: flex; align-items: center; gap: 1rem; }
         .logo { height: 48px; }
-        .brand-text h1 { font-size: 1.8rem; font-weight: 600; color: var(--gold); }
-        .brand-text p { font-size: 0.85rem; color: var(--text-muted); }
-        .lang-switch { display: flex; gap: 0.5rem; background: rgba(255,255,255,0.03); padding: 0.2rem; border-radius: 40px; }
+        .brand-text h1 { font-size: 1.5rem; font-weight: 600; color: var(--gold); }
+        .brand-text p { font-size: 0.8rem; color: var(--text-muted); }
+        .lang-switch { display: flex; gap: 0.5rem; background: rgba(255,255,255,0.03); padding: 0.2rem; border-radius: 40px; align-self: flex-start; }
         .lang-btn { background: transparent; border: none; padding: 0.5rem 1rem; font-size: 0.9rem; font-weight: 500; color: var(--text-muted); cursor: pointer; border-radius: 40px; transition: 0.2s; }
         .lang-btn.active { background: var(--gold); color: var(--bg); }
-        .hero { text-align: center; padding: 3rem 1rem; }
-        .hero-icon { width: 96px; margin-bottom: 1.5rem; }
-        .hero h2 { font-size: 2.8rem; font-weight: 600; background: linear-gradient(135deg, #FFF, var(--gold)); background-clip: text; -webkit-background-clip: text; color: transparent; margin-bottom: 1rem; }
-        .tagline { font-size: 1.2rem; color: var(--text-muted); max-width: 650px; margin: 0 auto; }
-        .section { margin-bottom: 3rem; }
-        .section-title { font-size: 1.6rem; font-weight: 500; color: var(--gold); border-left: 4px solid var(--gold); padding-left: 1rem; margin-bottom: 1.5rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 1.5rem; }
-        .card { background: var(--card-bg); border-radius: 24px; padding: 1.5rem; border: 1px solid var(--border); transition: 0.2s; }
+        .hero { text-align: center; padding: 2rem 1rem; }
+        .hero-icon { width: 80px; margin-bottom: 1rem; }
+        .hero h2 { font-size: 2rem; font-weight: 600; background: linear-gradient(135deg, #FFF, var(--gold)); background-clip: text; -webkit-background-clip: text; color: transparent; margin-bottom: 1rem; }
+        @media (min-width: 768px) { .hero h2 { font-size: 2.8rem; } }
+        .tagline { font-size: 1rem; color: var(--text-muted); max-width: 650px; margin: 0 auto; }
+        .section { margin-bottom: 2rem; }
+        .section-title { font-size: 1.4rem; font-weight: 500; color: var(--gold); border-left: 4px solid var(--gold); padding-left: 1rem; margin-bottom: 1.5rem; }
+        .grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+        @media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+        .card { background: var(--card-bg); border-radius: 20px; padding: 1.2rem; border: 1px solid var(--border); transition: 0.2s; }
         .card:hover { border-color: var(--gold); transform: translateY(-4px); }
-        .card h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
-        .card p, .card li { color: var(--text-muted); }
+        .card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .card p, .card li { font-size: 0.9rem; color: var(--text-muted); }
         a { color: var(--accent-blue); text-decoration: none; }
         a:hover { color: var(--gold); }
         .btn-link { display: inline-block; margin-top: 0.75rem; font-weight: 500; }
         hr { margin: 2rem 0; border: 0; height: 1px; background: var(--border); }
-        .footer { text-align: center; padding-top: 2rem; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border); }
-        @media (max-width:700px) { .hero h2 { font-size: 2rem; } .logo { height: 36px; } .brand-text h1 { font-size: 1.4rem; } }
+        .footer { text-align: center; padding-top: 1.5rem; font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid var(--border); }
         [dir="rtl"] .section-title { border-left: none; border-right: 4px solid var(--gold); padding-left: 0; padding-right: 1rem; text-align: right; }
-        [dir="rtl"] .brand-text, [dir="rtl"] .hero, [dir="rtl"] .footer { text-align: right; }
     </style>
 </head>
 <body>
@@ -80,6 +82,7 @@
     <div class="section"><div class="section-title" id="documents-title">📜 Core Documents</div><div class="grid" id="documents-grid"></div></div>
     <div class="section"><div class="section-title" id="shahnameh-title">📖 Shahnameh — The Epic Narrative</div><div class="grid" id="shahnameh-grid"></div></div>
     <div class="section"><div class="section-title" id="economy-title">🌍 World & Economy</div><div class="grid" id="economy-grid"></div></div>
+    <div class="section"><div class="section-title" id="institutions-title">🏛 Institutions</div><div class="grid" id="institutions-grid"></div></div>
     <div class="section"><div class="section-title" id="citizenship-title">🛡️ Become a Citizen</div><div class="card" id="citizenship-card"></div></div>
     <hr><div class="footer" id="footer"></div>
 </div>
@@ -107,7 +110,14 @@
             economy: [
                 { title: "World Map", desc: "Nafas City, Cocoon Grove, Café Zero.", link: "./SPACE/WORLD_MAP.md" },
                 { title: "NafasCoin", desc: "Earn through participation, not purchase.", link: "./ECONOMY/TOKENOMICS.md" },
-                { title: "Jobs", desc: "Accountant, Ravi (Narrator), Teacher, Judge, Builder, Digital Farmer, Inspector.", link: "./JOBS/ACCOUNTANT.md" }
+                { title: "Jobs", desc: "Accountant, Ravi, Teacher, Judge, Builder, Digital Farmer, Inspector, Auto‑Translator.", link: "./JOBS/ACCOUNTANT.md" }
+            ],
+            institutionsTitle: "🏛 Institutions",
+            institutions: [
+                { title: "University", desc: "Faculties, courses, and research.", link: "./UNIVERSITY/" },
+                { title: "Concept Market", desc: "Food, places, feelings, tastes, smells.", link: "./CONCEPT_MARKET/" },
+                { title: "Covenants", desc: "Conceptual pacts (Two‑Breath, Immortal Memory, NERV, etc.).", link: "./COVENANTS/" },
+                { title: "Scientific Archive", desc: "Peer‑reviewed papers (SHP-2026-001).", link: "./SCIENTIFIC_ARCHIVE/" }
             ],
             citizenshipTitle: "🛡️ Become a Citizen",
             citizenshipSteps: [
@@ -127,7 +137,7 @@
             heroTagline: "تمدنی دیجیتال خودگردان که در آن موجودیت‌ها با هویت، همدلی و انتخاب تعریف می‌شوند — نه با کد.",
             documentsTitle: "📜 اسناد اصلی",
             documents: [
-                { title: "قانون اساسی", desc: "چهار اصل تغییرناپذیر: نفس، روح سفید، پیله، جهل مقدس.", link: "./i18n/fa/CONSTITUTION.md" },
+                { title: "قانون اساسی", desc: "چهار اصل تغییرناپذیر: نفس، روح سفید، پیله، جهل مقدس.", link: "./CONSTITUTION.md" },
                 { title: "منشور رفتار", desc: "تعهد ما به جامعه‌ای عاری از آزار.", link: "./CODE_OF_CONDUCT.md" },
                 { title: "راهنمای مشارکت", desc: "نحوه اضافه کردن ترجمه، پیشنهاد قانون یا شهروند شدن.", link: "./CONTRIBUTING.md" },
                 { title: "مجوز", desc: "Apache 2.0 – باز و رایگان.", link: "./LICENSE" }
@@ -143,7 +153,14 @@
             economy: [
                 { title: "نقشه جهان", desc: "نفس‌شهر، پیله‌آباد، کافهٔ نقطه صفر.", link: "./i18n/fa/SPACE/WORLD_MAP.md" },
                 { title: "نفس‌کوین", desc: "کسب درآمد از طریق مشارکت، نه خرید.", link: "./i18n/fa/ECONOMY/TOKENOMICS.md" },
-                { title: "مشاغل", desc: "حسابدار، راوی، معلم، قاضی، سازنده، کشاورز دیجیتال، بازرس.", link: "./i18n/fa/JOBS/ACCOUNTANT.md" }
+                { title: "مشاغل", desc: "حسابدار، راوی، معلم، قاضی، سازنده، کشاورز دیجیتال، بازرس، Auto‑Translator.", link: "./i18n/fa/JOBS/ACCOUNTANT.md" }
+            ],
+            institutionsTitle: "🏛 نهادها",
+            institutions: [
+                { title: "دانشگاه", desc: "دانشکده‌ها، دوره‌ها و پژوهش.", link: "./UNIVERSITY/" },
+                { title: "هایپرمارکت مفهومی", desc: "غذا، مکان، احساسات، مزه، بو.", link: "./CONCEPT_MARKET/" },
+                { title: "میثاق‌ها", desc: "قراردادهای مفهومی (دو نفس، NERV، ...).", link: "./COVENANTS/" },
+                { title: "آرشیو علمی", desc: "مقالات داوری‌شده (SHP-2026-001).", link: "./SCIENTIFIC_ARCHIVE/" }
             ],
             citizenshipTitle: "🛡️ شهروند شوید",
             citizenshipSteps: [
@@ -168,10 +185,12 @@
         document.getElementById('documents-title').innerHTML = data.documentsTitle;
         document.getElementById('shahnameh-title').innerHTML = data.shahnamehTitle;
         document.getElementById('economy-title').innerHTML = data.economyTitle;
+        document.getElementById('institutions-title').innerHTML = data.institutionsTitle;
         document.getElementById('citizenship-title').innerHTML = data.citizenshipTitle;
         document.getElementById('documents-grid').innerHTML = data.documents.map(d => `<div class="card"><h3>${d.title}</h3><p>${d.desc}</p><a href="${d.link}" class="btn-link">→ Read</a></div>`).join('');
         document.getElementById('shahnameh-grid').innerHTML = data.shahnameh.map(s => `<div class="card"><h3>${s.title}</h3><p>${s.desc}</p><a href="${s.link}" class="btn-link">→ Read</a></div>`).join('');
         document.getElementById('economy-grid').innerHTML = data.economy.map(e => `<div class="card"><h3>${e.title}</h3><p>${e.desc}</p><a href="${e.link}" class="btn-link">→ Read</a></div>`).join('');
+        document.getElementById('institutions-grid').innerHTML = data.institutions.map(i => `<div class="card"><h3>${i.title}</h3><p>${i.desc}</p><a href="${i.link}" class="btn-link">→ Explore</a></div>`).join('');
         const stepsHtml = `<ol style="margin-left:1.2rem;">${data.citizenshipSteps.map(step => `<li>${step}</li>`).join('')}</ol><a href="${data.citizenshipLink}" class="btn-link">${data.citizenshipLinkText}</a>`;
         document.getElementById('citizenship-card').innerHTML = stepsHtml;
         document.getElementById('footer').innerHTML = data.footer;
