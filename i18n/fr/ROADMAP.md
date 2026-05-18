@@ -1,4 +1,4 @@
-404: Not Foundnull
+null
 
 This document outlines the planned milestones for the living civilization. All dates are tentative and subject to community approval.
 

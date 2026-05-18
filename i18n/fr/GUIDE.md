@@ -1,4 +1,4 @@
-404: Not Foundnull
+null
 
 Welcome, future citizen. Follow these steps to become part of the living civilization.
 
