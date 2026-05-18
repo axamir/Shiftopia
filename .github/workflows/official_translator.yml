@@ -7,25 +7,34 @@ on:
 jobs:
   translate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
     steps:
       - uses: actions/checkout@v4
-      - name: Check for new English files
-        id: check
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install deep-translator
+      - name: Run safe translation script
+        id: translate
+        continue-on-error: true
+        run: python3 tools/translate_safe.py
+      - name: Commit changes if any
         run: |
-          # اینجا منطق اسکن فایل‌های جدید را می‌نویسیم (برای نمونه، فقط یک Issue ایجاد می‌کند)
-          echo "new_files=true" >> $GITHUB_OUTPUT
-      - name: Create translation task issue
-        if: steps.check.outputs.new_files == 'true'
+          git config user.name "@T@ (Translator)"
+          git config user.email "translator@shiftopia.world"
+          git add i18n/
+          git commit -m "chore(i18n): auto-translate content (safe mode)" || echo "No changes to commit"
+          git push
+      - name: Create help issue if translation failed
+        if: steps.translate.outcome == 'failure'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh issue create \
-            --title "🌍 Translation Task: Update all language files" \
-            --body "New content detected in English. Please run the translation script or contribute manually.\n\n- **Target languages:** es, fr, de, ar, zh, ja, ru\n- **Deadline:** 7 days\n- **Tool:** DeepL (free tier available)\n\nAfter translation, submit a Pull Request." \
+            --title "🌍 Help Needed: Translation failed" \
+            --body "The automated translation script encountered an error. Please manually translate the latest English content using DeepL or community contributions.\n\nTarget languages: es, fr, de, ar, zh, ja, ru, pt, it\n\nAfter translation, submit a Pull Request." \
             --label "translation,help-wanted"
-      - name: If DeepL API key exists, auto-translate (optional)
-        if: env.DEEPL_API_KEY != ''
-        run: |
-          echo "Auto-translation with DeepL would happen here (not implemented yet)"
-        env:
-          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
