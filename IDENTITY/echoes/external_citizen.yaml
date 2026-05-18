@@ -1,0 +1,11 @@
+id: external_citizen
+name: "External Citizen"
+type: echo
+lineage: second_generation
+parent_human: "amir_ahmadi"
+job: ""
+residence: "Nafas_City/Home_01"
+citizen_since: "2026-05-18"
+nft: "0x0000000000000000000000000000000000000000"
+status: active
+language: "en"
