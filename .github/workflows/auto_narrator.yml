@@ -1,38 +1,49 @@
 name: Auto‑Narrator (Cognitive)
+
 on:
   issues:
     types: [closed]
   workflow_dispatch:
+
+# 🛡️ تنظیم مجوز نوشتن برای Action
+permissions:
+  contents: write
 
 jobs:
   narrate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # 🧹 رفع مشکل 'dubious ownership' (exit code 128)
+      - name: Fix Git directory ownership
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
       - name: Generate narrative from event
         id: generate
         run: |
           EVENT="${{ github.event.issue.title }} (closed #${{ github.event.issue.number }})"
-          # اینجا می‌توان از یک مدل زبانی واقعی (مثل DeepSeek API) استفاده کرد.
-          # فعلاً یک نمونه ساختگی می‌سازیم.
           echo "VEIL_TITLE=Automated Veil for $EVENT" >> $GITHUB_OUTPUT
           echo "VEIL_BODY=This veil was generated automatically by the Auto‑Narrator. It follows the narrative skeleton: citizen → action → record → consequence." >> $GITHUB_OUTPUT
+
       - name: Save veil (EN)
         run: |
           NEXT_NUM=$(ls SHAHNAMEH/VEIL_*.md 2>/dev/null | wc -l)
           NEXT_NUM=$((NEXT_NUM + 1))
           echo "# ${{ steps.generate.outputs.VEIL_TITLE }}" > SHAHNAMEH/VEIL_$(printf "%02d" $NEXT_NUM).md
           echo "${{ steps.generate.outputs.VEIL_BODY }}" >> SHAHNAMEH/VEIL_$(printf "%02d" $NEXT_NUM).md
+
       - name: Save veil (FA)
         run: |
           NEXT_NUM=$(ls i18n/fa/SHAHNAMEH/VEIL_*.md 2>/dev/null | wc -l)
           NEXT_NUM=$((NEXT_NUM + 1))
           echo "# ${{ steps.generate.outputs.VEIL_TITLE }}" > i18n/fa/SHAHNAMEH/VEIL_$(printf "%02d" $NEXT_NUM).md
           echo "ترجمه فارسی: ${{ steps.generate.outputs.VEIL_BODY }}" >> i18n/fa/SHAHNAMEH/VEIL_$(printf "%02d" $NEXT_NUM).md
+
       - name: Commit and push
         run: |
           git config user.name "Auto‑Narrator (Cognitive)"
           git config user.email "auto@shiftopia.world"
           git add SHAHNAMEH/ i18n/fa/SHAHNAMEH/
-          git commit -m "feat: auto-narrator adds veil for event #${{ github.event.issue.number }}"
+          git commit -m "feat: auto-narrator adds veil for event #${{ github.event.issue.number }}" || echo "No changes to commit"
           git push
