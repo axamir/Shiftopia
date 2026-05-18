@@ -1,7 +1,7 @@
 name: Weekly Valuation
 on:
   schedule:
-    - cron: '0 0 * * 0'  # every Sunday at midnight
+    - cron: '0 0 * * 0'
   workflow_dispatch:
 jobs:
   valuation:
@@ -15,12 +15,11 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install dependencies
-        run: pip install PyGithub  # optional, but we use gh cli
+        run: pip install requests
       - name: Run valuation script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          python3 TOOLS/dynamic_valuation.py
+        run: python3 TOOLS/dynamic_valuation.py
       - name: Commit and push report
         run: |
           git config user.name "github-actions[bot]"
