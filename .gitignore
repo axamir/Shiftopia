@@ -1,0 +1,5 @@
+*.backup.*
+*.before_*
+/scripts/*.sh
+cleanup_echo_samples.sh
+translate_safe.py
