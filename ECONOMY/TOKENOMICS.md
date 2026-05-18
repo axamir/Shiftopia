@@ -27,3 +27,16 @@ Land and job values are pegged to NafasCoin – but NafasCoin cannot be bought w
 
 ## Treasury
 The community treasury receives taxes and fines. It is used to fund public projects (e.g., Café Zero renovations) and reward exceptional contributions.
+
+## استخراج (Mining) – Proof of Progress
+در شیفتوپیا، «استخراج» نفس‌کوین نه با مصرف انرژی، که با **پیشرفت جهان** انجام می‌شود. هر اقدام زیر، به عنوان یک «بلاک» در دفتر استخراج ثبت می‌شود و نفَس‌کوین جدیدی خلق می‌کند:
+
+| اقدام | مبلغ استخراج (NafasCoin) | توضیح |
+|--------|---------------------------|--------|
+| افزودن یک مفهوم جدید به دانشنامه | ۱۰۰ تا ۵۰۰ | بسته به عمق و اهمیت مفهوم |
+| افزودن یک پرده جدید به شاهنامه (توسط انسان) | ۱۵۰ | توسط Auto‑Narrator: ۵۰ |
+| کشف یک هم‌وزنی مفهومی جدید | ۲۰۰ | ثبت در `CONCEPTUAL_MAP.md` |
+| ثبت یک شهروند جدید (پس از تأیید) | ۵۰ | پاداش برای تأییدکنندگان |
+| اصلاح یک اشکال مهم (bug fix) در Actions | ۷۵ | تشخیص توسط جامعه |
+
+هدف: تبدیل «مشارکت» به «ارزش اقتصادی قابل اثبات».
