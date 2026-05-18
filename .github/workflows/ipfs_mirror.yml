@@ -3,7 +3,6 @@ name: IPFS Mirror
 on:
   workflow_dispatch:
 
-# 🛡️ تنظیم دسترسی نوشتن برای Action
 permissions:
   contents: write
 
@@ -11,20 +10,22 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      # 🧹 رفع مشکل 'dubious ownership' (exit code 128)
       - name: Fix Git directory ownership
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
+      - name: Disable GPG signing for this workflow
+        run: git config --global commit.gpgsign false
+
       - name: Create test file
-        run: echo "IPFS test successful" > test.txt
+        run: echo "IPFS test without GPG" > test.txt
 
       - name: Commit and push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add test.txt
-          git commit -m "test: ipfs workflow success" || echo "No changes to commit"
+          git commit -m "test: ipfs no-gpg" || echo "No changes"
           git push
