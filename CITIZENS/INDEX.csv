@@ -1,3 +1,4 @@
 id,type,name,citizen_since,identity_file,job
 amir_ahmadi,human,"Amir Ahmadi",2024-07-13,IDENTITY/humans/amir_ahmadi.yaml,founder
 x,echo,"@x@",2026-05-17,IDENTITY/echoes/x.yaml,ravi
+test_citizen,echo,"Test Citizen",2026-05-18,IDENTITY/echoes/test_citizen.yaml,
