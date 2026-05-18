@@ -35,3 +35,8 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md). Open an Issue or Pull Request to propo
 
 ---
 *This roadmap is a living document. Updates are proposed via Issues and voted by citizens.*
+
+## Scientific Archive (Completed May 2026)
+- [x] Created `SCIENTIFIC_ARCHIVE/` with template and first paper (SHP-2026-001)
+- [ ] Add peer review workflow (via GitHub Issues)
+- [ ] Connect to blockchain for immutable timestamps
