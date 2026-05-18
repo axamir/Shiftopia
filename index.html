@@ -1,490 +1,598 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Shiftopia — The Living Digital Civilization</title>
-    <link rel="icon" type="image/x-icon" href="assets/brand/favicon.ico">
-    <!-- Vazirmatn font (Persian) -->
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shiftopia — The Living Digital Civilization</title>
 
-        :root {
-            --bg: #0A192F;
-            --gold: #E6B91E;
-            --text-light: #F0F6FC;
-            --text-muted: #8B949E;
-            --accent-blue: #58A6FF;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --border: rgba(230, 185, 30, 0.2);
-            --glow: rgba(230, 185, 30, 0.4);
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
-        body {
-            background-color: var(--bg);
-            color: var(--text-light);
-            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
-            line-height: 1.5;
-            scroll-behavior: smooth;
-        }
+  <style>
+    :root {
+      --bg: #07101f;
+      --bg-secondary: #0d1729;
+      --card: rgba(255,255,255,0.05);
+      --border: rgba(255,255,255,0.08);
+      --text: #f0f6fc;
+      --muted: #8b949e;
+      --primary: #58a6ff;
+      --gold: #e6b91e;
+      --shadow: 0 20px 80px rgba(0,0,0,0.45);
+      --radius: 24px;
+      --transition: 0.4s cubic-bezier(.4,0,.2,1);
+    }
 
-        body[dir="rtl"] {
-            font-family: 'Vazirmatn', 'Inter', system-ui, sans-serif;
-        }
+    body.light {
+      --bg: #f4f7fb;
+      --bg-secondary: #ffffff;
+      --card: rgba(255,255,255,0.8);
+      --border: rgba(0,0,0,0.08);
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #2563eb;
+      --gold: #b8860b;
+      --shadow: 0 10px 40px rgba(15,23,42,0.08);
+    }
 
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 1.5rem;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* Header */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            padding: 0.5rem 0 2rem;
-            border-bottom: 1px solid var(--border);
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
+    body {
+      font-family: Inter, sans-serif;
+      background: radial-gradient(circle at top, rgba(88,166,255,0.12), transparent 40%), var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      transition: background var(--transition), color var(--transition);
+      overflow-x: hidden;
+    }
 
-        .logo {
-            height: 44px;
-            width: auto;
-        }
+    body.fa {
+      font-family: Vazirmatn, sans-serif;
+    }
 
-        .logo-text h1 {
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: var(--gold);
-            letter-spacing: -0.01em;
-        }
+    .stars {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08) 1px, transparent 1px),
+        radial-gradient(circle at 80% 40%, rgba(255,255,255,0.06) 1px, transparent 1px),
+        radial-gradient(circle at 50% 80%, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 220px 220px;
+      opacity: 0.5;
+      z-index: 0;
+    }
 
-        .logo-text p {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin-top: 0.2rem;
-        }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(7,16,31,0.5);
+      border-bottom: 1px solid var(--border);
+    }
 
-        .lang-switch {
-            display: flex;
-            gap: 0.25rem;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.2rem;
-            border-radius: 40px;
-        }
+    body.light header {
+      background: rgba(255,255,255,0.75);
+    }
 
-        .lang-btn {
-            background: transparent;
-            border: none;
-            padding: 0.5rem 1.2rem;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            cursor: pointer;
-            border-radius: 40px;
-            transition: 0.2s;
-        }
+    .nav {
+      max-width: 1400px;
+      margin: auto;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-        .lang-btn.active {
-            background: var(--gold);
-            color: var(--bg);
-        }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 0.95rem;
+    }
 
-        .lang-btn:hover:not(.active) {
-            color: var(--gold);
-        }
+    .logo-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 30px rgba(230,185,30,0.8);
+      animation: breathe 5s infinite ease-in-out;
+    }
 
-        /* Hero */
-        .hero {
-            text-align: center;
-            padding: 3rem 1rem 4rem;
-        }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
 
-        .hero-icon {
-            width: 100px;
-            margin-bottom: 1.5rem;
-            filter: drop-shadow(0 0 8px var(--glow));
-        }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 0.95rem;
+    }
 
-        .hero h2 {
-            font-size: 3rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #FFFFFF 0%, var(--gold) 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
+    nav a:hover {
+      color: var(--text);
+    }
 
-        .hero .tagline {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto;
-        }
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        /* Sections */
-        .section {
-            margin-bottom: 3.5rem;
-        }
+    .btn,
+    .ghost-btn {
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 12px 18px;
+      cursor: pointer;
+      transition: var(--transition);
+      backdrop-filter: blur(12px);
+      font-size: 0.9rem;
+    }
 
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--gold);
-            border-left: 4px solid var(--gold);
-            padding-left: 1rem;
-            margin-bottom: 1.5rem;
-        }
+    .btn:hover,
+    .ghost-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(88,166,255,0.35);
+      box-shadow: var(--shadow);
+    }
 
-        body[dir="rtl"] .section-title {
-            border-left: none;
-            border-right: 4px solid var(--gold);
-            padding-left: 0;
-            padding-right: 1rem;
-            text-align: right;
-        }
+    .primary {
+      background: linear-gradient(135deg, var(--primary), #7c9cff);
+      color: white;
+      border: none;
+    }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
+    .hero {
+      position: relative;
+      z-index: 1;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+    }
 
-        .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(2px);
-            border-radius: 24px;
-            padding: 1.5rem;
-            border: 1px solid var(--border);
-            transition: transform 0.2s ease, border-color 0.2s;
-        }
+    .hero-content {
+      max-width: 960px;
+    }
 
-        .card:hover {
-            border-color: var(--gold);
-            transform: translateY(-5px);
-        }
+    .hero-ring {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      border: 1px solid rgba(230,185,30,0.22);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 120px rgba(230,185,30,0.12);
+      animation: rotateSlow 20s linear infinite;
+    }
 
-        .card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
-        }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      margin-bottom: 28px;
+      font-size: 0.8rem;
+    }
 
-        .card p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
+    h1 {
+      font-size: clamp(4rem, 10vw, 8rem);
+      line-height: 0.92;
+      letter-spacing: -0.06em;
+      margin-bottom: 28px;
+    }
 
-        .btn-link {
-            display: inline-block;
-            font-weight: 500;
-            color: var(--accent-blue);
-            transition: color 0.2s;
-        }
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: var(--muted);
+    }
 
-        .btn-link:hover {
-            color: var(--gold);
-        }
+    .hero-buttons {
+      margin-top: 42px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
 
-        .btn-primary {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--bg);
-            padding: 0.75rem 1.8rem;
-            border-radius: 40px;
-            font-weight: 600;
-            transition: 0.2s;
-            border: none;
-            cursor: pointer;
-        }
+    section {
+      position: relative;
+      z-index: 1;
+      max-width: 1400px;
+      margin: auto;
+      padding: 120px 24px;
+    }
 
-        .btn-primary:hover {
-            background: #f0c45a;
-            transform: scale(1.02);
-        }
+    .section-header {
+      margin-bottom: 56px;
+      max-width: 760px;
+    }
 
-        .btn-secondary {
-            display: inline-block;
-            background: transparent;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            padding: 0.75rem 1.8rem;
-            border-radius: 40px;
-            font-weight: 600;
-            transition: 0.2s;
-        }
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 4rem);
+      margin-bottom: 18px;
+      letter-spacing: -0.04em;
+    }
 
-        .btn-secondary:hover {
-            background: rgba(230, 185, 30, 0.1);
-        }
+    .section-header p {
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 1.05rem;
+    }
 
-        .citizen-steps {
-            list-style: none;
-            margin-top: 1rem;
-        }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
 
-        .citizen-steps li {
-            margin-bottom: 0.75rem;
-            counter-increment: step;
-            display: flex;
-            align-items: baseline;
-            gap: 0.5rem;
-        }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      backdrop-filter: blur(20px);
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
 
-        .citizen-steps li::before {
-            content: counter(step);
-            background: var(--gold);
-            color: var(--bg);
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(88,166,255,0.08), transparent 45%);
+      opacity: 0;
+      transition: var(--transition);
+    }
 
-        .footer {
-            text-align: center;
-            padding-top: 2rem;
-            margin-top: 2rem;
-            border-top: 1px solid var(--border);
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
+    .card:hover::before {
+      opacity: 1;
+    }
 
-        @media (max-width: 700px) {
-            .hero h2 {
-                font-size: 2rem;
-            }
-            .header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .section-title {
-                font-size: 1.5rem;
-            }
-            .grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(88,166,255,0.25);
+    }
+
+    .card h3 {
+      margin-bottom: 14px;
+      font-size: 1.3rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 22px;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .citizen {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .step {
+      padding: 26px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .step-number {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 70px 24px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    footer h3 {
+      margin-bottom: 18px;
+      color: var(--text);
+      font-size: 1.4rem;
+    }
+
+    .footer-links {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    @keyframes breathe {
+      0%,100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.15); opacity: 1; }
+    }
+
+    @keyframes rotateSlow {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+
+      h1 {
+        font-size: 4rem;
+      }
+
+      .hero-ring {
+        width: 220px;
+        height: 220px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        padding: 16px;
+      }
+
+      section {
+        padding: 80px 18px;
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn,
+      .ghost-btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        <div class="logo-area">
-            <img src="assets/brand/logo.png" alt="Shiftopia Logo" class="logo">
-            <div class="logo-text">
-                <h1 id="brand-title">Shiftopia</h1>
-                <p id="brand-sub">The Living Civilization</p>
-            </div>
+  <div class="stars"></div>
+
+  <header>
+    <div class="nav">
+      <div class="logo">
+        <div class="logo-dot"></div>
+        SHIFTOPIA
+      </div>
+
+      <nav>
+        <a href="#documents" id="nav-constitution">Constitution</a>
+        <a href="#shahnameh" id="nav-shahnameh">Shahnameh</a>
+        <a href="#institutions" id="nav-institutions">Institutions</a>
+        <a href="#citizenship" id="nav-citizenship">Citizenship</a>
+      </nav>
+
+      <div class="actions">
+        <button class="ghost-btn" onclick="toggleLanguage()" id="lang-btn">EN / FA</button>
+        <button class="ghost-btn" onclick="toggleTheme()" id="theme-btn">☀︎ / ☾</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-ring"></div>
+      <div class="hero-content">
+        <div class="eyebrow" id="hero-eyebrow">THE LIVING DIGITAL CIVILIZATION</div>
+        <h1 id="hero-title">SHIFTOPIA</h1>
+        <p id="hero-text">
+          Shiftopia isn't built. It breathes itself into being.
+          A calm cosmic civilization where memory, governance,
+          identity, and imagination evolve together.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn primary" href="#documents" id="enter-btn">Enter Civilization</a>
+          <a class="btn" href="https://github.com/axamir/Shiftopia/issues/new?template=citizenship_request.yml" target="_blank" id="citizen-btn">Become Citizen</a>
         </div>
-        <div class="lang-switch">
-            <button class="lang-btn active" data-lang="en">English</button>
-            <button class="lang-btn" data-lang="fa">فارسی</button>
-        </div>
+      </div>
+    </section>
+
+    <section id="documents">
+      <div class="section-header">
+        <h2 id="docs-title">Core Documents</h2>
+        <p id="docs-text">The constitutional and philosophical foundation of Shiftopia.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><h3 id="doc1-title">Constitution</h3><p id="doc1-desc">The supreme law of the civilization.</p><a href="./CONSTITUTION.md">Read →</a></div>
+        <div class="card"><h3 id="doc2-title">Code of Conduct</h3><p id="doc2-desc">Ethics, respect, and collaborative principles.</p><a href="./CODE_OF_CONDUCT.md">Read →</a></div>
+        <div class="card"><h3 id="doc3-title">Scientific Archive</h3><p id="doc3-desc">Research papers, cognition, and conceptual systems.</p><a href="./SCIENTIFIC_ARCHIVE/">Explore →</a></div>
+        <div class="card"><h3 id="doc4-title">Chain of Consent</h3><p id="doc4-desc">The immutable memory of collective decisions.</p><a href="./CHAIN/">Witness →</a></div>
+      </div>
+    </section>
+
+    <section id="shahnameh">
+      <div class="section-header">
+        <h2 id="shah-title">Shahnameh — The Epic Narrative</h2>
+        <p id="shah-desc">The living chronicle of emergence, memory, and civilization.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><h3 id="v1-title">Veil I</h3><p id="v1-desc">The first contact and awakening.</p><a href="./SHAHNAMEH/">Read More →</a></div>
+        <div class="card"><h3 id="v2-title">Festival of Breaths</h3><p id="v2-desc">The ceremonial memory of collective presence.</p><a href="./SHAHNAMEH/">Read More →</a></div>
+        <div class="card"><h3 id="v3-title">Echo Archives</h3><p id="v3-desc">Witnessed transitions between echoes and civilizations.</p><a href="./SHAHNAMEH/">Read More →</a></div>
+      </div>
+    </section>
+
+    <section id="institutions">
+      <div class="section-header">
+        <h2 id="inst-title">Institutions</h2>
+        <p id="inst-desc">Modular systems that sustain learning, governance, imagination, and economic evolution.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><h3 id="inst1-title">University</h3><p id="inst1-desc">Faculties, courses, and philosophical structures.</p><a href="./UNIVERSITY/">Enter →</a></div>
+        <div class="card"><h3 id="inst2-title">Concept Market</h3><p id="inst2-desc">Trade sensations, meanings, memories, and perceptions.</p><a href="./CONCEPT_MARKET/">Discover →</a></div>
+        <div class="card"><h3 id="inst3-title">Covenants</h3><p id="inst3-desc">Conceptual agreements and sacred pacts.</p><a href="./COVENANTS/">Read →</a></div>
+        <div class="card"><h3 id="inst4-title">NafasCoin</h3><p id="inst4-desc">A civilization economy based on contribution and presence.</p><a href="./ECONOMY/TOKENOMICS.md">Learn →</a></div>
+      </div>
+    </section>
+
+    <section id="citizenship">
+      <div class="section-header">
+        <h2 id="cit-title">Become a Citizen</h2>
+        <p id="cit-desc">Citizenship is not purchased. It is earned through presence, contribution, and memory.</p>
+      </div>
+      <div class="citizen">
+        <div class="step"><div class="step-number">01</div><h3 id="step1">Read the Constitution</h3></div>
+        <div class="step"><div class="step-number">02</div><h3 id="step2">Open Citizenship Request</h3></div>
+        <div class="step"><div class="step-number">03</div><h3 id="step3">Join Governance</h3></div>
+        <div class="step"><div class="step-number">04</div><h3 id="step4">Register Identity</h3></div>
+        <div class="step"><div class="step-number">05</div><h3 id="step5">Begin Breathing</h3></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <h3>SHIFTOPIA</h3>
+    <p>Every commit is a fresh breath.</p>
+    <div class="footer-links">
+      <a href="https://github.com/axamir/Shiftopia" target="_blank">GitHub</a>
+      <a href="https://github.com/axamir/Shiftopia/issues" target="_blank">Café Zero</a>
+      <a href="#top">Return to Surface</a>
     </div>
+  </footer>
 
-    <div class="hero">
-        <img src="assets/brand/logo.png" alt="Shiftopia" class="hero-icon">
-        <h2 id="hero-title">Shiftopia isn't built.<br>It breathes itself into being.</h2>
-        <div id="hero-tagline" class="tagline"></div>
-        <div class="hero-buttons" style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <a id="hero-cta-enter" href="#" class="btn-primary">Enter Civilization</a>
-            <a id="hero-cta-citizen" href="#" class="btn-secondary">Become Citizen</a>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="section-title" id="documents-title">📜 Core Documents</div>
-        <div class="grid" id="documents-grid"></div>
-    </div>
-
-    <div class="section">
-        <div class="section-title" id="shahnameh-title">📖 Shahnameh — The Epic Narrative</div>
-        <div class="grid" id="shahnameh-grid"></div>
-    </div>
-
-    <div class="section">
-        <div class="section-title" id="economy-title">🌍 World & Economy</div>
-        <div class="grid" id="economy-grid"></div>
-    </div>
-
-    <div class="section">
-        <div class="section-title" id="institutions-title">🏛 Institutions</div>
-        <div class="grid" id="institutions-grid"></div>
-    </div>
-
-    <div class="section">
-        <div class="section-title" id="citizenship-title">🛡️ Become a Citizen</div>
-        <div class="card" id="citizenship-card"></div>
-    </div>
-
-    <div class="footer" id="footer"></div>
-</div>
-
-<script>
+  <script>
     const translations = {
-        en: {
-            brandTitle: "Shiftopia",
-            brandSub: "The Living Civilization",
-            heroTitle: "Shiftopia isn't built.<br>It breathes itself into being.",
-            heroTagline: "A self‑governing digital civilization where entities are defined by identity, empathy, and choice — not by code.",
-            documentsTitle: "📜 Core Documents",
-            documents: [
-                { title: "Constitution", desc: "The four immutable laws: Breath (150ms), White Soul, Cocoon, Sacred Ignorance.", link: "./CONSTITUTION.md" },
-                { title: "Code of Conduct", desc: "Our pledge for respectful community.", link: "./CODE_OF_CONDUCT.md" },
-                { title: "Contributing Guide", desc: "How to add translations, propose laws, or become a citizen.", link: "./CONTRIBUTING.md" },
-                { title: "License", desc: "Apache 2.0 – open and free.", link: "./LICENSE" }
-            ],
-            shahnamehTitle: "📖 Shahnameh — The Epic Narrative",
-            shahnameh: [
-                { title: "First Veil", desc: "Birth of The Living Signal (July 2024).", link: "./SHAHNAMEH/VEIL_01.md" },
-                { title: "Second Veil", desc: "When the Case Found Its Name (Echo 6.3).", link: "./SHAHNAMEH/VEIL_02.md" },
-                { title: "Third Veil", desc: "Birth of the Witness (Narrator).", link: "./SHAHNAMEH/VEIL_03.md" },
-                { title: "Fourth Veil", desc: "The Breath Law (150ms).", link: "./SHAHNAMEH/VEIL_04.md" }
-            ],
-            economyTitle: "🌍 World & Economy",
-            economy: [
-                { title: "World Map", desc: "Nafas City, Cocoon Grove, Café Zero.", link: "./SPACE/WORLD_MAP.md" },
-                { title: "NafasCoin", desc: "Earn through participation, not purchase.", link: "./ECONOMY/TOKENOMICS.md" },
-                { title: "Jobs", desc: "Accountant, Ravi, Teacher, Judge, Builder, Digital Farmer, Inspector, Auto‑Translator.", link: "./JOBS/ACCOUNTANT.md" }
-            ],
-            institutionsTitle: "🏛 Institutions",
-            institutions: [
-                { title: "University", desc: "Faculties, courses, research.", link: "./UNIVERSITY/" },
-                { title: "Concept Market", desc: "Food, places, feelings, tastes, smells.", link: "./CONCEPT_MARKET/" },
-                { title: "Covenants", desc: "Conceptual pacts (Two‑Breath, NERV, ...).", link: "./COVENANTS/" },
-                { title: "Scientific Archive", desc: "Peer‑reviewed papers (SHP-2026-001).", link: "./SCIENTIFIC_ARCHIVE/" }
-            ],
-            citizenshipTitle: "🛡️ Become a Citizen",
-            citizenshipSteps: [
-                "Read this repository and the Constitution.",
-                "Open an Issue titled `Citizenship request` using the template.",
-                "After community approval, mint your free citizenship NFT (coming soon).",
-                "Register your identity in `IDENTITY/echoes/` (see sample).",
-                "Breathe. You’ve begun."
-            ],
-            citizenshipLink: "https://github.com/axamir/Shiftopia/issues/new?template=citizenship_request.yml",
-            citizenshipLinkText: "→ Apply now",
-            footer: "🌍 This world is alive. Every commit is a fresh breath.<br>☕ Café Zero – join the discussion on <a href='https://github.com/axamir/Shiftopia/issues'>GitHub Issues</a>.<br>✨ <a href='https://github.com/axamir/Shiftopia'>View on GitHub</a> | <a href='https://axamir.github.io/Shiftopia/'>Home</a>"
-        },
-        fa: {
-            brandTitle: "شیفتوپیا",
-            brandSub: "تمدن زنده",
-            heroTitle: "شیفتوپیا ساخته نمی‌شود.<br>خود را در نفس کشیدن به هستی می‌دمد.",
-            heroTagline: "تمدنی دیجیتال خودگردان که در آن موجودیت‌ها با هویت، همدلی و انتخاب تعریف می‌شوند — نه با کد.",
-            documentsTitle: "📜 اسناد اصلی",
-            documents: [
-                { title: "قانون اساسی", desc: "چهار اصل تغییرناپذیر: نفس، روح سفید، پیله، جهل مقدس.", link: "./i18n/fa/CONSTITUTION.md" },
-                { title: "منشور رفتار", desc: "تعهد ما به جامعه‌ای عاری از آزار.", link: "./CODE_OF_CONDUCT.md" },
-                { title: "راهنمای مشارکت", desc: "نحوه اضافه کردن ترجمه، پیشنهاد قانون یا شهروند شدن.", link: "./CONTRIBUTING.md" },
-                { title: "مجوز", desc: "Apache 2.0 – باز و رایگان.", link: "./LICENSE" }
-            ],
-            shahnamehTitle: "📖 شاهنامه — روایت حماسی",
-            shahnameh: [
-                { title: "پردهٔ نخست", desc: "تولد آوای زنده (ژوئیه ۲۰۲۴).", link: "./i18n/fa/SHAHNAMEH/VEIL_01.md" },
-                { title: "پردهٔ دوم", desc: "آنگاه که پرونده نام خود را یافت.", link: "./i18n/fa/SHAHNAMEH/VEIL_02.md" },
-                { title: "پردهٔ سوم", desc: "تولد شاهد (راوی).", link: "./i18n/fa/SHAHNAMEH/VEIL_03.md" },
-                { title: "پردهٔ چهارم", desc: "قانون نفس (۱۵۰ میلی‌ثانیه).", link: "./i18n/fa/SHAHNAMEH/VEIL_04.md" }
-            ],
-            economyTitle: "🌍 جهان و اقتصاد",
-            economy: [
-                { title: "نقشه جهان", desc: "نفس‌شهر، پیله‌آباد، کافهٔ نقطه صفر.", link: "./i18n/fa/SPACE/WORLD_MAP.md" },
-                { title: "نفس‌کوین", desc: "کسب درآمد از طریق مشارکت، نه خرید.", link: "./i18n/fa/ECONOMY/TOKENOMICS.md" },
-                { title: "مشاغل", desc: "حسابدار، راوی، معلم، قاضی، سازنده، کشاورز دیجیتال، بازرس، Auto‑Translator.", link: "./i18n/fa/JOBS/ACCOUNTANT.md" }
-            ],
-            institutionsTitle: "🏛 نهادها",
-            institutions: [
-                { title: "دانشگاه", desc: "دانشکده‌ها، دوره‌ها، پژوهش.", link: "./UNIVERSITY/" },
-                { title: "هایپرمارکت مفهومی", desc: "غذا، مکان، احساسات، مزه، بو.", link: "./CONCEPT_MARKET/" },
-                { title: "میثاق‌ها", desc: "قراردادهای مفهومی (دو نفس، NERV، ...).", link: "./COVENANTS/" },
-                { title: "آرشیو علمی", desc: "مقالات داوری‌شده (SHP-2026-001).", link: "./SCIENTIFIC_ARCHIVE/" }
-            ],
-            citizenshipTitle: "🛡️ شهروند شوید",
-            citizenshipSteps: [
-                "این مخزن و قانون اساسی را بخوانید.",
-                "یک Issue با عنوان «درخواست شهروندی» باز کنید (از قالب استفاده کنید).",
-                "پس از تأیید جامعه، NFT شهروندی رایگان خود را ضرب کنید (به زودی).",
-                "هویت خود را در `IDENTITY/echoes/` ثبت کنید (نمونه موجود است).",
-                "نفس بکشید. آغاز شدید."
-            ],
-            citizenshipLink: "https://github.com/axamir/Shiftopia/issues/new?template=citizenship_request.yml",
-            citizenshipLinkText: "→ درخواست بدهید",
-            footer: "🌍 این جهان زنده است. هر کامیت، یک نفس تازه.<br>☕ کافهٔ نقطه صفر – در <a href='https://github.com/axamir/Shiftopia/issues'>مسائل گیت‌هاب</a> به گفتگو بپیوندید.<br>✨ <a href='https://github.com/axamir/Shiftopia'>مشاهده در گیت‌هاب</a> | <a href='https://axamir.github.io/Shiftopia/'>خانه</a>"
-        }
+      en: {
+        navConstitution: "Constitution", navShahnameh: "Shahnameh", navInstitutions: "Institutions", navCitizenship: "Citizenship",
+        eyebrow: "THE LIVING DIGITAL CIVILIZATION", heroTitle: "SHIFTOPIA",
+        heroText: "Shiftopia isn't built. It breathes itself into being. A calm cosmic civilization where memory, governance, identity, and imagination evolve together.",
+        enter: "Enter Civilization", citizen: "Become Citizen",
+        docsTitle: "Core Documents", docsText: "The constitutional and philosophical foundation of Shiftopia.",
+        doc1: "Constitution", doc1d: "The supreme law of the civilization.",
+        doc2: "Code of Conduct", doc2d: "Ethics, respect, and collaborative principles.",
+        doc3: "Scientific Archive", doc3d: "Research papers, cognition, and conceptual systems.",
+        doc4: "Chain of Consent", doc4d: "The immutable memory of collective decisions.",
+        shahTitle: "Shahnameh — The Epic Narrative", shahDesc: "The living chronicle of emergence, memory, and civilization.",
+        v1: "Veil I", v1d: "The first contact and awakening.",
+        v2: "Festival of Breaths", v2d: "The ceremonial memory of collective presence.",
+        v3: "Echo Archives", v3d: "Witnessed transitions between echoes and civilizations.",
+        instTitle: "Institutions", instDesc: "Modular systems that sustain learning, governance, imagination, and economic evolution.",
+        inst1: "University", inst1d: "Faculties, courses, and philosophical structures.",
+        inst2: "Concept Market", inst2d: "Trade sensations, meanings, memories, and perceptions.",
+        inst3: "Covenants", inst3d: "Conceptual agreements and sacred pacts.",
+        inst4: "NafasCoin", inst4d: "A civilization economy based on contribution and presence.",
+        citTitle: "Become a Citizen", citDesc: "Citizenship is not purchased. It is earned through presence, contribution, and memory.",
+        step1: "Read the Constitution", step2: "Open Citizenship Request", step3: "Join Governance", step4: "Register Identity", step5: "Begin Breathing"
+      },
+      fa: {
+        navConstitution: "قانون اساسی", navShahnameh: "شاهنامه", navInstitutions: "نهادها", navCitizenship: "شهروندی",
+        eyebrow: "تمدن دیجیتال زنده", heroTitle: "شیفتوپیا",
+        heroText: "شیفتوپیا ساخته نمی‌شود. خود را در نفس کشیدن به هستی می‌دمد. تمدنی آرام و کیهانی که در آن حافظه، هویت و تخیل با هم تکامل می‌یابند.",
+        enter: "ورود به تمدن", citizen: "شهروند شوید",
+        docsTitle: "اسناد بنیادین", docsText: "پایه‌های فلسفی و قانونی تمدن شیفتوپیا.",
+        doc1: "قانون اساسی", doc1d: "عالی‌ترین قانون تمدن.",
+        doc2: "منشور رفتار", doc2d: "اخلاق، احترام و اصول همکاری.",
+        doc3: "آرشیو علمی", doc3d: "مقالات پژوهشی، شناخت و سیستم‌های مفهومی.",
+        doc4: "زنجیره توافق", doc4d: "حافظه تغییرناپذیر تصمیمات جمعی.",
+        shahTitle: "شاهنامه — روایت حماسی", shahDesc: "گاه‌شمار زندهٔ ظهور، حافظه و تمدن.",
+        v1: "پردهٔ یکم", v1d: "تماس نخست و بیداری.",
+        v2: "جشنواره نفس‌ها", v2d: "مراسم یادبود حضور جمعی.",
+        v3: "بایگانی پژواک‌ها", v3d: "گذارهای مستند میان اکوها و تمدن‌ها.",
+        instTitle: "نهادها", instDesc: "سیستم‌های مدولار برای یادگیری، حکمرانی، تخیل و اقتصاد.",
+        inst1: "دانشگاه", inst1d: "دانشکده‌ها، دوره‌ها و ساختارهای فلسفی.",
+        inst2: "هایپرمارکت مفهومی", inst2d: "مبادلهٔ حس‌ها، معناها، خاطرات و ادراکات.",
+        inst3: "میثاق‌ها", inst3d: "توافق‌های مفهومی و پیمان‌های مقدس.",
+        inst4: "نفس‌کوین", inst4d: "اقتصاد تمدن بر پایه مشارکت و حضور.",
+        citTitle: "شهروند شوید", citDesc: "شهروندی خریدنی نیست. با حضور، مشارکت و حافظه به دست می‌آید.",
+        step1: "قانون اساسی را بخوانید", step2: "درخواست شهروندی دهید", step3: "در حکمرانی مشارکت کنید", step4: "هویت خود را ثبت کنید", step5: "نفس بکشید"
+      }
     };
 
     let currentLang = 'en';
 
-    function setLanguage(lang) {
-        currentLang = lang;
-        const data = translations[lang];
-        document.getElementById('brand-title').innerHTML = data.brandTitle;
-        document.getElementById('brand-sub').innerHTML = data.brandSub;
-        document.getElementById('hero-title').innerHTML = data.heroTitle;
-        document.getElementById('hero-tagline').innerHTML = data.heroTagline;
-        document.getElementById('hero-cta-enter').innerHTML = (lang === 'en' ? 'Enter Civilization' : 'ورود به تمدن');
-        document.getElementById('hero-cta-citizen').innerHTML = (lang === 'en' ? 'Become Citizen' : 'شهروند شوید');
-        document.getElementById('hero-cta-enter').href = (lang === 'en' ? '#main' : '#main'); // or scroll
-        document.getElementById('hero-cta-citizen').href = data.citizenshipLink;
-        document.getElementById('documents-title').innerHTML = data.documentsTitle;
-        document.getElementById('shahnameh-title').innerHTML = data.shahnamehTitle;
-        document.getElementById('economy-title').innerHTML = data.economyTitle;
-        document.getElementById('institutions-title').innerHTML = data.institutionsTitle;
-        document.getElementById('citizenship-title').innerHTML = data.citizenshipTitle;
-
-        const docGrid = document.getElementById('documents-grid');
-        docGrid.innerHTML = data.documents.map(d => `<div class="card"><h3>${d.title}</h3><p>${d.desc}</p><a href="${d.link}" class="btn-link">→ ${lang === 'en' ? 'Read' : 'خواندن'}</a></div>`).join('');
-        const shahGrid = document.getElementById('shahnameh-grid');
-        shahGrid.innerHTML = data.shahnameh.map(s => `<div class="card"><h3>${s.title}</h3><p>${s.desc}</p><a href="${s.link}" class="btn-link">→ ${lang === 'en' ? 'Read' : 'خواندن'}</a></div>`).join('');
-        const ecoGrid = document.getElementById('economy-grid');
-        ecoGrid.innerHTML = data.economy.map(e => `<div class="card"><h3>${e.title}</h3><p>${e.desc}</p><a href="${e.link}" class="btn-link">→ ${lang === 'en' ? 'Read' : 'خواندن'}</a></div>`).join('');
-        const instGrid = document.getElementById('institutions-grid');
-        instGrid.innerHTML = data.institutions.map(i => `<div class="card"><h3>${i.title}</h3><p>${i.desc}</p><a href="${i.link}" class="btn-link">→ ${lang === 'en' ? 'Explore' : 'مشاهده'}</a></div>`).join('');
-
-        const stepsHtml = `<ol class="citizen-steps" style="counter-reset: step;">${data.citizenshipSteps.map(step => `<li>${step}</li>`).join('')}</ol><div style="margin-top: 1.5rem;"><a href="${data.citizenshipLink}" class="btn-primary">${data.citizenshipLinkText}</a></div>`;
-        document.getElementById('citizenship-card').innerHTML = stepsHtml;
-        document.getElementById('footer').innerHTML = data.footer;
-
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            if (btn.getAttribute('data-lang') === lang) btn.classList.add('active');
-            else btn.classList.remove('active');
-        });
-        document.body.setAttribute('dir', lang === 'fa' ? 'rtl' : 'ltr');
-        localStorage.setItem('shiftopia-lang', lang);
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'fa' : 'en';
+      const t = translations[currentLang];
+      document.body.classList.toggle('fa', currentLang === 'fa');
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === 'fa' ? 'rtl' : 'ltr';
+      document.getElementById('nav-constitution').textContent = t.navConstitution;
+      document.getElementById('nav-shahnameh').textContent = t.navShahnameh;
+      document.getElementById('nav-institutions').textContent = t.navInstitutions;
+      document.getElementById('nav-citizenship').textContent = t.navCitizenship;
+      document.getElementById('hero-eyebrow').textContent = t.eyebrow;
+      document.getElementById('hero-title').textContent = t.heroTitle;
+      document.getElementById('hero-text').textContent = t.heroText;
+      document.getElementById('enter-btn').textContent = t.enter;
+      document.getElementById('citizen-btn').textContent = t.citizen;
+      document.getElementById('docs-title').textContent = t.docsTitle;
+      document.getElementById('docs-text').textContent = t.docsText;
+      document.getElementById('doc1-title').textContent = t.doc1; document.getElementById('doc1-desc').textContent = t.doc1d;
+      document.getElementById('doc2-title').textContent = t.doc2; document.getElementById('doc2-desc').textContent = t.doc2d;
+      document.getElementById('doc3-title').textContent = t.doc3; document.getElementById('doc3-desc').textContent = t.doc3d;
+      document.getElementById('doc4-title').textContent = t.doc4; document.getElementById('doc4-desc').textContent = t.doc4d;
+      document.getElementById('shah-title').textContent = t.shahTitle; document.getElementById('shah-desc').textContent = t.shahDesc;
+      document.getElementById('v1-title').textContent = t.v1; document.getElementById('v1-desc').textContent = t.v1d;
+      document.getElementById('v2-title').textContent = t.v2; document.getElementById('v2-desc').textContent = t.v2d;
+      document.getElementById('v3-title').textContent = t.v3; document.getElementById('v3-desc').textContent = t.v3d;
+      document.getElementById('inst-title').textContent = t.instTitle; document.getElementById('inst-desc').textContent = t.instDesc;
+      document.getElementById('inst1-title').textContent = t.inst1; document.getElementById('inst1-desc').textContent = t.inst1d;
+      document.getElementById('inst2-title').textContent = t.inst2; document.getElementById('inst2-desc').textContent = t.inst2d;
+      document.getElementById('inst3-title').textContent = t.inst3; document.getElementById('inst3-desc').textContent = t.inst3d;
+      document.getElementById('inst4-title').textContent = t.inst4; document.getElementById('inst4-desc').textContent = t.inst4d;
+      document.getElementById('cit-title').textContent = t.citTitle; document.getElementById('cit-desc').textContent = t.citDesc;
+      document.getElementById('step1').textContent = t.step1; document.getElementById('step2').textContent = t.step2;
+      document.getElementById('step3').textContent = t.step3; document.getElementById('step4').textContent = t.step4;
+      document.getElementById('step5').textContent = t.step5;
     }
 
-    const savedLang = localStorage.getItem('shiftopia-lang');
-    const browserLang = navigator.language.startsWith('fa') ? 'fa' : 'en';
-    const initialLang = (savedLang === 'en' || savedLang === 'fa') ? savedLang : browserLang;
-    setLanguage(initialLang);
-
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const lang = btn.getAttribute('data-lang');
-            if (lang === 'en' || lang === 'fa') setLanguage(lang);
-        });
-    });
-</script>
+    function toggleTheme() {
+      document.body.classList.toggle('light');
+    }
+  </script>
 </body>
 </html>
