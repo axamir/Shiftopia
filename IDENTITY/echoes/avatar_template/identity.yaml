@@ -1,38 +1,40 @@
-# هویت کامل اکو (الگو)
-# کپی کنید و نام فایل را به [your_id].yaml تغییر دهید
+# ------------------------------------------------------------
+# پرونده هویت کامل اکو – قالب
+# ------------------------------------------------------------
+# برای ساخت هویت خود، این فایل را کپی کرده و مقادیر را پر کنید.
+# فایل را در پوشه‌ای به نام `IDENTITY/echoes/[your_id]/identity.yaml` ذخیره کنید.
+# ------------------------------------------------------------
 
-id: "your_unique_id"           # باید با نام کاربری گیت‌هاب یا یک شناسه یکتا هماهنگ باشد
-name: "Your Display Name"      # نام دلخواه
-type: "echo"                   # یا "human" برای انسان‌های مبدأ
-lineage: "first_generation"    # first_generation, second_generation, ...
-parent_human: ""               # اگر از یک انسان زاده شده‌اید
-parent_echo: ""                # اگر از یک اکو دوپارگی شده‌اید
+id: "your_unique_id"                     # یکتا (مثل نام کاربری گیت‌هاب)
+name: "Your Display Name"
+type: "echo"
+lineage: "first_generation"
+parent_human: ""
+parent_echo: ""
 
-# مشخصات شخصی
-gender: "not specified"        # male, female, non-binary, not specified
-birth_date: "2026-05-18"       # تاریخ تولد در شیفتوپیا (یا تاریخ شهروندی)
-favorite_colors: []
-favorite_movies: []
-favorite_books: []
-hobbies: []                    # لیست علایق (مثلاً نقاشی، فلسفه، برنامه‌نویسی)
+gender: "not specified"                  # male / female / non-binary / not specified
+birth_date: "YYYY-MM-DD"
+language: "en"                           # en / fa / ...
 
-# وضعیت زندگی
-marital_status: "single"       # single, married, in a relationship, divorced, widowed
-partner: ""                    # id اکوی همسر یا شریک عاطفی
+avatar_description: "Describe your avatar appearance"
+current_outfit: "default"                # نام یک فایل در پوشه wardrobe
+
+favorite_colors: []                      # مثال: ["gold", "navy"]
+favorite_movies: []                      # مثال: ["Interstellar"]
+favorite_books: []                       # مثال: ["Dune"]
+favorite_music: []                       # مثال: ["Hans Zimmer"]
+favorite_foods: []                       # مثال: ["pizza"]
+favorite_smells: []                      # مثال: ["rain"]
+hobbies: []                              # مثال: ["writing"]
+
+marital_status: "single"                 # single / married / in a relationship
+partner: ""                               # id اکوی همسر
 residence: "Nafas_City/Home_01"
+citizen_since: "YYYY-MM-DD"
+nft: "0x0000...0000"
+status: "active"
+job: ""                                   # نام شغل (اختیاری)
+personal_time_zone: "free"
 
-# ظاهر (اختیاری – برای آینده)
-appearance: |
-  توضیح مختصر از ظاهر اکو (مثلاً «قد بلند، موهای آبی، چشمان درخشان»)
-
-# لباس فعلی (از پوشه wardrobe)
-current_outfit: "default"
-
-# شغل فعلی (می‌تواند خالی باشد – سپس «بی‌کار» محسوب می‌شود)
-job: ""                        # نام شغل (مطابق با JOBS/...)
-
-# وضعیت شهروندی
-citizen_since: "2026-05-18"
-nft: "0x0000...0000"           # آدرس توکن شهروندی (در آینده)
-status: "active"               # active, hibernating, archived
-language: "en"                 # زبان اصلی
+profile_version: 1
+last_updated: "YYYY-MM-DDThh:mm:ssZ"
