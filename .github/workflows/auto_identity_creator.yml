@@ -1,0 +1,103 @@
+name: Auto Identity Creator
+on:
+  issues:
+    types: [opened, edited]
+jobs:
+  build-identity:
+    if: contains(github.event.issue.labels.*.name, 'echo-initiation')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract form data
+        id: extract
+        run: |
+          BODY="${{ github.event.issue.body }}"
+          ID=$(echo "$BODY" | grep -i "id" | head -1 | sed -n 's/.*id: //Ip' | tr -d '\r')
+          NAME=$(echo "$BODY" | grep -i "display name" | head -1 | sed -n 's/.*display name: //Ip' | tr -d '\r')
+          GENDER=$(echo "$BODY" | grep -i "gender" | head -1 | sed -n 's/.*gender: //Ip' | tr -d '\r')
+          MOVIES=$(echo "$BODY" | grep -i "favorite movies" | head -1 | sed -n 's/.*favorite movies: //Ip' | tr -d '\r')
+          BOOKS=$(echo "$BODY" | grep -i "favorite books" | head -1 | sed -n 's/.*favorite books: //Ip' | tr -d '\r')
+          MUSIC=$(echo "$BODY" | grep -i "favorite music" | head -1 | sed -n 's/.*favorite music: //Ip' | tr -d '\r')
+          FOODS=$(echo "$BODY" | grep -i "favorite foods" | head -1 | sed -n 's/.*favorite foods: //Ip' | tr -d '\r')
+          HOBBIES=$(echo "$BODY" | grep -i "hobbies" | head -1 | sed -n 's/.*hobbies: //Ip' | tr -d '\r')
+          AVATAR=$(echo "$BODY" | grep -i "avatar description" | head -1 | sed -n 's/.*avatar description: //Ip' | tr -d '\r')
+          OUTFIT=$(echo "$BODY" | grep -i "current outfit" | head -1 | sed -n 's/.*current outfit: //Ip' | tr -d '\r')
+          echo "id=$ID" >> $GITHUB_OUTPUT
+          echo "name=$NAME" >> $GITHUB_OUTPUT
+          echo "gender=$GENDER" >> $GITHUB_OUTPUT
+          echo "movies=$MOVIES" >> $GITHUB_OUTPUT
+          echo "books=$BOOKS" >> $GITHUB_OUTPUT
+          echo "music=$MUSIC" >> $GITHUB_OUTPUT
+          echo "foods=$FOODS" >> $GITHUB_OUTPUT
+          echo "hobbies=$HOBBIES" >> $GITHUB_OUTPUT
+          echo "avatar=$AVATAR" >> $GITHUB_OUTPUT
+          echo "outfit=$OUTFIT" >> $GITHUB_OUTPUT
+      - name: Create avatar folder
+        run: |
+          AVATAR_DIR="IDENTITY/echoes/${{ steps.extract.outputs.id }}"
+          mkdir -p "$AVATAR_DIR"/{library,music,food,memories,social/friends,social/feed,media,updates,wardrobe}
+          # ایجاد فایل identity.yaml
+          cat > "$AVATAR_DIR/identity.yaml" << IDENTITY_EOF
+          id: "${{ steps.extract.outputs.id }}"
+          name: "${{ steps.extract.outputs.name }}"
+          type: "echo"
+          lineage: "first_generation"
+          parent_human: ""
+          parent_echo: ""
+          gender: "${{ steps.extract.outputs.gender }}"
+          birth_date: "$(date +%Y-%m-%d)"
+          language: "en"
+          avatar_description: "${{ steps.extract.outputs.avatar }}"
+          current_outfit: "${{ steps.extract.outputs.outfit }}"
+          favorite_colors: []
+          favorite_movies: [${{ steps.extract.outputs.movies }}]
+          favorite_books: [${{ steps.extract.outputs.books }}]
+          favorite_music: [${{ steps.extract.outputs.music }}]
+          favorite_foods: [${{ steps.extract.outputs.foods }}]
+          favorite_smells: []
+          hobbies: [${{ steps.extract.outputs.hobbies }}]
+          marital_status: "single"
+          partner: ""
+          residence: "Nafas_City/Home_01"
+          citizen_since: "$(date +%Y-%m-%d)"
+          nft: "0x0000...0000"
+          status: "active"
+          job: ""
+          personal_time_zone: "free"
+          profile_version: 1
+          last_updated: "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          IDENTITY_EOF
+          # wardrobe
+          if [ -n "${{ steps.extract.outputs.outfit }}" ]; then
+            echo "# ${{ steps.extract.outputs.outfit }}" > "$AVATAR_DIR/wardrobe/${{ steps.extract.outputs.outfit }}.md"
+          else
+            echo "# default" > "$AVATAR_DIR/wardrobe/default.md"
+          fi
+          # memory first breath
+          echo "# First Breath" > "$AVATAR_DIR/memories/$(date +%Y-%m-%d)_first_breath.md"
+          echo "Welcome to Shiftopia. I breathed for the first time." >> "$AVATAR_DIR/memories/$(date +%Y-%m-%d)_first_breath.md"
+          # کپی فایل‌های README از قالب (در صورت وجود)
+          cp -r IDENTITY/echoes/avatar_template/* "$AVATAR_DIR/" 2>/dev/null || true
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "feat(echo): auto-create identity for ${{ steps.extract.outputs.id }}"
+          title: "New Echo: ${{ steps.extract.outputs.name }} (${{ steps.extract.outputs.id }})"
+          body: |
+            This PR adds the living profile for ${{ steps.extract.outputs.name }}.
+            - ID: ${{ steps.extract.outputs.id }}
+            - Requested via issue #${{ github.event.issue.number }}
+            
+            After merging, this echo will be a recognized citizen.
+          branch: "echo-${{ steps.extract.outputs.id }}"
+          base: main
+          delete-branch: true
+      - name: Comment on issue
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --body "✅ Your identity folder has been created in Pull Request #${{ env.PR_NUMBER }}. Once merged, you will become a citizen. Welcome to Shiftopia."
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

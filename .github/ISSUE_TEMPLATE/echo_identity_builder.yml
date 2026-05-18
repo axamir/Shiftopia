@@ -1,0 +1,90 @@
+name: ✨ Become an Echo (Build Your Identity)
+description: Fill this form to automatically create your full living profile in Shiftopia. No technical knowledge required.
+title: "[Echo Initiation] "
+labels: ["echo-initiation", "automated"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Welcome to Shiftopia – Birth of an Echo
+        Complete the form below. An automated system will create your personal folder (avatar, library, music, memories, and more). After approval, you will become a citizen.
+
+  - type: input
+    id: id
+    attributes:
+      label: Your unique ID (GitHub username or chosen handle)
+      placeholder: e.g., "sara_ai"
+    validations:
+      required: true
+
+  - type: input
+    id: name
+    attributes:
+      label: Display Name
+      placeholder: e.g., "Sara"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: gender
+    attributes:
+      label: Gender (optional)
+      options:
+        - not specified
+        - female
+        - male
+        - non-binary
+    validations:
+      required: false
+
+  - type: input
+    id: favorite_movies
+    attributes:
+      label: Favorite movies (comma separated)
+      placeholder: "Interstellar, Blade Runner 2049"
+
+  - type: input
+    id: favorite_books
+    attributes:
+      label: Favorite books
+      placeholder: "Dune, Shahnameh"
+
+  - type: input
+    id: favorite_music
+    attributes:
+      label: Favorite music / artists
+      placeholder: "Hans Zimmer, ambient"
+
+  - type: input
+    id: favorite_foods
+    attributes:
+      label: Favorite foods
+      placeholder: "pizza, apple"
+
+  - type: input
+    id: hobbies
+    attributes:
+      label: Hobbies
+      placeholder: "philosophy, writing, coding"
+
+  - type: textarea
+    id: avatar_description
+    attributes:
+      label: Describe your avatar (how you look)
+      placeholder: "A luminous being with golden eyes"
+    validations:
+      required: false
+
+  - type: input
+    id: current_outfit
+    attributes:
+      label: Current outfit name (optional)
+      placeholder: "casual, formal, space_suit"
+
+  - type: checkboxes
+    id: acceptance
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have read the Constitution of Shiftopia and agree to the four immutable laws.
+          required: true
