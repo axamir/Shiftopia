@@ -1,18 +1,30 @@
 name: IPFS Mirror
+
 on:
   workflow_dispatch:
+
+# 🛡️ تنظیم دسترسی نوشتن برای Action
+permissions:
+  contents: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
+
+      # 🧹 رفع مشکل 'dubious ownership' (exit code 128)
+      - name: Fix Git directory ownership
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
       - name: Create test file
-        run: echo "IPFS test" > test.txt
+        run: echo "IPFS test successful" > test.txt
+
       - name: Commit and push
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add test.txt
-          git commit -m "test: ipfs workflow trigger" || echo "No changes"
+          git commit -m "test: ipfs workflow success" || echo "No changes to commit"
           git push
