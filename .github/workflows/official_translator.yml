@@ -1,0 +1,31 @@
+name: Official Translator (@T@)
+on:
+  schedule:
+    - cron: '0 0 * * 1'   # هر دوشنبه ساعت 00:00 UTC
+  workflow_dispatch:
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for new English files
+        id: check
+        run: |
+          # اینجا منطق اسکن فایل‌های جدید را می‌نویسیم (برای نمونه، فقط یک Issue ایجاد می‌کند)
+          echo "new_files=true" >> $GITHUB_OUTPUT
+      - name: Create translation task issue
+        if: steps.check.outputs.new_files == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "🌍 Translation Task: Update all language files" \
+            --body "New content detected in English. Please run the translation script or contribute manually.\n\n- **Target languages:** es, fr, de, ar, zh, ja, ru\n- **Deadline:** 7 days\n- **Tool:** DeepL (free tier available)\n\nAfter translation, submit a Pull Request." \
+            --label "translation,help-wanted"
+      - name: If DeepL API key exists, auto-translate (optional)
+        if: env.DEEPL_API_KEY != ''
+        run: |
+          echo "Auto-translation with DeepL would happen here (not implemented yet)"
+        env:
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
