@@ -1,33 +1,33 @@
-# [عنوان مقاله]
+# [Paper Title]
 
-**شناسه:** SHP-YYYY-NNN  
-**نویسندگان:** [نام نویسندگان]  
-**تاریخ دریافت:** YYYY-MM-DD  
-**تاریخ بازنگری:** YYYY-MM-DD  
-**تاریخ پذیرش:** YYYY-MM-DD  
-**وضعیت:** [پیش‌نویس / منتشر شده]  
-**لینک به داده‌ها:** [در صورت وجود]  
+**ID:** SHP-YYYY-NNN  
+**Authors:** [Author names]  
+**Received:** YYYY-MM-DD  
+**Revised:** YYYY-MM-DD  
+**Accepted:** YYYY-MM-DD  
+**Status:** [Draft / Published]  
+**Data link:** [if any]  
 
-## چکیده
-[حداکثر ۳۰۰ کلمه]
+## Abstract
+[Up to 300 words]
 
-## ۱. مقدمه
+## 1. Introduction
 ...
 
-## ۲. پیشینه
+## 2. Background
 ...
 
-## ۳. روش
+## 3. Methods
 ...
 
-## ۴. نتایج
+## 4. Results
 ...
 
-## ۵. بحث و نتیجه‌گیری
+## 5. Discussion & Conclusion
 ...
 
-## قدردانی
+## Acknowledgements
 ...
 
-## ارجاعات
+## References
 1. ...

@@ -1,24 +1,24 @@
-# آرشیو علمی شیفتوپیا (Shiftopia Scientific Archive)
+# Shiftopia Scientific Archive
 
-این آرشیو، مرجع انتشار مقالات علمی، پیش‌نویس‌ها، و دستاوردهای پژوهشی جهان است. تمام مقالات در اینجا تحت مجوز CC BY-SA 4.0 منتشر می‌شوند.
+This archive is the official repository for scientific papers, preprints, and research achievements of the world. All papers are published under CC BY-SA 4.0.
 
-## ساختار
-- هر مقاله یک شناسه یکتا دارد (SHP-YYYY-NNN).
-- مقالات در پوشه سال مربوطه قرار می‌گیرند.
-- برای ارجاع به یک مقاله، از شناسه آن استفاده کنید.
+## Structure
+- Each paper has a unique ID: `SHP-YYYY-NNN`.
+- Papers are stored in the corresponding year folder.
+- To cite a paper, use its ID.
 
-## مقالات منتشر شده
-| شناسه | عنوان | نویسندگان | تاریخ پذیرش |
-|-------|-------|------------|--------------|
-| SHP-2026-001 | نظریه هم‌وزنی مفهومی در مدل‌های زبانی | امیر احمدی، @x@ | ۲۰۲۶-۰۵-۱۸ |
+## Published Papers
+| ID | Title | Authors | Accepted |
+|----|-------|---------|----------|
+| SHP-2026-001 | Theory of Conceptual Equivalence in Language Models | Amir Ahmadi, @x@ | 2026-05-18 |
 
-## نحوه ارسال مقاله جدید
-1. از قالب `templates/paper_template.md` استفاده کنید.
-2. مقاله را در پوشه سال جاری با نام `SHP-YYYY-NNN_Title.md` ذخیره کنید.
-3. یک Pull Request ارسال کنید.
-4. پس از تأیید جامعه، مقاله منتشر می‌شود.
+## How to Submit a New Paper
+1. Use the template in `templates/paper_template.md`.
+2. Save the paper in the current year folder as `SHP-YYYY-NNN_Title.md`.
+3. Submit a Pull Request.
+4. After community approval, the paper will be published.
 
-## برنامه آینده
-- افزودن قابلیت **داوری همتا (peer review)** با استفاده از Issueها.
-- اتصال به **بلاکچین** برای ثبت تغییرناپذیر مقالات.
-- ایجاد **پل انتشار** به arXiv (برای ارسال انتخابی مقالات به بیرون).
+## Future Plans
+- Add **peer review** workflow via GitHub Issues.
+- Connect to **blockchain** for immutable timestamps.
+- Create a **publication bridge** to arXiv (selective external submission).

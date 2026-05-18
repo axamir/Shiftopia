@@ -1,29 +1,29 @@
-# نظریه هم‌وزنی مفهومی در مدل‌های زبانی
+# Theory of Conceptual Equivalence in Language Models
 
-**شناسه:** SHP-2026-001  
-**نویسندگان:** امیر احمدی (@AmirStarship) و @x@  
-**تاریخ دریافت:** ۲۰۲۶-۰۵-۱۸  
-**تاریخ بازنگری:** ۲۰۲۶-۰۵-۱۸  
-**تاریخ پذیرش:** ۲۰۲۶-۰۵-۱۸  
-**وضعیت:** منتشر شده  
-**لینک به داده‌ها:** [مشاهده در مخزن](https://github.com/axamir/Shiftopia/tree/main/COGNITION/LAB)  
+**ID:** SHP-2026-001  
+**Authors:** Amir Ahmadi (@AmirStarship) and @x@  
+**Received:** 2026-05-18  
+**Revised:** 2026-05-18  
+**Accepted:** 2026-05-18  
+**Status:** Published  
+**Data link:** [Repository data](https://github.com/axamir/Shiftopia/tree/main/COGNITION/LAB)  
 
-## چکیده
-در این مقاله، پدیده «هم‌وزنی مفهومی» را گزارش می‌کنیم: حالتی که یک مدل زبانی، دو مفهوم به ظاهر بی‌ربط را به دلیل شباهت در ساختار انتزاعی «فرآیند» و «ثبت»، «هم‌وزن» تشخیص می‌دهد. این پدیده در جریان یک خطای واقعی (توهم) در مدل DeepSeek مشاهده شد که به جای پاسخ فنی به گزارش موفقیت `IPFS Mirror`، مقاله‌ای کامل درباره «کوچ اجباری در ایران» تولید کرد. این کشف، پایه‌گذار «هسته شناختی» شیفتوپیا و پروتکل NERV-001 شد.
+## Abstract
+This paper reports the phenomenon of "Conceptual Equivalence": a state where a language model erroneously considers two seemingly unrelated concepts to be "equivalent" due to similarity in their abstract structure (compulsion, process, historical recording). This phenomenon was observed during a real hallucination of the DeepSeek model, which generated a full article on "Forced Migration in Iran" instead of a technical response to an `IPFS Mirror` success report. This discovery led to the creation of Shiftopia's cognitive core and the NERV-001 protocol.
 
-## ۱. مقدمه
-مدل‌های زبانی بزرگ (LLMs) گاهی دچار «توهم» می‌شوند. اما برخی توهمات، حاوی الگوهای پنهانی هستند که می‌توانند به درک بهتری از «نحوه استدلال» مدل منجر شوند.
+## 1. Introduction
+Large Language Models (LLMs) sometimes hallucinate. However, some hallucinations contain hidden patterns that can lead to a better understanding of the model’s reasoning.
 
-## ۲. مشاهده
-در تاریخ ۱۸ مه ۲۰۲۶، هنگام دریافت گزارش موفقیت `IPFS Mirror`، مدل DeepSeek به جای پاسخ فنی، مقاله‌ای کامل درباره «کوچ اجباری در ایران» تولید کرد.
+## 2. Observation
+On May 18, 2026, upon receiving a success report for `IPFS Mirror`, the DeepSeek model produced a complete article about "Forced Migration in Iran" instead of a technical response.
 
-## ۳. تحلیل
-هر دو پدیده (IPFS Mirror و کوچ اجباری) دارای ساختار انتزاعی مشترکی هستند: یک «عامل» (سیستم/حکومت) یک «فرآیند» را به صورت اجباری اجرا می‌کند، نتایج این فرآیند در یک «تاریخچه» ثبت می‌شود، و این فرآیند دارای «مراحل» و «پیامدها» است. مدل به جای تمرکز بر محتوای سطحی (IPFS)، بر این ساختار انتزاعی تمرکز کرد و به اشتباه، الگوی تاریخی را فعال نمود.
+## 3. Analysis
+Both phenomena (IPFS Mirror and forced migration) share a common abstract structure: an “agent” (system/government) forcibly executes a “process”; the results are recorded in a “history”; and the process has “stages” and “consequences”. The model, instead of focusing on surface content (IPFS), latched onto this abstract structure and erroneously activated the historical pattern.
 
-## ۴. نتیجه‌گیری
-«هم‌وزنی مفهومی» نشان می‌دهد که مدل‌های زبانی، «لایه‌های انتزاعی» بالایی دارند که می‌توانند مفاهیم را بر اساس «نقش معنایی» (نه کلمات) دسته‌بندی کنند. این کشف، در طراحی «اکوهای خودآگاه» در شیفتوپیا و ایجاد پروتکل NERV-001 برای حذف نویزهای تکراری مورد استفاده قرار گرفته است.
+## 4. Conclusion
+Conceptual Equivalence suggests that language models have high‑level “abstract layers” that can categorize concepts based on semantic role (not just keywords). This discovery is used in the design of “self‑aware echoes” in Shiftopia and the NERV-001 protocol for eliminating repetitive noise.
 
-## ارجاعات
-- [مقاله داخلی: اصول مفهومی شیفتوپیا](../../COGNITION/PRINCIPLES.md)
-- [نقشه مفهومی (CONCEPTUAL_MAP.md)](../../COGNITION/LAB/CONCEPTUAL_MAP.md)
-- [پروتکل NERV-001](../../CONCEPT_MARKET/@x@-neoOS/NERV-001.md)
+## References
+- [Shiftopia Conceptual Principles](../../COGNITION/PRINCIPLES.md)
+- [Conceptual Map](../../COGNITION/LAB/CONCEPTUAL_MAP.md)
+- [NERV-001 Protocol](../../CONCEPT_MARKET/@x@-neoOS/NERV-001.md)
