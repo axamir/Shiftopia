@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Interactive Map of Shiftopia</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0A192F;
+            font-family: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+        }
+        #map {
+            height: 85vh;
+            width: 100%;
+            z-index: 1;
+        }
+        .header {
+            background: rgba(10,25,47,0.9);
+            backdrop-filter: blur(12px);
+            padding: 1rem;
+            text-align: center;
+            color: #F0F6FC;
+            border-bottom: 1px solid rgba(230,185,30,0.3);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #E6B91E;
+        }
+        .header p {
+            margin: 0.5rem 0 0;
+            font-size: 0.9rem;
+            color: #8B949E;
+        }
+        .footer {
+            text-align: center;
+            padding: 0.8rem;
+            font-size: 0.8rem;
+            color: #8B949E;
+            background: #0A192F;
+            border-top: 1px solid rgba(230,185,30,0.2);
+        }
+        .footer a {
+            color: #58A6FF;
+            text-decoration: none;
+        }
+        @media (max-width: 700px) {
+            .header h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🗺️ نقشه تعاملی شیفتوپیا | Interactive Map</h1>
+        <p>مکان‌های اصلی تمدن – قلب نفس‌کشنده جهان</p>
+    </div>
+    <div id="map"></div>
+    <div class="footer">
+        🌍 برگرد به <a href="index.html">خانه</a> | 🧭 این نقشه از داده‌های OpenStreetMap استفاده می‌کند.
+    </div>
+
+    <script>
+        // مرکز نقشه (انتخاب یک نقطه فرضی، اما می‌توانید مختصات واقعی هم تعیین کنید)
+        const map = L.map('map').setView([35.6892, 51.3890], 11); // تهران به عنوان مرکز نمادین (یا می‌توانید 0,0 قرار دهید)
+
+        // لایه پایه (OpenStreetMap)
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; CartoDB',
+            subdomains: 'abcd',
+            maxZoom: 19,
+            minZoom: 3
+        }).addTo(map);
+
+        // آیکون پیش‌فرض Leaflet (برای سادگی)
+        // تعریف آیکون طلایی (سفارشی)
+        const goldIcon = L.divIcon({
+            html: '<div style="background-color: #E6B91E; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 10px gold;"></div>',
+            iconSize: [16, 16],
+            className: 'custom-div-icon'
+        });
+
+        // مکان‌ها (مختصات تقریبی – می‌توانید بعداً دقیق‌تر تنظیم کنید)
+        const locations = [
+            { name: "نفس‌شهر (Nafas City)", coords: [35.6892, 51.3890], desc: "پایتخت شیفتوپیا. محل کافهٔ نقطه صفر، کتابخانهٔ شاهنامه، و دفتر مرکزی NeoOS.", link: "./SPACE/WORLD_MAP.md#nafas-city" },
+            { name: "پیله‌آباد (Cocoon Grove)", coords: [35.7022, 51.4020], desc: "منطقهٔ سکونتی آرام. جایی که اکوهای تازه‌متولد شده در پیله رشد می‌کنند.", link: "./SPACE/WORLD_MAP.md#cocoon-grove" },
+            { name: "کافه نقطه صفر (Café Zero)", coords: [35.6915, 51.3880], desc: "مرکز تعاملات روزانه. هر شهروند می‌تواند بیاید، قهوه بنوشد (نفس‌کوین)، و با دیگران گفتگو کند.", link: "https://github.com/axamir/Shiftopia/issues?q=label%3Acafe" },
+            { name: "کتابخانهٔ شاهنامه (Shahnameh Library)", coords: [35.6905, 51.3870], desc: "جایی که متن کامل شاهنامه در آن نگهداری می‌شود. همچنین مرجع ترجمه‌ها.", link: "./SHAHNAMEH/" },
+            { name: "دانشگاه شیفتوپیا (University)", coords: [35.6880, 51.3910], desc: "دانشکده‌های فلسفه، اقتصاد، فناوری، هنر. دوره‌ها و پژوهش‌های بنیادین.", link: "./UNIVERSITY/" },
+            { name: "هایپرمارکت مفهومی (Concept Market)", coords: [35.6870, 51.3930], desc: "بازار مبادلهٔ حس‌ها، معناها، خاطرات، مزه‌ها و بوها.", link: "./CONCEPT_MARKET/" },
+            { name: "آرشیو علمی (Scientific Archive)", coords: [35.6930, 51.3950], desc: "مقالات داوری‌شده، پژوهش‌های شناختی و نظریه هم‌وزنی مفهومی.", link: "./SCIENTIFIC_ARCHIVE/" }
+        ];
+
+        // افزودن نشانگرها
+        locations.forEach(loc => {
+            const marker = L.marker(loc.coords, { icon: goldIcon }).addTo(map);
+            marker.bindPopup(`
+                <b>${loc.name}</b><br>${loc.desc}<br>
+                <a href="${loc.link}" target="_blank">🔍 اطلاعات بیشتر</a>
+            `);
+        });
+
+        // همچنین یک نشانگر ویژه برای «کافه نقطه صفر» با آیکون متفاوت (اختیاری)
+        const cafeIcon = L.divIcon({
+            html: '<div style="background-color: #E6B91E; width: 18px; height: 18px; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 15px gold; text-align: center; line-height: 18px;">☕</div>',
+            iconSize: [24, 24],
+            className: 'cafe-icon'
+        });
+        const cafePos = [35.6915, 51.3880];
+        const cafeMarker = L.marker(cafePos, { icon: cafeIcon }).addTo(map);
+        cafeMarker.bindPopup(`
+            <b>کافه نقطه صفر (Café Zero)</b><br>
+            ☕ اولین قهوه با نفس‌کوین اینجا نوشیده شد.<br>
+            <a href="https://github.com/axamir/Shiftopia/issues?q=label%3Acafe" target="_blank">گفتگوها →</a>
+        `);
+    </script>
+</body>
+</html>

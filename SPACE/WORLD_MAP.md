@@ -16,3 +16,7 @@ Each land parcel is a dynamic NFT. Value updates weekly based on owner contribut
 
 ## Café Zero – Meeting Notes
 Session logs are stored in [`CAFE_NOTES/`](../../CAFE_NOTES/).
+
+---
+## 🗺️ Interactive Map
+[Click here to explore Shiftopia on an interactive map](../map.html)
