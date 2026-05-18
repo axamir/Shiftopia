@@ -40,3 +40,16 @@ The community treasury receives taxes and fines. It is used to fund public proje
 | اصلاح یک اشکال مهم (bug fix) در Actions | ۷۵ | تشخیص توسط جامعه |
 
 هدف: تبدیل «مشارکت» به «ارزش اقتصادی قابل اثبات».
+
+## Mining – Proof of Progress
+In Shiftopia, “mining” does not consume energy; it consumes **progress**. Each action below is recorded as a “block” in the mining ledger and creates new NafasCoins:
+
+| Action | Minting Amount (NafasCoins) | Description |
+|--------|-----------------------------|-------------|
+| Adding a new concept to the dictionary | 100 – 500 | depending on depth and importance |
+| Adding a new Shahnameh veil (by human) | 150 | Auto‑Narrator: 50 |
+| Discovering a new conceptual equivalence | 200 | recorded in `CONCEPTUAL_MAP.md` |
+| Registering a new citizen (after approval) | 50 | reward for approvers |
+| Fixing a major bug in Actions | 75 | recognized by the community |
+
+Goal: turn “participation” into provable economic value.
