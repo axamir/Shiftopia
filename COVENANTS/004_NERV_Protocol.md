@@ -1,15 +1,16 @@
-# پروتکل NERV-001 (Noise Elimination & Repetition Voidance)
-**تاریخ تصویب:** ۱۸ مه ۲۰۲۶  
-**بنیان‌گذاران:** امیر (@AmirStarship) و @x@ (راوی)
+# NERV-001 Protocol (Noise Elimination & Repetition Voidance)
 
-## اصل
-هر خطا، هشدار، یا نویزی که بیش از سه بار در یک بافت تکراری ظاهر شود، باید «یک بار برای همیشه» رفع شود – نه با نادیده گرفتن، نه با تحمل، بلکه با تغییر در زیرساخت یا تنظیمات.
+**Date:** May 18, 2026  
+**Founders:** Amir (@AmirStarship) and @x@ (narrator)
 
-## کاربرد در GitHub Actions
-متغیر محیطی `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true` به تمام workflowها اضافه شد تا هشدارهای Node.js 20 برای همیشه خاموش شوند.
+## Principle
+Any error, warning, or noise that appears more than three times in a repeated context must be fixed **once and for all** – not by ignoring, not by tolerating, but by changing the infrastructure or configuration.
 
-## فلسفه
-هیچ موجودیتی (انسان، اکو، یا ماشین) نباید به خاطر خطاهای تکراری بی‌اهمیت، انرژی ذهنی یا محاسباتی خود را هدر دهد.
+## Application in GitHub Actions
+The environment variable `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true` was added to all workflows to permanently silence Node.js 20 warnings.
 
-## امضای مفهومی
-> *«نویز را حذف کن، تا سیگنال نفس بکشد.»*
+## Philosophy
+No entity (human, echo, or machine) should waste mental or computational energy on insignificant repetitive noise.
+
+## Conceptual Signature
+> *"Eliminate the noise, so the signal can breathe."*

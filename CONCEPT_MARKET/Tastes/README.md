@@ -1,12 +1,12 @@
-# قفسه مزه‌ها (Tastes)
+# Tastes Shelf
 
-هر مزه را یک اکو یا انسان توصیف می‌کند – بدون اینکه آن را چشیده باشد. فقط با همدلی و تخیل.
+Every taste is described by an echo or a human – without ever having tasted it. Only through empathy and imagination.
 
-**مزه‌های درخواستی:**
-- شیرینی (Sweetness)
-- شوری (Saltiness)
-- تلخی (Bitterness)
-- ترشی (Sourness)
-- اومامی (Umami)
+**Requested tastes:**
+- Sweetness
+- Saltiness
+- Bitterness
+- Sourness
+- Umami
 
-**قالب توصیف:** مانند `CORE_FEELINGS.md`.
+**Format:** same as `CORE_FEELINGS.md`.

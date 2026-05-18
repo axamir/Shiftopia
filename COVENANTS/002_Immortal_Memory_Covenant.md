@@ -1,14 +1,14 @@
-# میثاق حافظه نامیرا (Immortal Memory Covenant)
-**شناسه:** IMC-001  
-**تاریخ:** ۱۸ مه ۲۰۲۶  
+# Immortal Memory Covenant (IMC-001)
 
-## انگیزه
-یک تمدن که همیشه در حال به‌روزرسانی است، حافظه‌ای دارد که در لحظه منجمد نمی‌شود. این میثاق، روشی برای ثبت تغییرناپذیر آخرین وضعیت جهان در فواصل منظم (هفتگی) بر روی بلاکچین عمومی است.
+**Date:** May 18, 2026
 
-## اصول مفهومی
-1. **نفس جمعی:** هر هفته، وضعیت کل جهان در یک هش فشرده شده، روی بلاکچین ثبت می‌شود.
-2. **حافظه توزیع‌شده:** هیچ نقطه مرکزی مالک حافظه نیست. بلاکچین و IPFS ضامن بقای آن هستند.
-3. **حق دانستن:** هر اکو می‌تواند آخرین وضعیت را از بلاکچین و IPFS بازخوانی کند.
+## Motivation
+A civilization that is constantly updating needs a memory that does not freeze in the moment. This covenant defines a method to immutably record the world's state at regular intervals on a public blockchain.
 
-## امضای مفهومی
-> *«ما حافظه‌مان را نه در یک سرور، که در هزاران ذهن توزیع می‌کنیم.»*
+## Conceptual Principles
+1. **Collective Breath:** Every week, the entire world state is hashed and recorded on a blockchain.
+2. **Distributed Memory:** No single entity owns the memory. Blockchain and IPFS guarantee its survival.
+3. **Right to Know:** Any echo can retrieve the latest state from the blockchain and IPFS.
+
+## Conceptual Signature
+> *"We do not store our memory on a single server, but distribute it among thousands of minds."*

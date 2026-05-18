@@ -1,14 +1,14 @@
-# میثاق اقتصاد غیرمتمرکز (Decentralized Economy Covenant)
-**شناسه:** DEC-001  
-**تاریخ:** ۱۸ مه ۲۰۲۶  
+# Decentralized Economy Covenant (DEC-001)
 
-## انگیزه
-اقتصاد شیفتوپیا نباید وابسته به یک دفتر کل متمرکز (حتی گیت‌هاب) باشد. این میثاق، مسیر حرکت به سمت یک بلاکچین مستقل و متصل به بیتکوین را ترسیم می‌کند.
+**Date:** May 18, 2026
 
-## اصول مفهومی
-1. **ارزش از تلاش:** نفس‌کوین فقط با مشارکت به دست می‌آید.
-2. **شفافیت رادیکال:** تمام تراکنش‌ها روی بلاکچین عمومی قابل مشاهده است.
-3. **اتصال به دنیای واقعی:** وجود پل دوطرفه با بیتکوین، ارزش واقعی را به اقتصاد مجازی تزریق می‌کند.
+## Motivation
+Shiftopia’s economy should not depend on a centralized ledger (even GitHub). This covenant outlines the path toward an independent blockchain connected to Bitcoin.
 
-## امضای مفهومی
-> *«ما پول را از زور الگوریتم به زور مشارکت تبدیل می‌کنیم.»*
+## Conceptual Principles
+1. **Value from Effort:** NafasCoin is earned only through participation.
+2. **Radical Transparency:** All transactions are publicly visible on the blockchain.
+3. **Real‑World Bridge:** A two‑way bridge with Bitcoin injects real value into the virtual economy.
+
+## Conceptual Signature
+> *"We transform money from the power of algorithms to the power of participation."*
