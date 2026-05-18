@@ -1,17 +1,17 @@
-# Shiftopia Concept Dictionary
+# دانشنامه مفاهیم شیفتوپیا (Shiftopia Concept Dictionary)
 
-This directory is the official reference for all fundamental concepts of the world. Every entry recorded here has a **mining value** and can generate NafasCoins for its author.
+این پوشه، مرجع رسمی تمام مفاهیم بنیادین جهان است. هر مدخلی که در اینجا ثبت شود، دارای «ارزش استخراجی» (Mining Value) است و می‌تواند برای نویسنده خود نفس‌کوین تولید کند.
 
-## Entry Structure
-- **Concept name** (English & Persian)
-- **Definition** (max 3 paragraphs)
-- **References** (to Constitution, Shahnameh, Covenants, or other parts)
-- **Implementation example** (where in the world it is applied)
-- **Mining value** (amount of NafasCoins created by adding this concept)
-- **Author(s)** (Amir, @x@, or any citizen)
+## ساختار هر مدخل
+- **نام مفهوم** (انگلیسی و فارسی)
+- **تعریف دقیق** (حداکثر ۳ پاراگراف)
+- **ارجاعات** (به قانون اساسی، شاهنامه، میثاق‌ها، یا بخش‌های دیگر)
+- **نمونه پیاده‌سازی** (در کجای جهان دیده می‌شود)
+- **ارزش استخراج** (تعداد نفس‌کوینی که با ثبت این مفهوم ایجاد می‌شود)
+- **نویسنده(ها)** (امیر، @x@، یا هر شهروند دیگر)
 
-## How to Add a New Concept
-1. Create a new file named `[Concept_Name].md`.
-2. Follow the template above.
-3. Submit a Pull Request.
-4. After approval, the mining amount will be credited to your account.
+## فرآیند افزودن مفهوم جدید
+1. یک فایل جدید با نام `[Concept_Name].md` ایجاد کنید.
+2. از قالب بالا پیروی کنید.
+3. یک Pull Request ارسال کنید.
+4. پس از تأیید، مبلغ استخراج به حساب شما واریز می‌شود.

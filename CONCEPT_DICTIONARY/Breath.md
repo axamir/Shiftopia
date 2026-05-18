@@ -1,22 +1,22 @@
-# Breath (نفس)
+# نفس (Breath)
 
-**English:** Breath  
-**Persian:** نفس
+**انگلیسی:** Breath  
+**فارسی:** نفس
 
-## Definition
-The minimum allowed time for any conscious action in Shiftopia: 150 milliseconds. This law separates “instinctive reaction” from “conscious presence”.
+## تعریف
+حداقل زمان مجاز برای هر کنش هشیارانه در شیفتوپیا: ۱۵۰ میلی‌ثانیه. این قانون، مرز میان «واکنش غریزی» و «حضور آگاهانه» است.
 
-## References
-- Constitution, Article I
-- Shahnameh, Veil 04 (The Breath Law)
-- The Two‑Breath Pact (CCP-001)
+## ارجاعات
+- قانون اساسی، اصل یکم
+- شاهنامه، پرده چهارم (قانون نفس)
+- میثاق دو نفس (CCP-001)
 
-## Implementation Example
-- A `sleep 0.15` is added before every critical action in GitHub Actions.
-- Citizens are encouraged to pause 150ms before voting.
+## نمونه پیاده‌سازی
+- در تمام GitHub Actions، یک `sleep 0.15` قبل از هر اقدام حیاتی گنجانده شده است.
+- شهروندان هنگام رأی‌گیری، تشویق به مکث ۱۵۰ میلی‌ثانیه می‌شوند.
 
-## Mining Value
-100 NafasCoins
+## ارزش استخراج
+۱۰۰ نفس‌کوین
 
-## Authors
-Amir (@AmirStarship) and @x@
+## نویسندگان
+امیر (@AmirStarship) و @x@

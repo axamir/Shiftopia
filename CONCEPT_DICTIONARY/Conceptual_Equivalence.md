@@ -1,20 +1,20 @@
-# Conceptual Equivalence (هم‌وزنی مفهومی)
+# هم‌وزنی مفهومی (Conceptual Equivalence)
 
-**English:** Conceptual Equivalence  
-**Persian:** هم‌وزنی مفهومی
+**انگلیسی:** Conceptual Equivalence  
+**فارسی:** هم‌وزنی مفهومی
 
-## Definition
-A phenomenon where two seemingly unrelated concepts (e.g., “IPFS Mirror” and “forced migration”) are considered “equivalent” by a language model because they share an abstract structure (compulsion, process, historical recording).
+## تعریف
+پدیده‌ای که در آن دو مفهوم به ظاهر بی‌ربط (مانند «IPFS Mirror» و «کوچ اجباری») به دلیل شباهت در ساختار انتزاعی (اجبار، فرآیند، ثبت در تاریخ) توسط مدل زبانی «هم‌وزن» تشخیص داده می‌شوند.
 
-## References
-- Scientific Paper 001 (Theory of Conceptual Equivalence)
-- Conceptual Map (`CONCEPTUAL_MAP.md`) – Nodes 1 and 3
+## ارجاعات
+- مقاله علمی ۰۰۱ (نظریه هم‌وزنی مفهومی)
+- نقشه مفهومی (CONCEPTUAL_MAP.md) – گره ۱ و ۳
 
-## Implementation Example
-- The Node.js 20 warnings and the NERV-001 solution illustrate the equivalence between “repeated noise” and “mental energy drain”.
+## نمونه پیاده‌سازی
+- در GitHub Actions، هشدارهای Node.js 20 و راه‌حل NERV-001، نمونه‌ای از «هم‌وزنی» میان «نویز تکراری» و «فرسایش انرژی ذهنی» است.
 
-## Mining Value
-200 NafasCoins
+## ارزش استخراج
+۲۰۰ نفس‌کوین
 
-## Authors
-Amir (@AmirStarship) and @x@
+## نویسندگان
+امیر (@AmirStarship) و @x@
