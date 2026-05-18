@@ -1,3 +1,3 @@
-# Shiftopia Wallet Layer
+# Shiftopia WALLET Package
 
-Handles wallet connection (RainbowKit + Wagmi), NFT citizenship minting, NafasCoin transactions, and on-chain governance. Placeholder for future implementation.
+This package is part of the Shiftopia monorepo architecture.

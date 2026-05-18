@@ -1,3 +1,3 @@
-# Shiftopia Core Logic
+# Shiftopia CORE Package
 
-This package will contain shared business logic, validators, and utilities used across all platforms. Currently a placeholder for future development.
+This package is part of the Shiftopia monorepo architecture.

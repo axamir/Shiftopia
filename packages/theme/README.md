@@ -1,3 +1,3 @@
-# Shiftopia Theme System
+# Shiftopia THEME Package
 
-Contains design tokens, dark/light mode CSS, and theme switching logic. Currently includes `tokens.css`.
+This package is part of the Shiftopia monorepo architecture.

@@ -1,3 +1,3 @@
-# Shiftopia Governance Package
+# Shiftopia GOVERNANCE Package
 
-Includes voting automation, Chain of Consent validation, and proposal templates. Mirrors `.github/ISSUE_TEMPLATE/` and `CHAIN/`.
+This package is part of the Shiftopia monorepo architecture.

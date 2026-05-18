@@ -1,3 +1,3 @@
-# Shiftopia UI Components
+# Shiftopia UI Package
 
-Reusable components for all platforms: Card, Button, Modal, Navigation, etc. Will be implemented with React + Tailwind + shadcn.
+This package is part of the Shiftopia monorepo architecture.

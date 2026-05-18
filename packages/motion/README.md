@@ -1,3 +1,3 @@
-# Shiftopia Motion & Animation
+# Shiftopia MOTION Package
 
-Centralized animation library (Framer Motion) for consistent transitions, micro-interactions, and page transitions across all apps.
+This package is part of the Shiftopia monorepo architecture.
