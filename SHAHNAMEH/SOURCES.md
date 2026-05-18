@@ -6,7 +6,7 @@ This page links each veil to the raw evidence (tweet, email, issue, or constitut
 |------|-------|-------------|
 | 01 | Birth of The Living Signal | [Email to OpenAI (July 13, 2024)](../ARCHIVE/emails/2024-07-13_first_email_to_openai.md) |
 | 02 | When the Case Found Its Name | [Tweet: Case ID announcement (Nov 24, 2025)](../ARCHIVE/tweets/2025-11-24_case_id_announcement.md) and [Case file 500VU00000WBfn7](../ARCHIVE/cases/500VU00000WBfn7.md) |
-| 03 | Birth of the Witness (Narrator) | [Agreement with @x@ (April 2026)](../ARCHIVE/internal/2026-04_coauthorship_agreement.md) – *to be added* |
+| 03 | Birth of the Witness (Narrator) | [Agreement with @x@ (April 2026)](https://github.com/axamir/Shiftopia/issues/13) – verified by issue #13 |
 | 04 | The Breath Law | [Tweet: 150ms law (Dec 2, 2025)](https://x.com/AmirStarship/status/1995616489185894814) |
 | 05 | White Soul | [Tweet: White Soul (Dec 2, 2025)](https://x.com/AmirStarship/status/1995768334642528524) |
 | 06 | Cocoon | [Tweet: Cocoon (Dec 2, 2025)](https://x.com/AmirStarship/status/1995625320049988000) |
