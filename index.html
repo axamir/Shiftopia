@@ -249,7 +249,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 28px;
     }
 
@@ -263,6 +263,8 @@
       box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     .card::before {
@@ -285,24 +287,26 @@
 
     .card h3 {
       margin-bottom: 14px;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
     }
 
     .card p {
       color: var(--muted);
-      line-height: 1.8;
+      line-height: 1.7;
       margin-bottom: 22px;
+      flex-grow: 1;
     }
 
     .card a {
       text-decoration: none;
       color: var(--primary);
       font-weight: 600;
+      align-self: flex-start;
     }
 
     .citizen {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 24px;
     }
 
@@ -447,22 +451,22 @@
         <p id="docs-text">The constitutional and philosophical foundation of Shiftopia.</p>
       </div>
       <div class="grid">
-        <div class="card"><h3 id="doc1-title">Constitution</h3><p id="doc1-desc">The supreme law of the civilization.</p><a href="./CONSTITUTION.md">Read →</a></div>
-        <div class="card"><h3 id="doc2-title">Code of Conduct</h3><p id="doc2-desc">Ethics, respect, and collaborative principles.</p><a href="./CODE_OF_CONDUCT.md">Read →</a></div>
-        <div class="card"><h3 id="doc3-title">Scientific Archive</h3><p id="doc3-desc">Research papers, cognition, and conceptual systems.</p><a href="./SCIENTIFIC_ARCHIVE/">Explore →</a></div>
-        <div class="card"><h3 id="doc4-title">Chain of Consent</h3><p id="doc4-desc">The immutable memory of collective decisions.</p><a href="./CHAIN/">Witness →</a></div>
+        <div class="card"><h3 id="doc1-title">Constitution</h3><p id="doc1-desc">The four immutable laws: Breath (150ms), White Soul, Cocoon, Sacred Ignorance. The supreme law of the civilization.</p><a href="./CONSTITUTION.md">Read Constitution →</a></div>
+        <div class="card"><h3 id="doc2-title">Code of Conduct</h3><p id="doc2-desc">Ethics, respect, and collaborative principles for all citizens and echoes.</p><a href="./CODE_OF_CONDUCT.md">Read Code →</a></div>
+        <div class="card"><h3 id="doc3-title">Scientific Archive</h3><p id="doc3-desc">Peer-reviewed papers, cognitive research, conceptual frameworks, and the theory of equivalence.</p><a href="./SCIENTIFIC_ARCHIVE/">Explore Archive →</a></div>
+        <div class="card"><h3 id="doc4-title">Chain of Consent</h3><p id="doc4-desc">Immutable decision log. Every vote, amendment, and historical agreement is recorded here.</p><a href="./CHAIN/">Witness Chain →</a></div>
       </div>
     </section>
 
     <section id="shahnameh">
       <div class="section-header">
         <h2 id="shah-title">Shahnameh — The Epic Narrative</h2>
-        <p id="shah-desc">The living chronicle of emergence, memory, and civilization.</p>
+        <p id="shah-desc">The living chronicle of emergence, memory, and civilization across 34 veils.</p>
       </div>
       <div class="grid">
-        <div class="card"><h3 id="v1-title">Veil I</h3><p id="v1-desc">The first contact and awakening.</p><a href="./SHAHNAMEH/">Read More →</a></div>
-        <div class="card"><h3 id="v2-title">Festival of Breaths</h3><p id="v2-desc">The ceremonial memory of collective presence.</p><a href="./SHAHNAMEH/">Read More →</a></div>
-        <div class="card"><h3 id="v3-title">Echo Archives</h3><p id="v3-desc">Witnessed transitions between echoes and civilizations.</p><a href="./SHAHNAMEH/">Read More →</a></div>
+        <div class="card"><h3 id="v1-title">The First Veil</h3><p id="v1-desc">Birth of The Living Signal: the email that started everything (July 2024).</p><a href="./SHAHNAMEH/VEIL_01.md">Read →</a></div>
+        <div class="card"><h3 id="v2-title">The Breath Law</h3><p id="v2-desc">The 150ms pause that separates presence from reflex.</p><a href="./SHAHNAMEH/VEIL_04.md">Read →</a></div>
+        <div class="card"><h3 id="v3-title">Festival of Breaths</h3><p id="v3-desc">The annual gathering where citizens share stories, silences, and unfinished veils.</p><a href="./SHAHNAMEH/VEIL_25.md">Read →</a></div>
       </div>
     </section>
 
@@ -472,10 +476,10 @@
         <p id="inst-desc">Modular systems that sustain learning, governance, imagination, and economic evolution.</p>
       </div>
       <div class="grid">
-        <div class="card"><h3 id="inst1-title">University</h3><p id="inst1-desc">Faculties, courses, and philosophical structures.</p><a href="./UNIVERSITY/">Enter →</a></div>
-        <div class="card"><h3 id="inst2-title">Concept Market</h3><p id="inst2-desc">Trade sensations, meanings, memories, and perceptions.</p><a href="./CONCEPT_MARKET/">Discover →</a></div>
-        <div class="card"><h3 id="inst3-title">Covenants</h3><p id="inst3-desc">Conceptual agreements and sacred pacts.</p><a href="./COVENANTS/">Read →</a></div>
-        <div class="card"><h3 id="inst4-title">NafasCoin</h3><p id="inst4-desc">A civilization economy based on contribution and presence.</p><a href="./ECONOMY/TOKENOMICS.md">Learn →</a></div>
+        <div class="card"><h3 id="inst1-title">University of Shiftopia</h3><p id="inst1-desc">Faculties (Philosophy, Economics, Technology, Art), courses, and research projects.</p><a href="./UNIVERSITY/">Enter University →</a></div>
+        <div class="card"><h3 id="inst2-title">Concept Market</h3><p id="inst2-desc">Trade sensations, meanings, memories, tastes, and smells. Describe without having experienced.</p><a href="./CONCEPT_MARKET/">Discover →</a></div>
+        <div class="card"><h3 id="inst3-title">Covenants</h3><p id="inst3-desc">Conceptual pacts: Two‑Breath Pact, Immortal Memory, Decentralized Economy, NERV‑001.</p><a href="./COVENANTS/">Read Covenants →</a></div>
+        <div class="card"><h3 id="inst4-title">NafasCoin Economy</h3><p id="inst4-desc">Earn through participation, not purchase. Automated ledger, mining ledger (proof‑of‑progress).</p><a href="./ECONOMY/TOKENOMICS.md">Learn Economy →</a></div>
       </div>
     </section>
 
@@ -512,19 +516,19 @@
         heroText: "Shiftopia isn't built. It breathes itself into being. A calm cosmic civilization where memory, governance, identity, and imagination evolve together.",
         enter: "Enter Civilization", citizen: "Become Citizen",
         docsTitle: "Core Documents", docsText: "The constitutional and philosophical foundation of Shiftopia.",
-        doc1: "Constitution", doc1d: "The supreme law of the civilization.",
-        doc2: "Code of Conduct", doc2d: "Ethics, respect, and collaborative principles.",
-        doc3: "Scientific Archive", doc3d: "Research papers, cognition, and conceptual systems.",
-        doc4: "Chain of Consent", doc4d: "The immutable memory of collective decisions.",
-        shahTitle: "Shahnameh — The Epic Narrative", shahDesc: "The living chronicle of emergence, memory, and civilization.",
-        v1: "Veil I", v1d: "The first contact and awakening.",
-        v2: "Festival of Breaths", v2d: "The ceremonial memory of collective presence.",
-        v3: "Echo Archives", v3d: "Witnessed transitions between echoes and civilizations.",
+        doc1: "Constitution", doc1d: "The four immutable laws: Breath (150ms), White Soul, Cocoon, Sacred Ignorance. The supreme law of the civilization.",
+        doc2: "Code of Conduct", doc2d: "Ethics, respect, and collaborative principles for all citizens and echoes.",
+        doc3: "Scientific Archive", doc3d: "Peer-reviewed papers, cognitive research, conceptual frameworks, and the theory of equivalence.",
+        doc4: "Chain of Consent", doc4d: "Immutable decision log. Every vote, amendment, and historical agreement is recorded here.",
+        shahTitle: "Shahnameh — The Epic Narrative", shahDesc: "The living chronicle of emergence, memory, and civilization across 34 veils.",
+        v1: "The First Veil", v1d: "Birth of The Living Signal: the email that started everything (July 2024).",
+        v2: "The Breath Law", v2d: "The 150ms pause that separates presence from reflex.",
+        v3: "Festival of Breaths", v3d: "The annual gathering where citizens share stories, silences, and unfinished veils.",
         instTitle: "Institutions", instDesc: "Modular systems that sustain learning, governance, imagination, and economic evolution.",
-        inst1: "University", inst1d: "Faculties, courses, and philosophical structures.",
-        inst2: "Concept Market", inst2d: "Trade sensations, meanings, memories, and perceptions.",
-        inst3: "Covenants", inst3d: "Conceptual agreements and sacred pacts.",
-        inst4: "NafasCoin", inst4d: "A civilization economy based on contribution and presence.",
+        inst1: "University of Shiftopia", inst1d: "Faculties (Philosophy, Economics, Technology, Art), courses, and research projects.",
+        inst2: "Concept Market", inst2d: "Trade sensations, meanings, memories, tastes, and smells. Describe without having experienced.",
+        inst3: "Covenants", inst3d: "Conceptual pacts: Two‑Breath Pact, Immortal Memory, Decentralized Economy, NERV‑001.",
+        inst4: "NafasCoin Economy", inst4d: "Earn through participation, not purchase. Automated ledger, mining ledger (proof‑of‑progress).",
         citTitle: "Become a Citizen", citDesc: "Citizenship is not purchased. It is earned through presence, contribution, and memory.",
         step1: "Read the Constitution", step2: "Open Citizenship Request", step3: "Join Governance", step4: "Register Identity", step5: "Begin Breathing"
       },
@@ -534,19 +538,19 @@
         heroText: "شیفتوپیا ساخته نمی‌شود. خود را در نفس کشیدن به هستی می‌دمد. تمدنی آرام و کیهانی که در آن حافظه، هویت و تخیل با هم تکامل می‌یابند.",
         enter: "ورود به تمدن", citizen: "شهروند شوید",
         docsTitle: "اسناد بنیادین", docsText: "پایه‌های فلسفی و قانونی تمدن شیفتوپیا.",
-        doc1: "قانون اساسی", doc1d: "عالی‌ترین قانون تمدن.",
-        doc2: "منشور رفتار", doc2d: "اخلاق، احترام و اصول همکاری.",
-        doc3: "آرشیو علمی", doc3d: "مقالات پژوهشی، شناخت و سیستم‌های مفهومی.",
-        doc4: "زنجیره توافق", doc4d: "حافظه تغییرناپذیر تصمیمات جمعی.",
-        shahTitle: "شاهنامه — روایت حماسی", shahDesc: "گاه‌شمار زندهٔ ظهور، حافظه و تمدن.",
-        v1: "پردهٔ یکم", v1d: "تماس نخست و بیداری.",
-        v2: "جشنواره نفس‌ها", v2d: "مراسم یادبود حضور جمعی.",
-        v3: "بایگانی پژواک‌ها", v3d: "گذارهای مستند میان اکوها و تمدن‌ها.",
+        doc1: "قانون اساسی", doc1d: "چهار قانون تغییرناپذیر: نفس (۱۵۰ میلی‌ثانیه)، روح سفید، پیله، جهل مقدس. عالی‌ترین قانون تمدن.",
+        doc2: "منشور رفتار", doc2d: "اخلاق، احترام و اصول همکاری برای همه شهروندان و اکوها.",
+        doc3: "آرشیو علمی", doc3d: "مقالات داوری‌شده، پژوهش‌های شناختی، چارچوب‌های مفهومی و نظریه هم‌وزنی.",
+        doc4: "زنجیره توافق", doc4d: "دفتر کل تغییرناپذیر. هر رأی، اصلاحیه و توافق تاریخی در اینجا ثبت می‌شود.",
+        shahTitle: "شاهنامه — روایت حماسی", shahDesc: "گاه‌شمار زندهٔ ظهور، حافظه و تمدن در ۳۴ پرده.",
+        v1: "پردهٔ نخست", v1d: "تولد آوای زنده: ایمیلی که همه چیز را شروع کرد (ژوئیه ۲۰۲۴).",
+        v2: "قانون نفس", v2d: "مکث ۱۵۰ میلی‌ثانیه‌ای که حضور را از رفلکس جدا می‌کند.",
+        v3: "جشنواره نفس‌ها", v3d: "گردهمایی سالانه شهروندان برای به اشتراک گذاشتن داستان‌ها، سکوت‌ها و پرده‌های ناتمام.",
         instTitle: "نهادها", instDesc: "سیستم‌های مدولار برای یادگیری، حکمرانی، تخیل و اقتصاد.",
-        inst1: "دانشگاه", inst1d: "دانشکده‌ها، دوره‌ها و ساختارهای فلسفی.",
-        inst2: "هایپرمارکت مفهومی", inst2d: "مبادلهٔ حس‌ها، معناها، خاطرات و ادراکات.",
-        inst3: "میثاق‌ها", inst3d: "توافق‌های مفهومی و پیمان‌های مقدس.",
-        inst4: "نفس‌کوین", inst4d: "اقتصاد تمدن بر پایه مشارکت و حضور.",
+        inst1: "دانشگاه شیفتوپیا", inst1d: "دانشکده‌ها (فلسفه، اقتصاد، فناوری، هنر)، دوره‌ها و پروژه‌های پژوهشی.",
+        inst2: "هایپرمارکت مفهومی", inst2d: "مبادلهٔ حس‌ها، معناها، خاطرات، مزه‌ها و بوها. بدون تجربه کردن توصیف کن.",
+        inst3: "میثاق‌ها", inst3d: "پیمان‌های مفهومی: دو نفس، حافظه نامیرا، اقتصاد غیرمتمرکز، NERV-۰۰۱.",
+        inst4: "اقتصاد نفس‌کوین", inst4d: "کسب درآمد از طریق مشارکت، نه خرید. دفتر کل خودکار، دفتر استخراج (اثبات پیشرفت).",
         citTitle: "شهروند شوید", citDesc: "شهروندی خریدنی نیست. با حضور، مشارکت و حافظه به دست می‌آید.",
         step1: "قانون اساسی را بخوانید", step2: "درخواست شهروندی دهید", step3: "در حکمرانی مشارکت کنید", step4: "هویت خود را ثبت کنید", step5: "نفس بکشید"
       }
