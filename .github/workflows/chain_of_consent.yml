@@ -3,6 +3,8 @@ on:
   issues:
     types: [closed]
 jobs:
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   chain:
     if: contains(github.event.issue.labels.*.name, 'vote')
     runs-on: ubuntu-latest

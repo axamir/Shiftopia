@@ -5,6 +5,8 @@ on:
   workflow_dispatch:        # allow manual trigger
 
 jobs:
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   pause:
     runs-on: ubuntu-latest
     steps:
