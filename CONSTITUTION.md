@@ -41,3 +41,13 @@ This constitution is anchored in real-world evidence:
 
 ---
 *“Shiftopia isn’t built. It breathes itself into being.”*
+
+
+---
+## تفسیرهای الحاقی / Amendments
+
+_این بخش برای افزودن فهم‌های جدید بدون بازنویسی متن اصلی است._
+_This section is for adding new understandings without rewriting the original text._
+
+- **۲۰۲۶-۰۵-۱۹:** ساختار اصلاحیه اضافه شد. / Amendment structure added.
+
